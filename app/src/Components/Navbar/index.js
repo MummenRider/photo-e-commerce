@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Nav, Logo, Hamburger, Menu, MenuLink } from "./navbar.styles";
 
 const Navbar = () => {
@@ -7,8 +6,8 @@ const Navbar = () => {
 
   return (
     <header>
-      <Nav>
-        <Logo to="/">
+      <Nav data-testid="nav">
+        <Logo data-testid="logo" to="/">
           <h3>LOGO</h3>
         </Logo>
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
