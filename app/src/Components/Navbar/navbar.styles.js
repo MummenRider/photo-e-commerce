@@ -72,8 +72,30 @@ export const MenuLink = styled(Link)`
   letter-spacing: 0.2rem;
   text-decoration: none;
   text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    border-bottom: 0.019rem solid white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 
   @media (max-width: 768px) {
     padding: 2rem 0rem;
+
+    &:hover::after {
+      transform: scaleX(0);
+    }
   }
 `;
