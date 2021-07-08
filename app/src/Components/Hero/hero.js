@@ -6,11 +6,12 @@ import {
   HeroLine,
   ImageBackground,
   Section,
-} from "./hero.styles";
+} from "Components/Hero/hero.styles.js";
 import heroImg from "Assets/Images/hero-bg@2x.png";
+
 const HeroSection = () => {
   return (
-    <Section>
+    <Section data-testid="hero-container">
       <HeroBackground>
         <ImageBackground src={heroImg} alt="image-background" />
       </HeroBackground>
