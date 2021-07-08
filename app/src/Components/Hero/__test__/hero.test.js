@@ -4,10 +4,8 @@ import HeroSection from "Components/Hero/hero.js";
 
 afterEach(cleanup);
 
-test("should render hero component", () => {
-  render(<HeroSection />);
+it("should render hero component", () => {
+  const { container } = render(<HeroSection />);
 
-  expect(screen.getByAltText(/image-background/i)).toBeInTheDocument();
-  expect(screen.getByText(/photography/i)).toBeInTheDocument();
-  expect(screen.getByTestId("explore-line")).toBeInTheDocument();
+  expect(container.firstChild).toMatchSnapshot();
 });

@@ -13,18 +13,18 @@ const links = [
   { text: "CONTACT", location: "/contact" },
 ];
 
-test("should render navbar component", () => {
-  render(
+it("should render navbar component", () => {
+  const { container } = render(
     <Router>
       <Navbar />
     </Router>
   );
-  const navbarElement = screen.getByTestId("nav");
-  expect(navbarElement).toBeInTheDocument();
+
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 describe("anchor tag", () => {
-  test("logo is visible and is linked to home page", () => {
+  it("logo is visible and is linked to home page", () => {
     render(
       <Router>
         <Navbar />
@@ -35,7 +35,7 @@ describe("anchor tag", () => {
     expect(logo).toHaveAttribute("href", "/");
   });
 
-  test.each(links)("Nav Bar have %s link.", (link) => {
+  it.each(links)("Nav Bar have %s link.", (link) => {
     render(
       <Router>
         <Navbar />
@@ -47,25 +47,26 @@ describe("anchor tag", () => {
 });
 
 describe("in mobile mode", () => {
-  test("hamburger value should be hidden", () => {
+  it("hamburger value should be hidden", () => {
     const { container } = render(<Hamburger />);
     expect(container.firstChild).toHaveStyleRule("display", "none");
   });
 
-  test("hamburger value should be visible", () => {
+  it("hamburger value should be visible", () => {
     const { container } = render(<Hamburger />);
     expect(container.firstChild).toHaveStyleRule("display", "flex", {
       media: "(max-width: 768px)",
     });
   });
-  test("menu links should be hidden", () => {
+
+  it("menu links should be hidden", () => {
     const tree = renderer.create(<Menu isOpen />).toJSON();
     expect(tree).not.toHaveStyleRule("max-height", "0px", {
       media: "(max-width: 768px)",
     });
   });
 
-  test("menu links should be visible", () => {
+  it("menu links should be visible", () => {
     const tree = renderer.create(<Menu isOpen />).toJSON();
     expect(tree).toHaveStyleRule("max-height", "300px", {
       media: "(max-width: 768px)",
