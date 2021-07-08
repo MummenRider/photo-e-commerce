@@ -1,9 +1,9 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "jest-styled-components";
-import { Hamburger, Menu, MenuLink } from "../navbar.styles";
+import { Hamburger, Menu } from "Components/Navbar/navbar.styles.js";
 import renderer from "react-test-renderer";
-import Navbar from "../navbar";
+import Navbar from "Components/Navbar/navbar.js";
 
 afterEach(cleanup);
 
