@@ -1,9 +1,15 @@
+import HeroSection from "Components/Hero/hero";
+import Navbar from "Components/Navbar/navbar";
 import React from "react";
-import { TestTitle } from "./home.styles";
 
 const Home = () => {
-  //temp return
-  return <TestTitle data-testid="home">Home</TestTitle>;
+  return (
+    <>
+      <Navbar />
+      <HeroSection />
+      <h3>hello</h3>
+    </>
+  );
 };
 
 export default Home;

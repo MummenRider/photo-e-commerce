@@ -1,10 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import Home from "../../../Pages/Home/home";
+import { getByTestId, render, screen } from "@testing-library/react";
+import HeroSection from "Components/Hero/hero";
 
-test("should render home component", () => {
-  render(<Home />);
+test("should render hero component", () => {
+  render(<HeroSection />);
 
-  const homeElement = screen.getByTestId("home");
-  expect(homeElement).toBeInTheDocument();
+  expect(screen.getByAltText(/image-background/i)).toBeInTheDocument();
+  expect(screen.getByText(/photography/i)).toBeInTheDocument();
+  expect(screen.getByTestId("explore-line")).toBeInTheDocument();
 });
