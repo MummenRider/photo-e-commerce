@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Nav, Logo, Hamburger, Menu, MenuLink } from "./navbar.styles";
+import { Nav, Logo, Hamburger, Menu, MenuLink, Header } from "./navbar.styles";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header>
+    <Header>
       <Nav data-testid="nav">
         <Logo data-testid="logo" to="/">
           <h3>LOGO</h3>
@@ -23,7 +23,7 @@ const Navbar = () => {
           <MenuLink to="/contact">CONTACT</MenuLink>
         </Menu>
       </Nav>
-    </header>
+    </Header>
   );
 };
 

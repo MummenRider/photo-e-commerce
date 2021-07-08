@@ -1,30 +1,43 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
+export const Header = styled.header`
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  padding: 2rem 0;
+  top: 0;
+  background-color: transparent;
+  font-family: "Montserrat", sans-serif;
+  min-height: 10vh;
+  width: 100%;
+  z-index: 999;
+`;
+
 export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 90%;
-  padding: 3rem 0rem;
   margin: auto;
-  font-family: "Montserrat", sans-serif;
-  align-items: center;
   flex-wrap: wrap;
-  @media (max-width: 768px) {
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0;
     width: 100%;
+    margin: 0;
   }
 `;
 
 export const Logo = styled(Link)`
-  color: #ffffff;
+  color: white;
   font-size: 2rem;
   font-weight: 400;
   text-decoration: none;
   text-align: center;
 
-  @media (max-width: 768px) {
-    padding-left: 4rem;
-    padding-bottom: 2rem;
+  @media screen and (max-width: 768px) {
+    padding: 0 0 2rem 4rem;
   }
 `;
 
@@ -43,8 +56,7 @@ export const Hamburger = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
-    padding-right: 4rem;
-    padding-bottom: 2rem;
+    padding: 0 4rem 2rem 0;
   }
 `;
 
@@ -54,7 +66,7 @@ export const Menu = styled.div`
   color: #ffffff;
   position: relative;
   width: 40rem;
-
+  align-items: center;
   @media (max-width: 768px) {
     overflow: hidden;
     flex-direction: column;
@@ -67,7 +79,7 @@ export const Menu = styled.div`
 
 export const MenuLink = styled(Link)`
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 100;
   letter-spacing: 0.2rem;
   text-decoration: none;
@@ -91,7 +103,7 @@ export const MenuLink = styled(Link)`
     transform-origin: left;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     padding: 2rem 0rem;
 
     &:hover::after {
