@@ -1,3 +1,4 @@
+import AboutSection from "Components/About/about";
 import HeroSection from "Components/Hero/hero";
 import Navbar from "Components/Navbar/navbar";
 import React from "react";
@@ -7,7 +8,7 @@ const Home = () => {
     <>
       <Navbar />
       <HeroSection />
-      <h3>hello</h3>
+      <AboutSection />
     </>
   );
 };
