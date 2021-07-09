@@ -1,11 +1,11 @@
 import React from "react";
 import { cleanup, render } from "@testing-library/react";
-import HeroSection from "Components/Hero/hero.js";
+import AboutSection from "../about";
 
 afterEach(cleanup);
 
-it("should render hero component", () => {
-  const { container } = render(<HeroSection />);
+it("should render about component", () => {
+  const { container } = render(<AboutSection />);
 
   expect(container.firstChild).toMatchSnapshot();
 });

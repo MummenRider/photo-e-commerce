@@ -5,13 +5,13 @@ import {
   HeroH1,
   HeroLine,
   ImageBackground,
-  Section,
+  HeroContainer,
 } from "Components/Hero/hero.styles.js";
 import heroImg from "Assets/Images/hero-bg@2x.png";
 
 const HeroSection = () => {
   return (
-    <Section data-testid="hero-container">
+    <HeroContainer data-testid="hero-container">
       <HeroBackground>
         <ImageBackground src={heroImg} alt="image-background" />
       </HeroBackground>
@@ -19,7 +19,7 @@ const HeroSection = () => {
         <HeroH1>Photography is the story I fail to put into words.</HeroH1>
       </HeroContent>
       <HeroLine data-testid="explore-line" />
-    </Section>
+    </HeroContainer>
   );
 };
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
+export const HeroContainer = styled.section`
   height: 100vh;
   display: flex;
   position: relative;
