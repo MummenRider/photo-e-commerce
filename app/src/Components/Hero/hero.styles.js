@@ -6,33 +6,6 @@ export const HeroContainer = styled.section`
   position: relative;
   justify-content: center;
   align-items: center;
-
-  /* &::after {
-    content: "EXPLORE";
-    color: white;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 200;
-    padding-right: 10px;
-    text-indent: 25px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    border-right: 2.6px solid white;
-    position: absolute;
-    right: 10rem;
-    bottom: 0;
-    animation: lineframe 2s ease-in-out infinite;
-
-    @keyframes lineframe {
-      from {
-        height: 0px;
-      }
-      to {
-        height: 140px;
-      }
-    }
-  } */
 `;
 
 export const HeroBackground = styled.div`
@@ -120,7 +93,7 @@ export const HeroLine = styled.div`
   height: 140px;
   right: 10rem;
   transform-origin: 100% 0%;
-  animation: lineframe 3s ease-in;
+  animation: lineframe 650ms ease-in;
 
   @keyframes lineframe {
     from {

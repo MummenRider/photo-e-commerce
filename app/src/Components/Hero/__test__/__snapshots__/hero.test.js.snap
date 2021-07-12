@@ -2,7 +2,7 @@
 
 exports[`should render hero component 1`] = `
 <section
-  class="sc-bdnxRM fooQge"
+  class="sc-bdnxRM kDgKQe"
   data-testid="hero-container"
 >
   <div
@@ -24,7 +24,7 @@ exports[`should render hero component 1`] = `
     </h1>
   </div>
   <div
-    class="sc-jSFjdj czudXC"
+    class="sc-jSFjdj eivmlX"
     data-testid="explore-line"
   />
 </section>
