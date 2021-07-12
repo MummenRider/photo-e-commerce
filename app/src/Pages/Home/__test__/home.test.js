@@ -24,15 +24,7 @@ describe("hero component in home page", () => {
 describe("about component in homepage", () => {
   beforeEach(() => render(<AboutSection />));
 
-  it("should have an image", () => {
-    expect(screen.getByAltText(/nico-img/i)).toBeInTheDocument();
-  });
-
   it("should have a header", () => {
-    expect(screen.getByText(/Who am I/i)).toBeInTheDocument();
-  });
-
-  it("should have abstract circle background", () => {
-    expect(screen.getByAltText(/abstract-circle/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Who am I/i)[0]).toBeInTheDocument();
   });
 });
