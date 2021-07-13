@@ -13,11 +13,14 @@ exports[`should render navbar component 1`] = `
   position: fixed;
   padding: 2rem 0;
   top: 0;
-  background-color: transparent;
+  background-color: #353535;
   font-family: "Montserrat",sans-serif;
   min-height: 10vh;
   width: 100%;
   z-index: 999;
+  -webkit-transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease-in;
+  box-shadow: 0px 2px 20px#1a1a1a;
 }
 
 .c1 {
@@ -174,53 +177,55 @@ exports[`should render navbar component 1`] = `
   }
 }
 
-<header
-  class="c0"
->
-  <nav
-    class="c1"
-    data-testid="nav"
+<div>
+  <header
+    class="c0"
   >
-    <a
-      aria-current="page"
-      class="c2 active"
-      data-testid="logo"
-      href="/"
-    >
-      <h3>
-        LOGO
-      </h3>
-    </a>
-    <div
-      class="c3"
-    >
-      <span />
-      <span />
-      <span />
-    </div>
-    <div
-      class="c4"
+    <nav
+      class="c1"
+      data-testid="nav"
     >
       <a
-        class="c5"
-        data-testid="about"
-        href="/about"
+        aria-current="page"
+        class="c2 active"
+        data-testid="logo"
+        href="/"
       >
-        ABOUT
+        <h3>
+          LOGO
+        </h3>
       </a>
-      <a
-        class="c5"
-        href="/services"
+      <div
+        class="c3"
       >
-        SERVICES
-      </a>
-      <a
-        class="c5"
-        href="/contact"
+        <span />
+        <span />
+        <span />
+      </div>
+      <div
+        class="c4"
       >
-        CONTACT
-      </a>
-    </div>
-  </nav>
-</header>
+        <a
+          class="c5"
+          data-testid="about"
+          href="/about"
+        >
+          ABOUT
+        </a>
+        <a
+          class="c5"
+          href="/services"
+        >
+          SERVICES
+        </a>
+        <a
+          class="c5"
+          href="/contact"
+        >
+          CONTACT
+        </a>
+      </div>
+    </nav>
+  </header>
+</div>
 `;
