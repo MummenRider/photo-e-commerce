@@ -4,7 +4,13 @@ import "jest-styled-components";
 import { Hamburger, Menu } from "Components/Navbar/navbar.styles.js";
 import renderer from "react-test-renderer";
 import Navbar from "Components/Navbar/navbar.js";
-
+import { act } from "react-dom/test-utils";
+import { useInView } from "react-intersection-observer";
+import {
+  mockAllIsIntersecting,
+  mockIsIntersecting,
+} from "react-intersection-observer/test-utils";
+import styled from "styled-components";
 afterEach(cleanup);
 
 const links = [
@@ -21,6 +27,51 @@ it("should render navbar component", () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
+});
+
+describe("intersection observer in Navbar", () => {
+  const Header = styled.header`
+    background-color: ${(props) =>
+      props.isScrolled ? "black" : "transparent"};
+  `;
+
+  const HeroSection = styled.section``;
+  const MockNavbar = () => {
+    const { ref, inView } = useInView();
+    return (
+      <Header isScrolled={inView}>
+        {inView.toString()}
+        <HeroSection ref={ref} />
+      </Header>
+    );
+  };
+
+  it("should create a hook inView", () => {
+    render(<MockNavbar />);
+
+    mockAllIsIntersecting(false);
+    screen.getByText("false");
+
+    mockAllIsIntersecting(true);
+    screen.getByText("true");
+  });
+
+  it("should have transparent background initially", () => {
+    const { container } = render(<MockNavbar />);
+
+    mockAllIsIntersecting(true);
+    expect(container.firstChild).toHaveStyleRule("background-color", "black");
+  });
+
+  it("should change the color when scrolled down", () => {
+    const { container } = render(<MockNavbar />);
+
+    mockAllIsIntersecting(false);
+    expect(container.firstChild).toHaveStyleRule(
+      "background-color",
+      "transparent"
+    );
+  });
 });
 
 describe("anchor tag", () => {
