@@ -7,13 +7,13 @@ export const Header = styled.header`
   position: fixed;
   padding: 2rem 0;
   top: 0;
-  background-color: ${(prop) => (prop.isScrolled ? "transparent" : "#353535")};
+  background-color: ${(prop) => (!prop.isScrolled ? "transparent" : "#353535")};
   font-family: "Montserrat", sans-serif;
   min-height: 10vh;
   width: 100%;
   z-index: 999;
   transition: background-color 200ms ease-in;
-  box-shadow: ${(prop) => (prop.isScrolled ? "none" : "0px 2px 20px#1a1a1a")};
+  box-shadow: ${(prop) => (!prop.isScrolled ? "none" : "0px 2px 20px#1a1a1a")};
 `;
 
 export const Nav = styled.nav`

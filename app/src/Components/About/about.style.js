@@ -108,8 +108,7 @@ export const AboutDescription = styled.div`
     }
   }
 `;
-
-export const AboutContainer = styled.section`
+export const AboutSection = styled.section`
   background-color: #111112;
   font-family: "Montserrat", sans-serif;
   color: white;
@@ -119,5 +118,4 @@ export const AboutContainer = styled.section`
     min-height: 912px;
   }
 `;
-
 export const AboutCircleImage = styled.div``;

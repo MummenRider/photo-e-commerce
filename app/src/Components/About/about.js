@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
-  AboutContainer,
   AboutDescription,
   AboutImage,
   ImageContent,
   DescriptionTitle,
   DescriptionParagraph,
   AboutWrapper,
+  AboutSection,
 } from "Components/About/about.style";
 import nicoImg from "Assets/Images/mobile-abt-nico@3x.png";
+import { useInView } from "react-intersection-observer";
+import { useNavBackground } from "context/navbar-context";
 
-const AboutSection = () => {
+const AboutComponent = ({ options }) => {
+  const [ref, inView] = useInView(options);
+  const { setNavBackground } = useNavBackground();
+
+  useEffect(() => {
+    setNavBackground(inView);
+  }, [inView, setNavBackground]);
+
   return (
     <>
-      <AboutContainer>
-        <AboutWrapper>
-          <DescriptionTitle>Who am I</DescriptionTitle>
+      <AboutSection>
+        <AboutWrapper ref={ref}>
+          <DescriptionTitle data-testid="about-header">
+            Who am I
+          </DescriptionTitle>
           <AboutImage>
             <ImageContent bkgImg={nicoImg} />
           </AboutImage>
@@ -50,9 +61,9 @@ const AboutSection = () => {
             </DescriptionParagraph>
           </AboutDescription>
         </AboutWrapper>
-      </AboutContainer>
+      </AboutSection>
     </>
   );
 };
 
-export default AboutSection;
+export default AboutComponent;
