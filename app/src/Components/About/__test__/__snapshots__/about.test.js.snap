@@ -9,6 +9,7 @@ exports[`should render about component 1`] = `
   >
     <h1
       class="sc-bdnxRM LhtCC"
+      data-testid="about-header"
     >
       Who am I
     </h1>

@@ -1,16 +1,13 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "jest-styled-components";
-import { Hamburger, Menu } from "Components/Navbar/navbar.styles.js";
+import { Hamburger, Menu, Header } from "Components/Navbar/navbar.styles.js";
 import renderer from "react-test-renderer";
 import Navbar from "Components/Navbar/navbar.js";
-import { act } from "react-dom/test-utils";
-import { useInView } from "react-intersection-observer";
 import {
-  mockAllIsIntersecting,
-  mockIsIntersecting,
-} from "react-intersection-observer/test-utils";
-import styled from "styled-components";
+  NavBackgroundProvider,
+  NavBackgroundContext,
+} from "context/navbar-context";
 afterEach(cleanup);
 
 const links = [
@@ -21,79 +18,61 @@ const links = [
 
 it("should render navbar component", () => {
   const { container } = render(
-    <Router>
-      <Navbar />
-    </Router>
+    <NavBackgroundProvider>
+      <Router>
+        <Navbar />
+      </Router>
+    </NavBackgroundProvider>
   );
 
   expect(container.firstChild).toMatchSnapshot();
 });
 
-describe("intersection observer in Navbar", () => {
-  const Header = styled.header`
-    background-color: ${(props) =>
-      props.isScrolled ? "black" : "transparent"};
-  `;
-
-  const HeroSection = styled.section``;
-  const MockNavbar = () => {
-    const { ref, inView } = useInView();
-    return (
-      <Header isScrolled={inView}>
-        {inView.toString()}
-        <HeroSection ref={ref} />
-      </Header>
+describe("<NavBackgroundContext.Provider />", () => {
+  const customRender = (ui, { providerProps }) => {
+    return render(
+      <NavBackgroundContext.Provider {...providerProps}>
+        {ui}
+      </NavBackgroundContext.Provider>
     );
   };
 
-  it("should create a hook inView", () => {
-    render(<MockNavbar />);
-
-    mockAllIsIntersecting(false);
-    screen.getByText("false");
-
-    mockAllIsIntersecting(true);
-    screen.getByText("true");
-  });
-
   it("should have transparent background initially", () => {
-    const { container } = render(<MockNavbar />);
+    const providerProps = {
+      value: {
+        navBackground: false,
+      },
+    };
+    customRender(
+      <Router>
+        <Navbar />
+      </Router>,
+      { providerProps }
+    );
 
-    mockAllIsIntersecting(true);
-    expect(container.firstChild).toHaveStyleRule("background-color", "black");
-  });
-
-  it("should change the color when scrolled down", () => {
-    const { container } = render(<MockNavbar />);
-
-    mockAllIsIntersecting(false);
-    expect(container.firstChild).toHaveStyleRule(
+    expect(screen.getByTestId("nav-header")).toHaveStyleRule(
       "background-color",
       "transparent"
     );
   });
-});
 
-describe("anchor tag", () => {
-  it("logo is visible and is linked to home page", () => {
-    render(
+  it("should have #353535 background color", () => {
+    const providerProps = {
+      value: {
+        navBackground: true,
+      },
+    };
+    customRender(
       <Router>
         <Navbar />
-      </Router>
+      </Router>,
+      { providerProps }
     );
-    const logo = screen.getByTestId("logo");
-    expect(screen.getByText("LOGO")).toBeVisible();
-    expect(logo).toHaveAttribute("href", "/");
-  });
 
-  it.each(links)("Nav Bar have %s link.", (link) => {
-    render(
-      <Router>
-        <Navbar />
-      </Router>
+    expect(screen.getByTestId("nav-header")).toHaveStyleRule(
+      "background-color",
+      "#353535"
     );
-    const linkDom = screen.getByText(link.text);
-    expect(linkDom).toHaveAttribute("href", link.location);
   });
 });
 

@@ -1,7 +1,9 @@
 import React from "react";
 import { cleanup, render, screen } from "@testing-library/react";
 import HeroSection from "Components/Hero/hero";
-import AboutSection from "Components/About/about";
+import AboutComponent from "Components/About/about";
+import "react-intersection-observer/test-utils";
+import { NavBackgroundProvider } from "context/navbar-context";
 
 afterEach(cleanup);
 
@@ -21,10 +23,13 @@ describe("hero component in home page", () => {
   });
 });
 
-describe("about component in homepage", () => {
-  beforeEach(() => render(<AboutSection />));
-
-  it("should have a header", () => {
+describe("about component", () => {
+  it("should have a header ", () => {
+    render(
+      <NavBackgroundProvider>
+        <AboutComponent />
+      </NavBackgroundProvider>
+    );
     expect(screen.getAllByText(/Who am I/i)[0]).toBeInTheDocument();
   });
 });
