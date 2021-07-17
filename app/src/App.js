@@ -6,9 +6,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path={ROUTES.HOME} exact>
-          <Home />
-        </Route>
+        <Route path={ROUTES.HOME} exact component={Home}></Route>
       </Switch>
     </Router>
   );

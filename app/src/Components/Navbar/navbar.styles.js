@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { NavLink as Link } from "react-router-dom";
 export const Header = styled.header`
   display: flex;
   justify-content: center;
@@ -25,7 +25,8 @@ export const Container = styled.div`
     padding: 1rem 0;
   }
 `;
-export const Logo = styled.a`
+export const Logo = styled(Link)`
+  cursor: pointer;
   color: white;
   font-size: 2rem;
   font-weight: 400;
@@ -64,7 +65,7 @@ export const Menu = styled.nav`
     background-color: #353535;
   }
 `;
-export const Item = styled.a`
+export const Item = styled(Link)`
   color: #ffffff;
   font-size: 1.8rem;
   font-weight: 100;
@@ -72,6 +73,7 @@ export const Item = styled.a`
   text-decoration: none;
   text-align: center;
   position: relative;
+  cursor: pointer;
   &::after {
     content: "";
     position: absolute;

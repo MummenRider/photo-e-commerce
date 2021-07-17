@@ -7,17 +7,15 @@ import {
   Menu,
   Item,
 } from "Components/Navbar/navbar.styles";
-import { useNavBackground } from "context/navbar-context";
+import useScroll from "Hooks/useScroll";
+
 const ToggleMenuContext = createContext();
 
 export default function Navbar({ children, ...restProps }) {
-  const { navBackground } = useNavBackground();
+  const { isScrolled } = useScroll(false);
+
   return (
-    <Header
-      isScrolled={navBackground}
-      data-testid="nav-background"
-      {...restProps}
-    >
+    <Header isScrolled={isScrolled} data-testid="nav-background" {...restProps}>
       {children}
     </Header>
   );
@@ -32,12 +30,8 @@ Navbar.Container = function NavbarContainer({ children, ...restProps }) {
   );
 };
 
-Navbar.Logo = function NavbarLogo({ to, children, ...restProps }) {
-  return (
-    <Logo to={to} {...restProps}>
-      {children}
-    </Logo>
-  );
+Navbar.Logo = function NavbarLogo({ children, ...restProps }) {
+  return <Logo {...restProps}>{children}</Logo>;
 };
 
 Navbar.Burger = function NavbarBurger({ children, ...restProps }) {
@@ -64,10 +58,6 @@ Navbar.Menu = function NavbarMenu({ children, ...restProps }) {
   );
 };
 
-Navbar.Item = function NavbarItem({ to, children, ...restProps }) {
-  return (
-    <Item to={to} {...restProps}>
-      {children}
-    </Item>
-  );
+Navbar.Item = function NavbarItem({ children, ...restProps }) {
+  return <Item {...restProps}>{children}</Item>;
 };

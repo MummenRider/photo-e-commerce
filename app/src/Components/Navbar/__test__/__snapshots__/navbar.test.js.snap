@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> should have colored background 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  padding: 2rem 0;
+  top: 0;
+  background-color: #353535;
+  font-family: "Montserrat",sans-serif;
+  min-height: 10vh;
+  width: 100%;
+  z-index: 999;
+  -webkit-transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease-in;
+  box-shadow: 0px 2px 20px#1a1a1a;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  width: 40rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 100;
+  -webkit-letter-spacing: 0.2rem;
+  -moz-letter-spacing: 0.2rem;
+  -ms-letter-spacing: 0.2rem;
+  letter-spacing: 0.2rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.c4::after {
+  content: "";
+  position: absolute;
+  border-bottom: 0.019rem solid white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in;
+  -webkit-transition: transform 250ms ease-in;
+  transition: transform 250ms ease-in;
+}
+
+.c4:hover::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+}
+
+@media screen and (max-width:768px) {
+  .c1 {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width:768px) {
+  .c3 {
+    overflow: hidden;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0px;
+    -webkit-transition: max-height 300ms ease-in;
+    transition: max-height 300ms ease-in;
+    background-color: #353535;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c4 {
+    padding: 2rem 0rem;
+  }
+
+  .c4:hover::after {
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+}
+
+<header
+  class="c0"
+  data-testid="nav-background"
+>
+  <div
+    class="c1"
+  >
+    <a
+      aria-current="page"
+      class="c2 active"
+      href="/"
+    >
+      Some logo here
+    </a>
+    <nav
+      class="c3"
+      data-testid="nav-menu"
+    >
+      <a
+        class="c4"
+        href="/about"
+      >
+        Link one
+      </a>
+      <a
+        class="c4"
+        href="/contact"
+      >
+        Link two
+      </a>
+      <a
+        class="c4"
+        href="/services"
+      >
+        Link three
+      </a>
+    </nav>
+  </div>
+</header>
+`;
+
+exports[`<Navbar /> should have logo with transparent background 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  padding: 2rem 0;
+  top: 0;
+  background-color: transparent;
+  font-family: "Montserrat",sans-serif;
+  min-height: 10vh;
+  width: 100%;
+  z-index: 999;
+  -webkit-transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease-in;
+  box-shadow: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  width: 40rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 100;
+  -webkit-letter-spacing: 0.2rem;
+  -moz-letter-spacing: 0.2rem;
+  -ms-letter-spacing: 0.2rem;
+  letter-spacing: 0.2rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.c4::after {
+  content: "";
+  position: absolute;
+  border-bottom: 0.019rem solid white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
+  transform-origin: right;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in;
+  -webkit-transition: transform 250ms ease-in;
+  transition: transform 250ms ease-in;
+}
+
+.c4:hover::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
+  transform-origin: left;
+}
+
+@media screen and (max-width:768px) {
+  .c1 {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width:768px) {
+  .c3 {
+    overflow: hidden;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0px;
+    -webkit-transition: max-height 300ms ease-in;
+    transition: max-height 300ms ease-in;
+    background-color: #353535;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c4 {
+    padding: 2rem 0rem;
+  }
+
+  .c4:hover::after {
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+}
+
+<header
+  class="c0"
+  data-testid="nav-background"
+>
+  <div
+    class="c1"
+  >
+    <a
+      aria-current="page"
+      class="c2 active"
+      href="/"
+    >
+      Some logo here
+    </a>
+    <nav
+      class="c3"
+      data-testid="nav-menu"
+    >
+      <a
+        class="c4"
+        href="/about"
+      >
+        Link one
+      </a>
+      <a
+        class="c4"
+        href="/contact"
+      >
+        Link two
+      </a>
+      <a
+        class="c4"
+        href="/services"
+      >
+        Link three
+      </a>
+    </nav>
+  </div>
+</header>
+`;
+
+exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  padding: 2rem 0;
+  top: 0;
+  background-color: transparent;
+  font-family: "Montserrat",sans-serif;
+  min-height: 10vh;
+  width: 100%;
+  z-index: 999;
+  -webkit-transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease-in;
+  box-shadow: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.c2 span {
+  height: 2px;
+  width: 25px;
+  background: white;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  width: 40rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media screen and (max-width:768px) {
+  .c1 {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width:768px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width:768px) {
+
+}
+
+@media (max-width:768px) {
+  .c3 {
+    overflow: hidden;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-height: 300px;
+    -webkit-transition: max-height 300ms ease-in;
+    transition: max-height 300ms ease-in;
+    background-color: #353535;
+  }
+}
+
+<header
+  class="c0"
+  data-testid="nav-background"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+      data-testid="burger"
+    >
+      <span />
+      <span />
+      <span />
+    </div>
+    <nav
+      class="c3"
+      data-testid="nav-menu"
+    />
+  </div>
+</header>
+`;
