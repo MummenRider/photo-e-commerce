@@ -1,3 +1,5 @@
+![Hero - Home page](https://user-images.githubusercontent.com/43891568/126047118-6c68c7d2-1b1c-487d-9470-58f225f6a84b.png)
+
 # Description
 A web application dedicated to help [Nico Inocalla](https://www.instagram.com/inocalla.ruinico/?hl=en), an amateur photographer, to show off his work and attract new customers. The application also able customer to select the type of photoshoot event based on their needs such as weddings and birthday parties. 
 
