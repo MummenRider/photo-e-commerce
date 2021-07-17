@@ -7,7 +7,7 @@ export function useNavBackground() {
 }
 
 export function NavBackgroundProvider({ children }) {
-  const [navBackground, setNavBackground] = useState(false);
+  const [navBackground, setNavBackground] = useState();
 
   return (
     <NavBackgroundContext.Provider value={{ navBackground, setNavBackground }}>

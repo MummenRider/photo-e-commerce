@@ -1,104 +1,71 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "Components/Navbar/navbar";
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
 import "jest-styled-components";
-import { Hamburger, Menu, Header } from "Components/Navbar/navbar.styles.js";
-import renderer from "react-test-renderer";
-import Navbar from "Components/Navbar/navbar.js";
-import {
-  NavBackgroundProvider,
-  NavBackgroundContext,
-} from "context/navbar-context";
-afterEach(cleanup);
+import { NavBackgroundProvider } from "context/navbar-context";
 
-const links = [
-  { text: "ABOUT", location: "/about" },
-  { text: "SERVICES", location: "/services" },
-  { text: "CONTACT", location: "/contact" },
-];
-
-it("should render navbar component", () => {
-  const { container } = render(
-    <NavBackgroundProvider>
-      <Router>
-        <Navbar />
-      </Router>
-    </NavBackgroundProvider>
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
-describe("<NavBackgroundContext.Provider />", () => {
+describe("<Navbar />", () => {
   const customRender = (ui, { providerProps }) => {
     return render(
-      <NavBackgroundContext.Provider {...providerProps}>
-        {ui}
-      </NavBackgroundContext.Provider>
+      <NavBackgroundProvider {...providerProps}>{ui}</NavBackgroundProvider>
     );
   };
-
-  it("should have transparent background initially", () => {
+  it("should have logo with transparent background", () => {
     const providerProps = {
       value: {
         navBackground: false,
       },
     };
-    customRender(
-      <Router>
-        <Navbar />
-      </Router>,
+    const { container, getByText } = customRender(
+      <Navbar>
+        <Navbar.Container>
+          <Navbar.Logo>Some logo here</Navbar.Logo>
+          <Navbar.Menu>
+            <Navbar.Item>Link one</Navbar.Item>
+            <Navbar.Item>Link two</Navbar.Item>
+            <Navbar.Item>Link three</Navbar.Item>
+          </Navbar.Menu>
+        </Navbar.Container>
+      </Navbar>,
       { providerProps }
     );
 
-    expect(screen.getByTestId("nav-header")).toHaveStyleRule(
+    expect(getByText("Some logo here")).toBeTruthy();
+    expect(container.firstChild).toHaveStyleRule(
       "background-color",
       "transparent"
     );
+    expect(getByText("Link one")).toBeTruthy();
+    expect(getByText("Link two")).toBeTruthy();
+    expect(getByText("Link three")).toBeTruthy();
   });
 
-  it("should have #353535 background color", () => {
+  it("should toggle the burger menu in smaller devices", () => {
     const providerProps = {
       value: {
-        navBackground: true,
+        navBackground: false,
       },
     };
-    customRender(
-      <Router>
-        <Navbar />
-      </Router>,
-      { providerProps }
-    );
+    const { container, getByText, getByTestId, queryByTestId, debug } =
+      customRender(
+        <Navbar>
+          <Navbar.Container>
+            <Navbar.Burger>
+              <span />
+              <span />
+              <span />
+            </Navbar.Burger>
+            <Navbar.Menu></Navbar.Menu>
+          </Navbar.Container>
+        </Navbar>,
+        { providerProps }
+      );
 
-    expect(screen.getByTestId("nav-header")).toHaveStyleRule(
-      "background-color",
-      "#353535"
-    );
-  });
-});
-
-describe("in mobile mode", () => {
-  it("hamburger value should be hidden", () => {
-    const { container } = render(<Hamburger />);
-    expect(container.firstChild).toHaveStyleRule("display", "none");
-  });
-
-  it("hamburger value should be visible", () => {
-    const { container } = render(<Hamburger />);
-    expect(container.firstChild).toHaveStyleRule("display", "flex", {
+    expect(getByTestId("nav-menu")).toHaveStyleRule("max-height", "0px", {
       media: "(max-width: 768px)",
     });
-  });
-
-  it("menu links should be hidden", () => {
-    const tree = renderer.create(<Menu isOpen />).toJSON();
-    expect(tree).not.toHaveStyleRule("max-height", "0px", {
-      media: "(max-width: 768px)",
-    });
-  });
-
-  it("menu links should be visible", () => {
-    const tree = renderer.create(<Menu isOpen />).toJSON();
-    expect(tree).toHaveStyleRule("max-height", "300px", {
+    fireEvent.click(getByTestId("burger"));
+    expect(getByTestId("nav-menu")).toHaveStyleRule("max-height", "300px", {
       media: "(max-width: 768px)",
     });
   });
