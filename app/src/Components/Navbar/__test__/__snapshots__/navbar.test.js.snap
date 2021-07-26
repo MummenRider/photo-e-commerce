@@ -1,6 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render navbar component 1`] = `
+exports[`<Navbar /> should have colored background 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  padding: 2rem 0;
+  top: 0;
+  background-color: #353535;
+  font-family: "Montserrat",sans-serif;
+  min-height: 96.9px;
+  width: 100%;
+  z-index: 999;
+  -webkit-transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease-in;
+  box-shadow: 0px 2px 20px#1a1a1a;
+}
+
+<header
+  class="c0"
+  data-testid="nav-background"
+/>
+`;
+
+exports[`<Navbar /> should have logo, nav links with transparent background 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -15,7 +44,7 @@ exports[`should render navbar component 1`] = `
   top: 0;
   background-color: transparent;
   font-family: "Montserrat",sans-serif;
-  min-height: 10vh;
+  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   -webkit-transition: background-color 200ms ease-in;
@@ -32,8 +61,7 @@ exports[`should render navbar component 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 90%;
-  margin: auto;
+  width: 100%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -44,31 +72,17 @@ exports[`should render navbar component 1`] = `
 }
 
 .c2 {
+  cursor: pointer;
   color: white;
   font-size: 2rem;
   font-weight: 400;
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
+  padding-left: 3rem;
 }
 
 .c3 {
-  display: none;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.c3 span {
-  height: 2px;
-  width: 25px;
-  background: white;
-  margin-bottom: 4px;
-  border-radius: 5px;
-}
-
-.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -84,9 +98,10 @@ exports[`should render navbar component 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-right: 3rem;
 }
 
-.c5 {
+.c4 {
   color: #ffffff;
   font-size: 1.8rem;
   font-weight: 100;
@@ -98,9 +113,10 @@ exports[`should render navbar component 1`] = `
   text-decoration: none;
   text-align: center;
   position: relative;
+  cursor: pointer;
 }
 
-.c5::after {
+.c4::after {
   content: "";
   position: absolute;
   border-bottom: 0.019rem solid white;
@@ -118,7 +134,7 @@ exports[`should render navbar component 1`] = `
   transition: transform 250ms ease-in;
 }
 
-.c5:hover::after {
+.c4:hover::after {
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
   transform: scaleX(1);
@@ -130,29 +146,11 @@ exports[`should render navbar component 1`] = `
 @media screen and (max-width:768px) {
   .c1 {
     padding: 1rem 0;
-    width: 100%;
-    margin: 0;
-  }
-}
-
-@media screen and (max-width:768px) {
-  .c2 {
-    padding: 0 0 2rem 4rem;
   }
 }
 
 @media (max-width:768px) {
   .c3 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0 4rem 2rem 0;
-  }
-}
-
-@media (max-width:768px) {
-  .c4 {
     overflow: hidden;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -162,15 +160,17 @@ exports[`should render navbar component 1`] = `
     -webkit-transition: max-height 300ms ease-in;
     transition: max-height 300ms ease-in;
     background-color: #353535;
+    margin-top: 10px;
+    padding-right: 0;
   }
 }
 
 @media screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding: 2rem 0rem;
   }
 
-  .c5:hover::after {
+  .c4:hover::after {
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);
@@ -179,52 +179,177 @@ exports[`should render navbar component 1`] = `
 
 <header
   class="c0"
-  data-testid="nav-header"
+  data-testid="nav-background"
 >
-  <nav
+  <div
     class="c1"
-    data-testid="nav"
   >
     <a
       aria-current="page"
       class="c2 active"
-      data-testid="logo"
       href="/"
     >
-      <h3>
-        LOGO
-      </h3>
+      Some logo here
     </a>
-    <div
+    <nav
       class="c3"
-    >
-      <span />
-      <span />
-      <span />
-    </div>
-    <div
-      class="c4"
+      data-testid="nav-menu"
     >
       <a
-        class="c5"
-        data-testid="about"
+        class="c4"
         href="/about"
       >
-        ABOUT
+        Link one
       </a>
       <a
-        class="c5"
-        href="/services"
-      >
-        SERVICES
-      </a>
-      <a
-        class="c5"
+        class="c4"
         href="/contact"
       >
-        CONTACT
+        Link two
       </a>
+      <a
+        class="c4"
+        href="/services"
+      >
+        Link three
+      </a>
+    </nav>
+  </div>
+</header>
+`;
+
+exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: fixed;
+  padding: 2rem 0;
+  top: 0;
+  background-color: transparent;
+  font-family: "Montserrat",sans-serif;
+  min-height: 96.9px;
+  width: 100%;
+  z-index: 999;
+  -webkit-transition: background-color 200ms ease-in;
+  transition: background-color 200ms ease-in;
+  box-shadow: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+  padding-right: 3rem;
+}
+
+.c2 span {
+  height: 2px;
+  width: 25px;
+  background: white;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #ffffff;
+  position: relative;
+  width: 40rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 3rem;
+}
+
+@media screen and (max-width:768px) {
+  .c1 {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width:768px) {
+  .c2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width:768px) {
+
+}
+
+@media (max-width:768px) {
+  .c3 {
+    overflow: hidden;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-height: 300px;
+    -webkit-transition: max-height 300ms ease-in;
+    transition: max-height 300ms ease-in;
+    background-color: #353535;
+    margin-top: 10px;
+    padding-right: 0;
+  }
+}
+
+<header
+  class="c0"
+  data-testid="nav-background"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+      data-testid="burger"
+    >
+      <span />
+      <span />
+      <span />
     </div>
-  </nav>
+    <nav
+      class="c3"
+      data-testid="nav-menu"
+    />
+  </div>
 </header>
 `;

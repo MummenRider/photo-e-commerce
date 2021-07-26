@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   AboutDescription,
   AboutImage,
@@ -9,21 +9,12 @@ import {
   AboutSection,
 } from "Components/About/about.style";
 import nicoImg from "Assets/Images/mobile-abt-nico@3x.png";
-import { useInView } from "react-intersection-observer";
-import { useNavBackground } from "context/navbar-context";
 
-const AboutComponent = ({ options }) => {
-  const [ref, inView] = useInView(options);
-  const { setNavBackground } = useNavBackground();
-
-  useEffect(() => {
-    setNavBackground(inView);
-  }, [inView, setNavBackground]);
-
+const AboutComponent = () => {
   return (
     <>
       <AboutSection>
-        <AboutWrapper ref={ref}>
+        <AboutWrapper>
           <DescriptionTitle data-testid="about-header">
             Who am I
           </DescriptionTitle>

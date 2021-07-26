@@ -1,13 +1,13 @@
 import AboutComponent from "Components/About/about";
 import HeroSection from "Components/Hero/hero";
+import { NavbarContainer } from "Containers/navbar-container";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
+      <NavbarContainer />
       <HeroSection />
-      <AboutComponent options={{ threshold: 0.1 }} />
+      <AboutComponent />
     </>
   );
-};
-
-export default Home;
+}

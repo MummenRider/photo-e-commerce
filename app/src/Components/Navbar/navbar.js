@@ -1,33 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useContext, createContext } from "react";
+import {
+  Container,
+  Header,
+  Logo,
+  Burger,
+  Menu,
+  Item,
+} from "Components/Navbar/navbar.styles";
+import useScroll from "Hooks/useScroll";
 
-import { Nav, Logo, Hamburger, Menu, MenuLink, Header } from "./navbar.styles";
-import { useNavBackground } from "context/navbar-context";
+const ToggleMenuContext = createContext();
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { navBackground } = useNavBackground();
+export default function Navbar({ children, ...restProps }) {
+  const { isScrolled } = useScroll(false);
 
   return (
-    <Header isScrolled={navBackground} data-testid="nav-header">
-      <Nav data-testid="nav">
-        <Logo data-testid="logo" to="/">
-          <h3>LOGO</h3>
-        </Logo>
-        <Hamburger onClick={() => setIsOpen(!isOpen)}>
-          <span />
-          <span />
-          <span />
-        </Hamburger>
-        <Menu isOpen={isOpen}>
-          <MenuLink to="/about" data-testid="about">
-            ABOUT
-          </MenuLink>
-          <MenuLink to="/services">SERVICES</MenuLink>
-          <MenuLink to="/contact">CONTACT</MenuLink>
-        </Menu>
-      </Nav>
+    <Header isScrolled={isScrolled} data-testid="nav-background" {...restProps}>
+      {children}
     </Header>
+  );
+}
+
+Navbar.Container = function NavbarContainer({ children, ...restProps }) {
+  const [toggleMenu, setToggleMenu] = useState(ToggleMenuContext);
+  return (
+    <ToggleMenuContext.Provider value={{ toggleMenu, setToggleMenu }}>
+      <Container {...restProps}>{children}</Container>
+    </ToggleMenuContext.Provider>
   );
 };
 
-export default Navbar;
+Navbar.Logo = function NavbarLogo({ children, ...restProps }) {
+  return <Logo {...restProps}>{children}</Logo>;
+};
+
+Navbar.Burger = function NavbarBurger({ children, ...restProps }) {
+  const { toggleMenu, setToggleMenu } = useContext(ToggleMenuContext);
+
+  return (
+    <Burger
+      data-testid="burger"
+      onClick={() => setToggleMenu(!toggleMenu)}
+      {...restProps}
+    >
+      {children}
+    </Burger>
+  );
+};
+
+Navbar.Menu = function NavbarMenu({ children, ...restProps }) {
+  const { toggleMenu } = useContext(ToggleMenuContext);
+
+  return (
+    <Menu data-testid="nav-menu" isOpen={toggleMenu} {...restProps}>
+      {children}
+    </Menu>
+  );
+};
+
+Navbar.Item = function NavbarItem({ children, ...restProps }) {
+  return <Item {...restProps}>{children}</Item>;
+};
