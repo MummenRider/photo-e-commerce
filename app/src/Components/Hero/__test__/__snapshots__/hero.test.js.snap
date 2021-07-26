@@ -2,7 +2,7 @@
 
 exports[`should render hero component 1`] = `
 <section
-  class="sc-bdnxRM kDgKQe"
+  class="sc-bdnxRM jbqVaE"
   data-testid="hero-container"
 >
   <div

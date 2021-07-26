@@ -8,7 +8,7 @@ export const Header = styled.header`
   top: 0;
   background-color: ${(prop) => (!prop.isScrolled ? "transparent" : "#353535")};
   font-family: "Montserrat", sans-serif;
-  min-height: 10vh;
+  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   transition: background-color 200ms ease-in;
@@ -17,8 +17,7 @@ export const Header = styled.header`
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  margin: auto;
+  width: 100%;
   flex-wrap: wrap;
   align-items: center;
   @media screen and (max-width: 768px) {
@@ -32,11 +31,13 @@ export const Logo = styled(Link)`
   font-weight: 400;
   text-decoration: none;
   text-align: center;
+  padding-left: 3rem;
 `;
 export const Burger = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
+  padding-right: 3rem;
   span {
     height: 2px;
     width: 25px;
@@ -56,6 +57,7 @@ export const Menu = styled.nav`
   position: relative;
   width: 40rem;
   align-items: center;
+  padding-right: 3rem;
   @media (max-width: 768px) {
     overflow: hidden;
     flex-direction: column;
@@ -63,6 +65,8 @@ export const Menu = styled.nav`
     max-height: ${({ isOpen }) => (!isOpen ? "300px" : "0px")};
     transition: max-height 300ms ease-in;
     background-color: #353535;
+    margin-top: 10px;
+    padding-right: 0;
   }
 `;
 export const Item = styled(Link)`

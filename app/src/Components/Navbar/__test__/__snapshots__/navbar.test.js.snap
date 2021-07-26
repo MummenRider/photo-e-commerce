@@ -15,7 +15,7 @@ exports[`<Navbar /> should have colored background 1`] = `
   top: 0;
   background-color: #353535;
   font-family: "Montserrat",sans-serif;
-  min-height: 10vh;
+  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   -webkit-transition: background-color 200ms ease-in;
@@ -23,170 +23,13 @@ exports[`<Navbar /> should have colored background 1`] = `
   box-shadow: 0px 2px 20px#1a1a1a;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 {
-  cursor: pointer;
-  color: white;
-  font-size: 2rem;
-  font-weight: 400;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  text-align: center;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  color: #ffffff;
-  position: relative;
-  width: 40rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c4 {
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: 100;
-  -webkit-letter-spacing: 0.2rem;
-  -moz-letter-spacing: 0.2rem;
-  -ms-letter-spacing: 0.2rem;
-  letter-spacing: 0.2rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-}
-
-.c4::after {
-  content: "";
-  position: absolute;
-  border-bottom: 0.019rem solid white;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  -webkit-transform-origin: right;
-  -ms-transform-origin: right;
-  transform-origin: right;
-  -webkit-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: -webkit-transform 250ms ease-in;
-  -webkit-transition: transform 250ms ease-in;
-  transition: transform 250ms ease-in;
-}
-
-.c4:hover::after {
-  -webkit-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  transform: scaleX(1);
-  -webkit-transform-origin: left;
-  -ms-transform-origin: left;
-  transform-origin: left;
-}
-
-@media screen and (max-width:768px) {
-  .c1 {
-    padding: 1rem 0;
-  }
-}
-
-@media (max-width:768px) {
-  .c3 {
-    overflow: hidden;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    max-height: 0px;
-    -webkit-transition: max-height 300ms ease-in;
-    transition: max-height 300ms ease-in;
-    background-color: #353535;
-  }
-}
-
-@media screen and (max-width:768px) {
-  .c4 {
-    padding: 2rem 0rem;
-  }
-
-  .c4:hover::after {
-    -webkit-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    transform: scaleX(0);
-  }
-}
-
 <header
   class="c0"
   data-testid="nav-background"
->
-  <div
-    class="c1"
-  >
-    <a
-      aria-current="page"
-      class="c2 active"
-      href="/"
-    >
-      Some logo here
-    </a>
-    <nav
-      class="c3"
-      data-testid="nav-menu"
-    >
-      <a
-        class="c4"
-        href="/about"
-      >
-        Link one
-      </a>
-      <a
-        class="c4"
-        href="/contact"
-      >
-        Link two
-      </a>
-      <a
-        class="c4"
-        href="/services"
-      >
-        Link three
-      </a>
-    </nav>
-  </div>
-</header>
+/>
 `;
 
-exports[`<Navbar /> should have logo with transparent background 1`] = `
+exports[`<Navbar /> should have logo, nav links with transparent background 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -201,7 +44,7 @@ exports[`<Navbar /> should have logo with transparent background 1`] = `
   top: 0;
   background-color: transparent;
   font-family: "Montserrat",sans-serif;
-  min-height: 10vh;
+  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   -webkit-transition: background-color 200ms ease-in;
@@ -218,8 +61,7 @@ exports[`<Navbar /> should have logo with transparent background 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 90%;
-  margin: auto;
+  width: 100%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -237,6 +79,7 @@ exports[`<Navbar /> should have logo with transparent background 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
+  padding-left: 3rem;
 }
 
 .c3 {
@@ -255,6 +98,7 @@ exports[`<Navbar /> should have logo with transparent background 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-right: 3rem;
 }
 
 .c4 {
@@ -316,6 +160,8 @@ exports[`<Navbar /> should have logo with transparent background 1`] = `
     -webkit-transition: max-height 300ms ease-in;
     transition: max-height 300ms ease-in;
     background-color: #353535;
+    margin-top: 10px;
+    padding-right: 0;
   }
 }
 
@@ -387,7 +233,7 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   top: 0;
   background-color: transparent;
   font-family: "Montserrat",sans-serif;
-  min-height: 10vh;
+  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   -webkit-transition: background-color 200ms ease-in;
@@ -404,8 +250,7 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 90%;
-  margin: auto;
+  width: 100%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -421,6 +266,7 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
+  padding-right: 3rem;
 }
 
 .c2 span {
@@ -447,6 +293,7 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-right: 3rem;
 }
 
 @media screen and (max-width:768px) {
@@ -479,6 +326,8 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
     -webkit-transition: max-height 300ms ease-in;
     transition: max-height 300ms ease-in;
     background-color: #353535;
+    margin-top: 10px;
+    padding-right: 0;
   }
 }
 
