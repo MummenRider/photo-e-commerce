@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeroContainer = styled.section`
   height: 100vh;
-  min-height: 900px;
+  min-height: 500px;
   display: flex;
   position: relative;
   justify-content: center;
