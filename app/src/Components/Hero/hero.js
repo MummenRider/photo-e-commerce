@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Circle,
-  CircleFrame,
   Text,
   Image,
   Container,
