@@ -31,13 +31,17 @@ export const Logo = styled(Link)`
   font-weight: 400;
   text-decoration: none;
   text-align: center;
-  padding-left: 3rem;
+  padding-left: 10rem;
+
+  @media screen and (max-width: 768px) {
+    padding-left: 3rem;
+  }
 `;
 export const Burger = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
-  padding-right: 3rem;
+  padding-right: 10rem;
   span {
     height: 2px;
     width: 25px;
@@ -45,8 +49,9 @@ export const Burger = styled.div`
     margin-bottom: 4px;
     border-radius: 5px;
   }
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: flex;
+    padding-right: 3rem;
   }
 `;
 
@@ -57,7 +62,12 @@ export const Menu = styled.nav`
   position: relative;
   width: 40rem;
   align-items: center;
-  padding-right: 3rem;
+  margin-right: 15rem;
+
+  @media screen and (max-width: 900px) {
+    margin-right: 5rem;
+  }
+
   @media (max-width: 768px) {
     overflow: hidden;
     flex-direction: column;

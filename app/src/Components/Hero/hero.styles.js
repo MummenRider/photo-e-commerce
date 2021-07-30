@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const HeroContainer = styled.section`
+export const Container = styled(motion.section)`
   height: 100vh;
   min-height: 500px;
   display: flex;
@@ -9,7 +10,7 @@ export const HeroContainer = styled.section`
   align-items: center;
 `;
 
-export const HeroBackground = styled.div`
+export const ImageFrame = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -20,104 +21,40 @@ export const HeroBackground = styled.div`
   width: 100%;
 `;
 
-export const ImageBackground = styled.img`
+export const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: brightness(70%);
+  filter: brightness(50%);
 `;
 
-export const HeroContent = styled.div`
-  z-index: 2;
-  width: 90%;
-  max-width: 300px;
-
-  @media screen and (min-width: 1024px) {
-    max-width: 700px;
-  }
-
-  @media screen and (min-width: 640px) {
-    max-width: 500px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    max-width: 700px;
-  }
-
-  @media screen and (min-width: 1224px) {
-    max-width: 850px;
-  }
-
-  @media screen and (min-width: 1920px) {
-    max-width: 1000px;
-  }
-`;
-
-export const HeroH1 = styled.h1`
-  text-align: center;
+export const Text = styled(motion.span)`
   font-family: lust-sans, sans-serif;
-  font-size: 3.4rem;
+  font-size: clamp(30px, 5vw, 80px);
   font-style: italic;
-  font-weight: lighter;
-  line-height: 5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
   color: white;
-
-  @media screen and (min-width: 375px) {
-    font-size: 4.4rem;
-  }
-
-  @media screen and (min-width: 640px) {
-    font-size: 6rem;
-    line-height: 10rem;
-  }
-
-  @media screen and (min-width: 1024px) {
-    font-size: 8rem;
-    line-height: 12rem;
-  }
-
-  @media screen and (min-width: 1224px) {
-    font-size: 10rem;
-    line-height: 14rem;
-  }
-  @media screen and (min-width: 1920px) {
-    font-size: 12rem;
-    line-height: 16rem;
-  }
+  padding: 10px 0;
+`;
+export const TextContainer = styled.h1`
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 `;
 
-export const HeroLine = styled.div`
+export const SVG = styled(motion.svg)`
+  z-index: 2;
   position: absolute;
-  background-color: white;
-  width: 1.3px;
-  bottom: 0;
-  height: 140px;
-  right: 10rem;
-  transform-origin: 100% 0%;
-  animation: lineframe 650ms ease-in;
-
-  @keyframes lineframe {
-    from {
-      transform: scale(1, 0);
-    }
-    to {
-      transform: scale(1, 1);
-    }
-  }
-
-  &::after {
-    content: "EXPLORE";
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    font-size: 1.2rem;
-    position: absolute;
-    letter-spacing: 2.4px;
-    left: -50px;
-    top: 50%;
-    transform: rotate(270deg);
-  }
+  bottom: 0px;
+  right: 0px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    left: 45%;
   }
 `;
+export const Path = styled(motion.path)``;

@@ -1,12 +1,12 @@
 import AboutComponent from "Components/About/about";
-import HeroSection from "Components/Hero/hero";
+import { HeroContainer } from "Containers/hero-container";
 import { NavbarContainer } from "Containers/navbar-container";
 
 export default function Home() {
   return (
     <>
       <NavbarContainer />
-      <HeroSection />
+      <HeroContainer />
       <AboutComponent />
     </>
   );
