@@ -9,7 +9,7 @@ export function HeroContainer() {
       </Hero.ImageFrame>
       <Hero.TextContainer>
         <Hero.Text>Photography is</Hero.Text>
-        <Hero.Text>the story I fails to</Hero.Text>
+        <Hero.Text>the story I fail to</Hero.Text>
         <Hero.Text>put into words</Hero.Text>
       </Hero.TextContainer>
     </Hero>
