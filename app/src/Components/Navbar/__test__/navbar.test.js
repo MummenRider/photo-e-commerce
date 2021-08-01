@@ -1,6 +1,6 @@
 import Navbar from "Components/Navbar/navbar";
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "jest-styled-components";
 import * as ROUTES from "Constants/route";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -9,12 +9,13 @@ describe("<Navbar />", () => {
   const customRender = (ui) => {
     return render(<Router>{ui}</Router>);
   };
+
   it("should have logo, nav links with transparent background", () => {
     const { container, getByText } = customRender(
       <Navbar>
         <Navbar.Container>
           <Navbar.Logo to={ROUTES.HOME}>Some logo here</Navbar.Logo>
-          <Navbar.Menu>
+          <Navbar.Menu isBigDevice={true}>
             <Navbar.Item to={ROUTES.ABOUT}>Link one</Navbar.Item>
             <Navbar.Item to={ROUTES.CONTACT}>Link two</Navbar.Item>
             <Navbar.Item to={ROUTES.SERVICES}>Link three</Navbar.Item>
@@ -40,27 +41,17 @@ describe("<Navbar />", () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it("should toggle the burger menu in smaller devices", () => {
-    const { container, getByTestId } = customRender(
-      <Navbar>
-        <Navbar.Container>
-          <Navbar.Burger>
-            <span />
-            <span />
-            <span />
-          </Navbar.Burger>
-          <Navbar.Menu />
-        </Navbar.Container>
-      </Navbar>
+  it("should not render burger icon", () => {
+    const { container, debug, queryByTestId } = render(
+      <Navbar.Button isBigDevice={true}>hi</Navbar.Button>
     );
+    expect(screen.queryByTestId("menu-icon")).toBeFalsy();
+  });
 
-    expect(getByTestId("nav-menu")).toHaveStyleRule("max-height", "0px", {
-      media: "(max-width: 768px)",
-    });
-    fireEvent.click(getByTestId("burger"));
-    expect(getByTestId("nav-menu")).toHaveStyleRule("max-height", "300px", {
-      media: "(max-width: 768px)",
-    });
-    expect(container.firstChild).toMatchSnapshot();
+  it("should render burger icon", () => {
+    const { container, debug, queryByTestId } = render(
+      <Navbar.Button isBigDevice={false}>hi</Navbar.Button>
+    );
+    expect(queryByTestId("menu-icon")).toBeTruthy();
   });
 });
