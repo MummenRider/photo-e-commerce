@@ -6,6 +6,8 @@ import {
   Burger,
   Menu,
   Item,
+  Button,
+  MenuSide,
 } from "Components/Navbar/navbar.styles";
 import useScroll from "Hooks/useScroll";
 
@@ -34,30 +36,33 @@ Navbar.Logo = function NavbarLogo({ children, ...restProps }) {
   return <Logo {...restProps}>{children}</Logo>;
 };
 
-Navbar.Burger = function NavbarBurger({ children, ...restProps }) {
-  const { toggleMenu, setToggleMenu } = useContext(ToggleMenuContext);
-
-  return (
-    <Burger
-      data-testid="burger"
-      onClick={() => setToggleMenu(!toggleMenu)}
-      {...restProps}
-    >
-      {children}
-    </Burger>
-  );
+Navbar.MenuSide = function NavbarMenuSide({ children, ...restProps }) {
+  return <MenuSide {...restProps}>{children}</MenuSide>;
 };
 
-Navbar.Menu = function NavbarMenu({ children, ...restProps }) {
+Navbar.Menu = function NavbarMenu({ isBigDevice, children, ...restProps }) {
   const { toggleMenu } = useContext(ToggleMenuContext);
 
-  return (
+  return isBigDevice ? (
     <Menu data-testid="nav-menu" isOpen={toggleMenu} {...restProps}>
       {children}
     </Menu>
-  );
+  ) : null;
 };
 
 Navbar.Item = function NavbarItem({ children, ...restProps }) {
   return <Item {...restProps}>{children}</Item>;
+};
+
+Navbar.Button = function NavbarButton({
+  setIsOpen,
+  isBigDevice,
+  children,
+  ...restProps
+}) {
+  return !isBigDevice ? (
+    <Button data-testid="menu-icon" onClick={setIsOpen} {...restProps}>
+      {children}
+    </Button>
+  ) : null;
 };

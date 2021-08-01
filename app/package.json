@@ -41,6 +41,13 @@
     ]
   },
   "jest": {
+    "moduleNameMapper": {
+      "\\.(css|jpg|png)$": "<rootDir>/empty-module.js"
+    },
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.svg$": "jest-svg-transformer"
+    },
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",

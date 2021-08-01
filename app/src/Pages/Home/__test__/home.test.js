@@ -6,6 +6,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Home from "../home";
 
 it("should render <Home />", () => {
+  if (!SVGElement.prototype.getTotalLength) {
+    SVGElement.prototype.getTotalLength = () => 1;
+  }
   render(
     <Router>
       <Home />

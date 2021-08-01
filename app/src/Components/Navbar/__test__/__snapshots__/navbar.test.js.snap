@@ -61,7 +61,7 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -79,7 +79,6 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
-  padding-left: 10rem;
 }
 
 .c3 {
@@ -98,7 +97,6 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 15rem;
 }
 
 .c4 {
@@ -141,40 +139,6 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -webkit-transform-origin: left;
   -ms-transform-origin: left;
   transform-origin: left;
-}
-
-@media screen and (max-width:768px) {
-  .c1 {
-    padding: 1rem 0;
-  }
-}
-
-@media screen and (max-width:768px) {
-  .c2 {
-    padding-left: 3rem;
-  }
-}
-
-@media screen and (max-width:900px) {
-  .c3 {
-    margin-right: 5rem;
-  }
-}
-
-@media (max-width:768px) {
-  .c3 {
-    overflow: hidden;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    max-height: 0px;
-    -webkit-transition: max-height 300ms ease-in;
-    transition: max-height 300ms ease-in;
-    background-color: #353535;
-    margin-top: 10px;
-    padding-right: 0;
-  }
 }
 
 @media screen and (max-width:768px) {
@@ -226,153 +190,6 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
         Link three
       </a>
     </nav>
-  </div>
-</header>
-`;
-
-exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: fixed;
-  padding: 2rem 0;
-  top: 0;
-  background-color: transparent;
-  font-family: "Montserrat",sans-serif;
-  min-height: 96.9px;
-  width: 100%;
-  z-index: 999;
-  -webkit-transition: background-color 200ms ease-in;
-  transition: background-color 200ms ease-in;
-  box-shadow: none;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c2 {
-  display: none;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  cursor: pointer;
-  padding-right: 10rem;
-}
-
-.c2 span {
-  height: 2px;
-  width: 25px;
-  background: white;
-  margin-bottom: 4px;
-  border-radius: 5px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  color: #ffffff;
-  position: relative;
-  width: 40rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-right: 15rem;
-}
-
-@media screen and (max-width:768px) {
-  .c1 {
-    padding: 1rem 0;
-  }
-}
-
-@media screen and (max-width:768px) {
-  .c2 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-right: 3rem;
-  }
-}
-
-@media screen and (max-width:900px) {
-
-}
-
-@media (max-width:768px) {
-
-}
-
-@media screen and (max-width:900px) {
-  .c3 {
-    margin-right: 5rem;
-  }
-}
-
-@media (max-width:768px) {
-  .c3 {
-    overflow: hidden;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: 100%;
-    max-height: 300px;
-    -webkit-transition: max-height 300ms ease-in;
-    transition: max-height 300ms ease-in;
-    background-color: #353535;
-    margin-top: 10px;
-    padding-right: 0;
-  }
-}
-
-<header
-  class="c0"
-  data-testid="nav-background"
->
-  <div
-    class="c1"
-  >
-    <div
-      class="c2"
-      data-testid="burger"
-    >
-      <span />
-      <span />
-      <span />
-    </div>
-    <nav
-      class="c3"
-      data-testid="nav-menu"
-    />
   </div>
 </header>
 `;

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 export const Header = styled.header`
   display: flex;
   justify-content: center;
@@ -17,12 +19,9 @@ export const Header = styled.header`
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
   flex-wrap: wrap;
   align-items: center;
-  @media screen and (max-width: 768px) {
-    padding: 1rem 0;
-  }
 `;
 export const Logo = styled(Link)`
   cursor: pointer;
@@ -31,11 +30,6 @@ export const Logo = styled(Link)`
   font-weight: 400;
   text-decoration: none;
   text-align: center;
-  padding-left: 10rem;
-
-  @media screen and (max-width: 768px) {
-    padding-left: 3rem;
-  }
 `;
 export const Burger = styled.div`
   display: none;
@@ -55,6 +49,29 @@ export const Burger = styled.div`
   }
 `;
 
+export const Button = styled(motion.button)`
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+export const MenuSide = styled(motion.nav)`
+  position: absolute;
+  top: 97px;
+  right: 0;
+  height: 50vh;
+  width: 100%;
+  background-color: #353535;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+`;
 export const Menu = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -62,22 +79,6 @@ export const Menu = styled.nav`
   position: relative;
   width: 40rem;
   align-items: center;
-  margin-right: 15rem;
-
-  @media screen and (max-width: 900px) {
-    margin-right: 5rem;
-  }
-
-  @media (max-width: 768px) {
-    overflow: hidden;
-    flex-direction: column;
-    width: 100%;
-    max-height: ${({ isOpen }) => (!isOpen ? "300px" : "0px")};
-    transition: max-height 300ms ease-in;
-    background-color: #353535;
-    margin-top: 10px;
-    padding-right: 0;
-  }
 `;
 export const Item = styled(Link)`
   color: #ffffff;
