@@ -46,15 +46,3 @@ export const TextContainer = styled.h1`
   margin: 0 auto;
   text-align: center;
 `;
-
-export const SVG = styled(motion.svg)`
-  z-index: 2;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-
-  @media screen and (max-width: 768px) {
-    left: 45%;
-  }
-`;
-export const Path = styled(motion.path)``;

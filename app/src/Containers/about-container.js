@@ -8,7 +8,7 @@ export function AboutContainer() {
   return (
     <About>
       {!isBigDevice && <About.Title>Who am I</About.Title>}
-      <About.Image src={nicoImg} href="nico" />
+      <About.Image src={nicoImg} alt="nico" />
       <About.Content>
         {isBigDevice && <About.Title>Who am I</About.Title>}
         <About.Description>

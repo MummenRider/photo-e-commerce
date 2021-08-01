@@ -79,7 +79,7 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
-  padding-left: 3rem;
+  padding-left: 10rem;
 }
 
 .c3 {
@@ -98,7 +98,7 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 3rem;
+  margin-right: 15rem;
 }
 
 .c4 {
@@ -146,6 +146,18 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
 @media screen and (max-width:768px) {
   .c1 {
     padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .c2 {
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (max-width:900px) {
+  .c3 {
+    margin-right: 5rem;
   }
 }
 
@@ -266,7 +278,7 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
-  padding-right: 3rem;
+  padding-right: 10rem;
 }
 
 .c2 span {
@@ -293,7 +305,7 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-right: 3rem;
+  margin-right: 15rem;
 }
 
 @media screen and (max-width:768px) {
@@ -302,17 +314,28 @@ exports[`<Navbar /> should toggle the burger menu in smaller devices 1`] = `
   }
 }
 
-@media (max-width:768px) {
+@media screen and (max-width:768px) {
   .c2 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding-right: 3rem;
   }
+}
+
+@media screen and (max-width:900px) {
+
 }
 
 @media (max-width:768px) {
 
+}
+
+@media screen and (max-width:900px) {
+  .c3 {
+    margin-right: 5rem;
+  }
 }
 
 @media (max-width:768px) {

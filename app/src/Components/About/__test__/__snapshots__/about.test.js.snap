@@ -1,51 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render about component 1`] = `
-<div>
-  <section
-    class="sc-gKAaRy iRpmcS"
+exports[`should render <About /> 1`] = `
+<section
+  class="sc-bdnxRM cnQhyl"
+>
+  <div
+    class="sc-gtsrHT givMVg"
   >
-    <div
-      class="sc-eCApnc dCmruv"
+    <h3
+      class="sc-jSFjdj eNMYbP"
     >
-      <h1
-        class="sc-bdnxRM LhtCC"
-        data-testid="about-header"
-      >
-        Who am I
-      </h1>
+      Title here
+    </h3>
+    <div
+      class="sc-dlnjwi coeqwS"
+    >
       <div
-        class="sc-dlnjwi eeYgQG"
-      >
-        <div
-          class="sc-hKFxyN kJoWaf"
-        />
-      </div>
-      <div
-        class="sc-jSFjdj hIIHdV"
-      >
-        <h1
-          class="sc-bdnxRM LhtCC"
-        >
-          Who am I
-        </h1>
-        <p
-          class="sc-gtsrHT ebAahp"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus iaculis urna id volutpat lacus laoreet non. Ut eu sem integer vitae justo eget. Iaculis at erat pellentesque adipiscing commodo. Nam at lectus urna duis convallis convallis tellus id. Sed nisi lacus sed viverra tellus in hac. Id cursus metus aliquam eleifend mi in nulla. Nulla posuere sollicitudin aliquam ultrices sagittis. Est ante in nibh mauris cursus mattis molestie. Qas utsaqa sasas tortorsa pretium viverra suspendisse potenti nullam ac.
-        </p>
-        <p
-          class="sc-gtsrHT ebAahp"
-        >
-          Egestas integer eget aliquet nibh praesent tristique magna sit amet. Vitae nunc sed velit dignissim sodales ut eu sem. Faucibus in ornare quam viverra orci sagittis eu. Justo laoreet sit amet cursus sit amet dictum sit amet. Orci a scelerisque purus semper eget duis at tellus. Purus ut faucibus pulvinar elementum. Odio facilisis mauris sit amet massa vitae tortor.
-        </p>
-        <p
-          class="sc-gtsrHT ebAahp"
-        >
-          Faucibus in ornare quam viverra orci sagittis eu. Justo laoreet sit amet cursus sit amet dictum sit amet. Orci a scelerisque purus semper eget duis at tellus. Purus ut faucibus pulvinar elementum. Odio facilisis mauris sit amet massa vitae tortor.
-        </p>
-      </div>
+        class="sc-hKFxyN YnZmL"
+      />
     </div>
-  </section>
-</div>
+    <p
+      class="sc-gKAaRy gFSBBD"
+    >
+      Some description
+    </p>
+  </div>
+</section>
 `;

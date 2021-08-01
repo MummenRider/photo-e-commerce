@@ -2,30 +2,25 @@
 
 exports[`should render hero component 1`] = `
 <section
-  class="sc-bdnxRM jbqVaE"
-  data-testid="hero-container"
+  class="sc-bdnxRM gdGlvo"
 >
   <div
     class="sc-gtsrHT hUrVza"
   >
     <img
       alt="image-background"
-      class="sc-dlnjwi iGfLot"
+      class="sc-dlnjwi bnBFJT"
       src="hero-bg@2x.png"
     />
   </div>
-  <div
-    class="sc-hKFxyN jhIZwn"
+  <h1
+    class="sc-eCApnc efgXHd"
   >
-    <h1
-      class="sc-eCApnc qgAqt"
+    <span
+      class="sc-hKFxyN jCbYLT"
     >
-      Photography is the story I fail to put into words.
-    </h1>
-  </div>
-  <div
-    class="sc-jSFjdj eivmlX"
-    data-testid="explore-line"
-  />
+      Hero section
+    </span>
+  </h1>
 </section>
 `;

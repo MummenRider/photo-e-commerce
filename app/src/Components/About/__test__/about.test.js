@@ -1,11 +1,18 @@
 import React from "react";
-import { cleanup, render } from "@testing-library/react";
-import AboutComponent from "Components/about/about";
-import "react-intersection-observer/test-utils";
+import { cleanup, render, screen } from "@testing-library/react";
+import About from "Components/about/about";
+import nicoImg from "Assets/Images/mobile-abt-nico@3x.png";
 
-afterEach(cleanup);
+it("should render <About />", () => {
+  const { container, getByText } = render(
+    <About>
+      <About.Title>Title here</About.Title>
+      <About.Image src={nicoImg} />
+      <About.Description>Some description</About.Description>
+    </About>
+  );
 
-it("should render about component", () => {
-  const { container } = render(<AboutComponent />);
-  expect(container).toMatchSnapshot();
+  expect(getByText("Title here")).toBeTruthy();
+  expect(getByText("Some description")).toBeTruthy();
+  expect(container.firstChild).toMatchSnapshot();
 });

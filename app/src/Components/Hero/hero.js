@@ -5,8 +5,6 @@ import {
   Container,
   ImageFrame,
   TextContainer,
-  SVG,
-  Path,
 } from "Components/Hero/hero.styles.js";
 
 export default function Hero({ children, ...restProps }) {
@@ -27,12 +25,4 @@ Hero.TextContainer = function HeroTextContainer({ children, ...restProps }) {
 
 Hero.Text = function HeroText({ children, ...restProps }) {
   return <Text {...restProps}>{children}</Text>;
-};
-
-Hero.SVG = function HeroSvg({ children, ...restProps }) {
-  return <SVG {...restProps}>{children}</SVG>;
-};
-
-Hero.Path = function HeroPath({ ...restProps }) {
-  return <Path {...restProps} />;
 };
