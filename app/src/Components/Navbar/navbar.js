@@ -3,7 +3,6 @@ import {
   Container,
   Header,
   Logo,
-  Burger,
   Menu,
   Item,
   Button,

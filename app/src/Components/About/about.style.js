@@ -60,6 +60,10 @@ export const Image = styled.div`
 export const Content = styled.div`
   width: 80%;
   margin: auto;
+
+  @media screen and (max-width: 768px) {
+    padding: 6rem 0;
+  }
 `;
 export const Title = styled.h3`
   font-size: clamp(3rem, 6vw, 7rem);

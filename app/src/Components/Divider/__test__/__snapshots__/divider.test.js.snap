@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Divider /> should render <Divider /> with button 1`] = `
+<section
+  class="sc-bdnxRM iCphrG"
+>
+  <div
+    class="sc-gtsrHT qrQIS"
+  >
+    <h1
+      class="sc-dlnjwi hZvaQd"
+    >
+      Some title here
+    </h1>
+    <button
+      class="sc-jSFjdj gvvKvs"
+    >
+      <span
+        class="sc-gKAaRy rxnOu"
+      >
+        Click me
+      </span>
+      <svg
+        class="sc-iCoGMd jeAZbZ"
+      >
+        <path
+          class="sc-fujyAs bLaEBj"
+        />
+      </svg>
+    </button>
+  </div>
+</section>
+`;
+
+exports[`<Divider /> should render <Divider /> with data included 1`] = `
+<section
+  class="sc-bdnxRM iCphrG"
+>
+  <div
+    class="sc-gtsrHT qrQIS"
+  >
+    <h1
+      class="sc-dlnjwi hZvaQd"
+    >
+      Some title here
+    </h1>
+    <h1
+      class="sc-hKFxyN"
+    >
+      This is subtitle included in divider component
+    </h1>
+    <img
+      alt="divider image"
+      class="sc-eCApnc"
+      src="flower.png"
+    />
+  </div>
+</section>
+`;
+
+exports[`<Divider /> should render <Divider /> with just title 1`] = `
+<section
+  class="sc-bdnxRM iCphrG"
+>
+  <div
+    class="sc-gtsrHT qrQIS"
+  >
+    <h1
+      class="sc-dlnjwi hZvaQd"
+    >
+      Some title here
+    </h1>
+  </div>
+</section>
+`;
