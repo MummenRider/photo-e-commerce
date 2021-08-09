@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StreetPhoto /> should not render <StreetPhoto /> in smaller devices 1`] = `null`;
+
+exports[`<StreetPhoto /> should render <StreetPhoto /> with populated data 1`] = `
+<section
+  class="sc-bdnxRM gSErYQ"
+  data-testid="str-photo-component"
+>
+  <div
+    class="sc-gtsrHT cNKTQo"
+  >
+    <span
+      class="sc-hKFxyN kFhYQn"
+    >
+      COMMUNITY, LOVE, RESPECT
+    </span>
+    <h1
+      class="sc-dlnjwi fMROt"
+    >
+      Lorem Ipsum Dolor Amet, Consetetur
+    </h1>
+    <span
+      class="sc-hKFxyN kFhYQn"
+    >
+      Food Charity - Sikh
+    </span>
+  </div>
+  <div
+    class="sc-eCApnc dorTzf"
+  >
+    Image content one
+  </div>
+  <div
+    class="sc-jSFjdj fAcKOI"
+  >
+    Image content two
+  </div>
+  <div
+    class="sc-gKAaRy eZmELm"
+  >
+    Image content three
+  </div>
+  <div
+    class="sc-iCoGMd JmXwo"
+  >
+    Image content four
+  </div>
+</section>
+`;
