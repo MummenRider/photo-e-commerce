@@ -1,10 +1,11 @@
 import Navbar from "Components/Navbar/navbar";
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import "jest-styled-components";
 import * as ROUTES from "Constants/route";
 import { BrowserRouter as Router } from "react-router-dom";
 
+afterEach(cleanup);
 describe("<Navbar />", () => {
   const customRender = (ui) => {
     return render(<Router>{ui}</Router>);
@@ -42,14 +43,14 @@ describe("<Navbar />", () => {
   });
 
   it("should not render burger icon", () => {
-    const { container, debug, queryByTestId } = render(
+    const { queryByTestId } = render(
       <Navbar.Button isBigDevice={true}>hi</Navbar.Button>
     );
-    expect(screen.queryByTestId("menu-icon")).toBeFalsy();
+    expect(queryByTestId("menu-icon")).toBeFalsy();
   });
 
   it("should render burger icon", () => {
-    const { container, debug, queryByTestId } = render(
+    const { queryByTestId } = render(
       <Navbar.Button isBigDevice={false}>hi</Navbar.Button>
     );
     expect(queryByTestId("menu-icon")).toBeTruthy();

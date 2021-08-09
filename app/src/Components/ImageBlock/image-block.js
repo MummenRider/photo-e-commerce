@@ -1,9 +1,5 @@
 import { Image, Picture, Source } from "./image-block.styles";
 
-// export default function ImageBlock({ children, ...restProps }) {
-//   return <ImageFrame {...restProps}>{children}</ImageFrame>;
-// }
-
 export default function LoadImage({
   src,
   fallback,

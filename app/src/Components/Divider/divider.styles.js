@@ -11,6 +11,9 @@ export const Inner = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  color: white;
+  align-items: ${(prop) => prop.position};
 `;
 
 export const Title = styled.h1`
@@ -18,13 +21,20 @@ export const Title = styled.h1`
   font-size: clamp(3.5rem, 4vw, 5rem);
   font-style: italic;
   font-weight: lighter;
-  color: white;
   letter-spacing: 3px;
 `;
 
-export const Subtitle = styled.h1``;
+export const Subtitle = styled.h1`
+  font-family: var(--ff-primary);
+  letter-spacing: 1.5px;
+  font-weight: 200;
+  padding: 2rem 0;
+`;
 
-export const ImageContent = styled.img``;
+export const ImageFrame = styled.div`
+  width: ${(props) => props.width};
+  padding-top: 6rem;
+`;
 
 export const Button = styled.button`
   cursor: pointer;

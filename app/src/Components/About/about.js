@@ -7,7 +7,7 @@ import {
   Description,
   Inner,
   Frames,
-} from "Components/About/about.style";
+} from "Components/About/about.styles";
 
 export default function About({ children, ...restProps }) {
   return (
@@ -29,8 +29,8 @@ About.Content = function AboutContent({ children, ...restProps }) {
   return <Content {...restProps}>{children}</Content>;
 };
 
-About.Title = function AboutTitle({ children, ...restProps }) {
-  return <Title {...restProps}>{children}</Title>;
+About.Title = function AboutTitle({ isBigDevice, children, ...restProps }) {
+  return isBigDevice ? <Title {...restProps}>{children}</Title> : null;
 };
 
 About.Description = function AboutDescription({ children, ...restProps }) {

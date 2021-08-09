@@ -1,14 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Divider /> should not render <Divider /> when show is set to false 1`] = `null`;
+
 exports[`<Divider /> should render <Divider /> with button 1`] = `
 <section
   class="sc-bdnxRM iCphrG"
+  data-testid="divider"
 >
   <div
-    class="sc-gtsrHT qrQIS"
+    class="sc-gtsrHT jQZgRL"
   >
     <h1
-      class="sc-dlnjwi hZvaQd"
+      class="sc-dlnjwi bcKMoI"
     >
       Some title here
     </h1>
@@ -35,25 +38,26 @@ exports[`<Divider /> should render <Divider /> with button 1`] = `
 exports[`<Divider /> should render <Divider /> with data included 1`] = `
 <section
   class="sc-bdnxRM iCphrG"
+  data-testid="divider"
 >
   <div
-    class="sc-gtsrHT qrQIS"
+    class="sc-gtsrHT jQZgRL"
   >
     <h1
-      class="sc-dlnjwi hZvaQd"
+      class="sc-dlnjwi bcKMoI"
     >
       Some title here
     </h1>
     <h1
-      class="sc-hKFxyN"
+      class="sc-hKFxyN kvLebY"
     >
       This is subtitle included in divider component
     </h1>
-    <img
-      alt="divider image"
-      class="sc-eCApnc"
-      src="flower.png"
-    />
+    <div
+      class="sc-eCApnc cFUyki"
+    >
+      Image to be pass here or svg
+    </div>
   </div>
 </section>
 `;
@@ -61,12 +65,13 @@ exports[`<Divider /> should render <Divider /> with data included 1`] = `
 exports[`<Divider /> should render <Divider /> with just title 1`] = `
 <section
   class="sc-bdnxRM iCphrG"
+  data-testid="divider"
 >
   <div
-    class="sc-gtsrHT qrQIS"
+    class="sc-gtsrHT jQZgRL"
   >
     <h1
-      class="sc-dlnjwi hZvaQd"
+      class="sc-dlnjwi bcKMoI"
     >
       Some title here
     </h1>

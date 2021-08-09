@@ -1,11 +1,8 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "react-intersection-observer/test-utils";
 import { BrowserRouter as Router } from "react-router-dom";
-import Home from "../home";
-import { StreetPhotoContainer } from "Containers/street-photo-container";
-import renderer from "react-test-renderer";
-import "jest-styled-components";
+import Home from "Pages/Home/home";
 
 describe("<Home />", () => {
   if (!SVGElement.prototype.getTotalLength) {
@@ -13,14 +10,17 @@ describe("<Home />", () => {
   }
 
   it("should render <Home />", () => {
-    render(
+    const { getByText, getByAltText } = render(
       <Router>
-        <Home />
+        <Home isBigDevice={true} />
       </Router>
     );
 
-    expect(screen.getByText("I do not capture images,")).toBeTruthy();
-    expect(screen.getByText("I capture memories")).toBeTruthy();
-    expect(screen.getByText("My Creations")).toBeTruthy();
+    expect(getByText("I do not capture images,")).toBeTruthy();
+    expect(getByText("I capture memories")).toBeTruthy();
+    expect(getByText("My Creations")).toBeTruthy();
+    expect(getByText("LOREM IPSUM DOTTOR ANET")).toBeTruthy();
+    expect(getByText("Captured Portraits")).toBeTruthy();
+    expect(getByAltText("flower")).toBeTruthy();
   });
 });
