@@ -19,4 +19,10 @@ html {
   box-sizing: border-box;
 
 }
+
+body {
+  background: var(--bg-primary);
+  overflow-x: hidden;
+}
+
 `;
