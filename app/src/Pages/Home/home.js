@@ -1,18 +1,20 @@
 import Divider from "Components/Divider/divider";
-import { ButtonIconPath } from "Components/Divider/divider.style";
+import { ButtonIconPath } from "Components/Divider/divider.styles";
+import LoadImage from "Components/ImageBlock/image-block";
 import { AboutContainer } from "Containers/about-container";
 import { HeroContainer } from "Containers/hero-container";
 import { NavbarContainer } from "Containers/navbar-container";
 import { StreetPhotoContainer } from "Containers/street-photo-container";
+import flower from "Assets/Images/flower.png";
 
-export default function Home() {
+export default function Home({ isBigDevice }) {
   return (
     <>
       <NavbarContainer />
       <HeroContainer />
       <AboutContainer />
 
-      <Divider>
+      <Divider position="initial" show={isBigDevice}>
         <Divider.Title>I do not capture images,</Divider.Title>
         <Divider.Title>I capture memories</Divider.Title>
         <Divider.Button>
@@ -33,6 +35,14 @@ export default function Home() {
       </Divider>
 
       <StreetPhotoContainer />
+
+      <Divider position="center" show={true}>
+        <Divider.Subtitle>LOREM IPSUM DOTTOR ANET</Divider.Subtitle>
+        <Divider.Title>Captured Portraits</Divider.Title>
+        <Divider.ImageFrame width="15%">
+          <LoadImage src={flower} alt="flower" />
+        </Divider.ImageFrame>
+      </Divider>
     </>
   );
 }

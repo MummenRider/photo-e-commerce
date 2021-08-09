@@ -11,11 +11,6 @@ export const Container = styled.section`
   @media screen and (max-width: 1040px) {
     margin: 0;
   }
-
-  @media screen and (max-width: 380px) {
-    max-height: 10px;
-    border: 1px solid red;
-  }
 `;
 
 export const TextContainer = styled.div`
@@ -48,83 +43,81 @@ export const SubTitle = styled.span`
 
 export const ImageBlockOne = styled.div`
   position: absolute;
-  height: 38%;
+  height: 24%;
   width: fit-content;
-  top: 1%;
-  left: 8%;
+  top: 200px;
+  left: 150px;
 
   @media screen and (max-width: 1375px) {
-    height: 35%;
+    height: 22%;
   }
 
   @media screen and (max-width: 1230px) {
-    height: 30%;
-    top: 5%;
+    height: 20%;
   }
 
   @media screen and (max-width: 1130px) {
-    height: 28%;
-    top: 8%;
+    height: 18%;
   }
 `;
 
 export const ImageBlockTwo = styled.div`
   position: absolute;
-  height: 30%;
+  height: 18%;
   width: fit-content;
-  top: 10%;
-  right: 8%;
+  top: 50px;
+  right: 100px;
 
   @media screen and (max-width: 1375px) {
-    height: 28%;
+    height: 16%;
   }
 
   @media screen and (max-width: 1230px) {
-    height: 24%;
+    height: 14%;
   }
 
   @media screen and (max-width: 1130px) {
-    height: 22%;
-    top: 13%;
+    height: 12%;
   }
 `;
 export const ImageBlockThree = styled.div`
   position: absolute;
   width: fit-content;
-  height: 350px;
-  bottom: 0;
-  left: 8%;
+  height: 18%;
+  bottom: 200px;
+  left: 100px;
 
   @media screen and (max-width: 1375px) {
-    height: 320px;
+    height: 16%;
   }
 
   @media screen and (max-width: 1230px) {
-    height: 310px;
+    height: 14%;
+    bottom: 300px;
   }
 
   @media screen and (max-width: 1130px) {
-    height: 290px;
-    bottom: 13%;
+    height: 12%;
+    bottom: 400px;
   }
 `;
 export const ImageBlockFour = styled.div`
   position: absolute;
   width: fit-content;
-  height: 500px;
-  bottom: 10%;
-  right: 8%;
+  height: 24%;
+  bottom: 300px;
+  right: 100px;
 
   @media screen and (max-width: 1375px) {
-    height: 490px;
+    height: 22%;
   }
 
   @media screen and (max-width: 1230px) {
-    height: 400px;
+    height: 20%;
+    bottom: 420px;
   }
 
   @media screen and (max-width: 1130px) {
-    height: 350px;
-    bottom: 30%;
+    height: 18%;
   }
 `;

@@ -4,7 +4,7 @@ exports[`<StreetPhoto /> should not render <StreetPhoto /> in smaller devices 1`
 
 exports[`<StreetPhoto /> should render <StreetPhoto /> with populated data 1`] = `
 <section
-  class="sc-bdnxRM gSErYQ"
+  class="sc-bdnxRM khCAqU"
   data-testid="str-photo-component"
 >
   <div
@@ -27,22 +27,22 @@ exports[`<StreetPhoto /> should render <StreetPhoto /> with populated data 1`] =
     </span>
   </div>
   <div
-    class="sc-eCApnc dorTzf"
+    class="sc-eCApnc cdA-Das"
   >
     Image content one
   </div>
   <div
-    class="sc-jSFjdj fAcKOI"
+    class="sc-jSFjdj kqvPWF"
   >
     Image content two
   </div>
   <div
-    class="sc-gKAaRy eZmELm"
+    class="sc-gKAaRy gKUFHy"
   >
     Image content three
   </div>
   <div
-    class="sc-iCoGMd JmXwo"
+    class="sc-iCoGMd blfSAQ"
   >
     Image content four
   </div>

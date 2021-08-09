@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render <About /> 1`] = `
+exports[`<About /> should render <About /> 1`] = `
 <section
   class="sc-bdnxRM cnQhyl"
 >
@@ -25,5 +25,15 @@ exports[`should render <About /> 1`] = `
       Some description
     </p>
   </div>
+</section>
+`;
+
+exports[`<About /> should render <About /> with title hidden to user 1`] = `
+<section
+  class="sc-bdnxRM cnQhyl"
+>
+  <div
+    class="sc-gtsrHT givMVg"
+  />
 </section>
 `;

@@ -13,5 +13,6 @@ describe("<ImageBlock />", () => {
     );
 
     expect(getByAltText("Some kind of picture")).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

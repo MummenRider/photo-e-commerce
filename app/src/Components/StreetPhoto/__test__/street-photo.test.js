@@ -1,7 +1,8 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import StreetPhoto from "Components/StreetPhoto/street-photo";
 
+afterEach(cleanup);
 describe("<StreetPhoto />", () => {
   it("should render <StreetPhoto /> with populated data", () => {
     const { container, getByText } = render(

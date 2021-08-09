@@ -4,19 +4,19 @@ import {
   Inner,
   Title,
   Subtitle,
-  ImageContent,
+  ImageFrame,
   Button,
   ButtonText,
   ButtonIcon,
   ButtonIconPath,
-} from "./divider.style";
+} from "./divider.styles";
 
-export default function Divider({ children, ...restProps }) {
-  return (
-    <Frame {...restProps}>
-      <Inner>{children}</Inner>
+export default function Divider({ show, position, children, ...restProps }) {
+  return show ? (
+    <Frame data-testid="divider" {...restProps}>
+      <Inner position={position}>{children}</Inner>
     </Frame>
-  );
+  ) : null;
 }
 
 Divider.Title = function DividerTitle({ children, ...restProps }) {
@@ -27,8 +27,8 @@ Divider.Subtitle = function DividerSubtitle({ children, ...restProps }) {
   return <Subtitle {...restProps}>{children}</Subtitle>;
 };
 
-Divider.ImageContent = function DividerImageContent({ ...restProps }) {
-  return <ImageContent {...restProps} />;
+Divider.ImageFrame = function DividerImagFramet({ children, ...restProps }) {
+  return <ImageFrame {...restProps}>{children}</ImageFrame>;
 };
 
 Divider.Button = function DividerButton({
