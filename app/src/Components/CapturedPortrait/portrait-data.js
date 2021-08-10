@@ -1,8 +1,8 @@
 export const capturedImageData = [
   {
     id: 1,
-    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
-    mainTitle: "LOREM, IPSUM, NONUMY",
+    mainTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    topSubTitle: "LOREM, IPSUM, NONUMY",
     bottomSubTitle: "Stet Clita - AMOR",
     src: require("Assets/Images/captured_img_1.jpg").default,
     fallback: require("Assets/Images/captured_img_1.webp").default,
@@ -10,8 +10,8 @@ export const capturedImageData = [
   },
   {
     id: 2,
-    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
-    mainTitle: "LOREM, IPSUM, NONUMY",
+    mainTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    topSubTitle: "LOREM, IPSUM, NONUMY",
     bottomSubTitle: "Stet Clita - AMOR",
     src: require("Assets/Images/captured_img_2.jpg").default,
     fallback: require("Assets/Images/captured_img_2.webp").default,
@@ -19,8 +19,8 @@ export const capturedImageData = [
   },
   {
     id: 3,
-    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
-    mainTitle: "LOREM, IPSUM, NONUMY",
+    mainTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    topSubTitle: "LOREM, IPSUM, NONUMY",
     bottomSubTitle: "Stet Clita - AMOR",
     src: require("Assets/Images/captured_img_3.jpg").default,
     fallback: require("Assets/Images/captured_img_3.webp").default,
@@ -28,8 +28,8 @@ export const capturedImageData = [
   },
   {
     id: 4,
-    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
-    mainTitle: "LOREM, IPSUM, NONUMY",
+    mainTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    topSubTitle: "LOREM, IPSUM, NONUMY",
     bottomSubTitle: "Stet Clita - AMOR",
     src: require("Assets/Images/captured_img_3.jpg").default,
     fallback: require("Assets/Images/captured_img_3.webp").default,
