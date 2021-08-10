@@ -7,6 +7,7 @@ export const capturedImageData = [
     src: require("Assets/Images/captured_img_1.jpg").default,
     fallback: require("Assets/Images/captured_img_1.webp").default,
     alt: "Chan image",
+    bkg: "#111112",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const capturedImageData = [
     src: require("Assets/Images/captured_img_2.jpg").default,
     fallback: require("Assets/Images/captured_img_2.webp").default,
     alt: "Ariana image",
+    bkg: "#272727",
   },
   {
     id: 3,
@@ -25,14 +27,17 @@ export const capturedImageData = [
     src: require("Assets/Images/captured_img_3.jpg").default,
     fallback: require("Assets/Images/captured_img_3.webp").default,
     alt: "Liz image",
+    bkg: "#D0D5D8",
+    fontColor: "#111112",
   },
   {
     id: 4,
     mainTitle: "Lorem Ipsum Dolor Amet Conseteur",
     topSubTitle: "LOREM, IPSUM, NONUMY",
     bottomSubTitle: "Stet Clita - AMOR",
-    src: require("Assets/Images/captured_img_3.jpg").default,
-    fallback: require("Assets/Images/captured_img_3.webp").default,
+    src: require("Assets/Images/captured_img_4.jpg").default,
+    fallback: require("Assets/Images/captured_img_4.webp").default,
     alt: "Bailey image",
+    bkg: "#111112",
   },
 ];

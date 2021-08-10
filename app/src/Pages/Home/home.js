@@ -6,6 +6,7 @@ import { HeroContainer } from "Containers/hero-container";
 import { NavbarContainer } from "Containers/navbar-container";
 import { StreetPhotoContainer } from "Containers/street-photo-container";
 import flower from "Assets/Images/flower.png";
+import { CapturedPortraitContainer } from "Containers/captured-portrait-container";
 
 export default function Home({ isBigDevice }) {
   return (
@@ -43,6 +44,8 @@ export default function Home({ isBigDevice }) {
           <LoadImage src={flower} alt="flower" />
         </Divider.ImageFrame>
       </Divider>
+
+      <CapturedPortraitContainer />
     </>
   );
 }

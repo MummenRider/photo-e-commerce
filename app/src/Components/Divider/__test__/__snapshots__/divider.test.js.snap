@@ -8,7 +8,7 @@ exports[`<Divider /> should render <Divider /> with button 1`] = `
   data-testid="divider"
 >
   <div
-    class="sc-gtsrHT jQZgRL"
+    class="sc-gtsrHT kYNZKW"
   >
     <h1
       class="sc-dlnjwi bcKMoI"
@@ -41,18 +41,18 @@ exports[`<Divider /> should render <Divider /> with data included 1`] = `
   data-testid="divider"
 >
   <div
-    class="sc-gtsrHT jQZgRL"
+    class="sc-gtsrHT kYNZKW"
   >
     <h1
       class="sc-dlnjwi bcKMoI"
     >
       Some title here
     </h1>
-    <h1
-      class="sc-hKFxyN kvLebY"
+    <h3
+      class="sc-hKFxyN bkFsMT"
     >
       This is subtitle included in divider component
-    </h1>
+    </h3>
     <div
       class="sc-eCApnc cFUyki"
     >
@@ -68,7 +68,7 @@ exports[`<Divider /> should render <Divider /> with just title 1`] = `
   data-testid="divider"
 >
   <div
-    class="sc-gtsrHT jQZgRL"
+    class="sc-gtsrHT kYNZKW"
   >
     <h1
       class="sc-dlnjwi bcKMoI"
