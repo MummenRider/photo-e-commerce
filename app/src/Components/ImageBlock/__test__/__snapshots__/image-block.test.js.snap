@@ -13,7 +13,7 @@ exports[`<ImageBlock /> should render <ImageBlock /> with the passed data 1`] = 
   />
   <img
     alt="Some kind of picture"
-    class="sc-dlnjwi fRYemt"
+    class="sc-dlnjwi nsrng"
   />
 </picture>
 `;

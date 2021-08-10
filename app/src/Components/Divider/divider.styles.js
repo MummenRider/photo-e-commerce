@@ -13,6 +13,7 @@ export const Inner = styled.div`
   flex-direction: column;
   justify-content: center;
   color: white;
+  text-align: ${(prop) => prop.position};
   align-items: ${(prop) => prop.position};
 `;
 
@@ -24,10 +25,10 @@ export const Title = styled.h1`
   letter-spacing: 3px;
 `;
 
-export const Subtitle = styled.h1`
+export const Subtitle = styled.h3`
   font-family: var(--ff-primary);
   letter-spacing: 1.5px;
-  font-weight: 200;
+  font-weight: 100;
   padding: 2rem 0;
 `;
 
