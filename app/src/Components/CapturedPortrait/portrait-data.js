@@ -1,0 +1,38 @@
+export const capturedImageData = [
+  {
+    id: 1,
+    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    mainTitle: "LOREM, IPSUM, NONUMY",
+    bottomSubTitle: "Stet Clita - AMOR",
+    src: require("Assets/Images/captured_img_1.jpg").default,
+    fallback: require("Assets/Images/captured_img_1.webp").default,
+    alt: "Chan image",
+  },
+  {
+    id: 2,
+    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    mainTitle: "LOREM, IPSUM, NONUMY",
+    bottomSubTitle: "Stet Clita - AMOR",
+    src: require("Assets/Images/captured_img_2.jpg").default,
+    fallback: require("Assets/Images/captured_img_2.webp").default,
+    alt: "Ariana image",
+  },
+  {
+    id: 3,
+    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    mainTitle: "LOREM, IPSUM, NONUMY",
+    bottomSubTitle: "Stet Clita - AMOR",
+    src: require("Assets/Images/captured_img_3.jpg").default,
+    fallback: require("Assets/Images/captured_img_3.webp").default,
+    alt: "Liz image",
+  },
+  {
+    id: 4,
+    topSubTitle: "Lorem Ipsum Dolor Amet Conseteur",
+    mainTitle: "LOREM, IPSUM, NONUMY",
+    bottomSubTitle: "Stet Clita - AMOR",
+    src: require("Assets/Images/captured_img_3.jpg").default,
+    fallback: require("Assets/Images/captured_img_3.webp").default,
+    alt: "Bailey image",
+  },
+];
