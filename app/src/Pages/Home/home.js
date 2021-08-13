@@ -7,6 +7,7 @@ import { NavbarContainer } from "Containers/navbar-container";
 import { StreetPhotoContainer } from "Containers/street-photo-container";
 import flower from "Assets/Images/flower.png";
 import { CapturedPortraitContainer } from "Containers/captured-portrait-container";
+import { AbstractPhotoContainer } from "Containers/abstract-photo-container";
 
 export default function Home({ isBigDevice }) {
   return (
@@ -46,6 +47,7 @@ export default function Home({ isBigDevice }) {
       </Divider>
 
       <CapturedPortraitContainer />
+      <AbstractPhotoContainer />
     </>
   );
 }

@@ -9,8 +9,8 @@ export const Container = styled.section`
 export const Block = styled.div`
   display: flex;
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
   }
 `;
 
