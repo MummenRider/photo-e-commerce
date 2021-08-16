@@ -3,7 +3,6 @@ import { ButtonIconPath } from "Components/Divider/divider.styles";
 import LoadImage from "Components/ImageBlock/image-block";
 import { AboutContainer } from "Containers/about-container";
 import { HeroContainer } from "Containers/hero-container";
-import { NavbarContainer } from "Containers/navbar-container";
 import { StreetPhotoContainer } from "Containers/street-photo-container";
 import flower from "Assets/Images/flower.png";
 import { CapturedPortraitContainer } from "Containers/captured-portrait-container";
@@ -12,7 +11,6 @@ import { AbstractPhotoContainer } from "Containers/abstract-photo-container";
 export default function Home({ isBigDevice }) {
   return (
     <>
-      <NavbarContainer />
       <HeroContainer />
       <AboutContainer />
 
