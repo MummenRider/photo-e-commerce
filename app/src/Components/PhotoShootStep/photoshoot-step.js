@@ -18,8 +18,12 @@ PhotoShootStep.Left = function PhotoShootLeft({ children, ...restProps }) {
   return <Left {...restProps}>{children}</Left>;
 };
 
-PhotoShootStep.Right = function PhotoShootRight({ children, ...restProps }) {
-  return <Right {...restProps}>{children}</Right>;
+PhotoShootStep.Right = function PhotoShootRight({
+  isMobile,
+  children,
+  ...restProps
+}) {
+  return isMobile ? <Right {...restProps}>{children}</Right> : null;
 };
 
 PhotoShootStep.Title = function PhotoShootTitle({ children, ...restProps }) {
