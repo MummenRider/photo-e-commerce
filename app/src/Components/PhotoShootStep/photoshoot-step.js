@@ -1,6 +1,7 @@
 import {
   Container,
   Left,
+  Inner,
   Right,
   Title,
   SubTitle,
@@ -8,6 +9,10 @@ import {
   Item,
   Image,
   ContactBtn,
+  SvgInner,
+  SvgWave,
+  Outer,
+  Wrapper,
 } from "Components/PhotoShootStep/photoshoot-step.styles";
 
 export default function PhotoShootStep({ children, ...restProps }) {
@@ -15,7 +20,19 @@ export default function PhotoShootStep({ children, ...restProps }) {
 }
 
 PhotoShootStep.Left = function PhotoShootLeft({ children, ...restProps }) {
-  return <Left {...restProps}>{children}</Left>;
+  return (
+    <Left {...restProps}>
+      <Wrapper>{children}</Wrapper>
+    </Left>
+  );
+};
+
+PhotoShootStep.Inner = function PhotoShootInner({ children, ...restProps }) {
+  return <Inner {...restProps}>{children}</Inner>;
+};
+
+PhotoShootStep.Outer = function PhotoShootOuter({ children, ...restProps }) {
+  return <Outer {...restProps}>{children}</Outer>;
 };
 
 PhotoShootStep.Right = function PhotoShootRight({
@@ -54,4 +71,18 @@ PhotoShootStep.ContactBtn = function PhotoShootContactBtn({
   ...restProps
 }) {
   return <ContactBtn {...restProps}>{children}</ContactBtn>;
+};
+
+PhotoShootStep.SvgWave = function PhotoShootStepSvgWave({
+  children,
+  ...restProps
+}) {
+  return <SvgWave {...restProps}>{children}</SvgWave>;
+};
+
+PhotoShootStep.SvgInner = function PhotoShootStepSvgInner({
+  children,
+  ...restProps
+}) {
+  return <SvgInner {...restProps}>{children}</SvgInner>;
 };

@@ -49,7 +49,7 @@ const App = () => {
   return (
     <AppContainer>
       <Router>
-        <NavbarContainer />
+        {/* <NavbarContainer /> */}
         <Switch>
           <MomentumScroll ref={scrollRef}>
             <Route path={ROUTES.HOME} exact>
