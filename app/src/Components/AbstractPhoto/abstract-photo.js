@@ -41,7 +41,7 @@ AbstractPhoto.ImageItem = function AbstractPhotoImageItem({
   show,
   ...restProps
 }) {
-  return show ? <ImageItem {...restProps} /> : null;
+  return show ? <ImageItem {...restProps} data-testid="abstract-img" /> : null;
 };
 
 AbstractPhoto.Title = function AbstractPhotoTitle({ children, ...restProps }) {

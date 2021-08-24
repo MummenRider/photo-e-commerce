@@ -25,6 +25,7 @@ html {
 body {
   background: var(--bg-primary);
   overflow-x: hidden;
+  overscroll-behavior-y:none;
 }
 
 body::-webkit-scrollbar {

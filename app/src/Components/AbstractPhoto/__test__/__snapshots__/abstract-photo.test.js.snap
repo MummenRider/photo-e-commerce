@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AbstractPhoto /> should not render image when show is set to false 1`] = `<div />`;
+
+exports[`<AbstractPhoto /> should render <AbstractPhoto /> with populated data with image all visible 1`] = `
+<div>
+  <section
+    class="sc-bdnxRM kuFmtL"
+  >
+    <div
+      class="sc-gtsrHT"
+    >
+      <div
+        class="sc-pNWdM dUaizU"
+      >
+        <div
+          class="sc-eCApnc hziMjk"
+          data-testid="abstract-img"
+          src="abstract_img_2.jpg"
+        />
+        <div
+          class="sc-fujyAs girNZW"
+        >
+          <div
+            class="sc-eCApnc idtfEv"
+            data-testid="abstract-img"
+            src="abstract_img_1.jpg"
+          />
+        </div>
+        <div
+          class="sc-jrsJWt jmLeCP"
+        >
+          <div
+            class="sc-eCApnc hDhIUh"
+            data-testid="abstract-img"
+            src="abstract_img_3.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-dlnjwi dpOBYy"
+    >
+      <h1
+        class="sc-jSFjdj kTgxSH"
+      >
+        This is a title
+      </h1>
+      <div
+        class="sc-iCoGMd bNWLdH"
+      />
+      <p
+        class="sc-gKAaRy dfECc"
+      >
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </div>
+    <div
+      class="sc-hKFxyN bFxYLe"
+    >
+      <div
+        class="sc-eCApnc jneklQ"
+        data-testid="abstract-img"
+        src="abstract_img_4.jpg"
+      />
+    </div>
+  </section>
+</div>
+`;

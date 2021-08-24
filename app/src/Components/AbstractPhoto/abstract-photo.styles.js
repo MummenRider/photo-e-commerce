@@ -60,8 +60,8 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   font-family: var(--ff-primary);
-  font-size: 1.4rem;
-  font-weight: 200;
+  font-size: 1.2rem;
+  font-weight: lighter;
   line-height: 1.6;
   letter-spacing: 1px;
   text-align: center;
