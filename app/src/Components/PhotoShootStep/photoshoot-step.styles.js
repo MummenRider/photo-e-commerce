@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: rgb(240, 238, 236);
-  padding: 8% 0;
+  background: rgb(240, 238, 236);
+  padding: 14vh 0 8vh 0;
   position: relative;
   flex-wrap: wrap;
   &::before {
@@ -32,24 +32,20 @@ export const Container = styled.section`
 
 export const Left = styled.div`
   color: black;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-weight: 400;
+  justify-content: center;
 `;
 
-export const Right = styled.div`
-  border: 1px solid blue;
-  width: 10vw;
-`;
+export const Right = styled.div``;
 export const Image = styled.div`
   background-image: url(${(props) => props.src});
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  padding-bottom: 125%;
+  padding-top: 125%;
 `;
 export const Inner = styled.div`
   display: flex;
@@ -65,17 +61,22 @@ export const Outer = styled.div`
 
 export const Title = styled.h1`
   font-family: var(--ff-secondary);
-  font-size: clamp(3.4rem, 3.5vw, 22rem);
+  font-size: 4.2rem;
   font-weight: lighter;
-  padding: 5rem 0 0.5rem 0;
   text-align: left;
   line-height: 1.2;
+  padding: 5rem 0 1rem 0;
+
+  @media screen and (min-width: 768px) {
+    font-size: clamp(3.2rem, 5vw, 32rem);
+    padding: 0;
+  }
 `;
 
 export const SubTitle = styled.p`
   font-family: var(--ff-primary);
-  font-size: clamp(1.3rem, 1vw, 7rem);
-  margin-bottom: 3em;
+  font-size: clamp(1.5rem, 1.2vw, 7.8rem);
+  margin-bottom: 10%;
   span {
     color: #9a6130;
     font-weight: 600;
@@ -88,7 +89,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.p`
-  font-size: clamp(1rem, 0.8vw, 5.2rem);
+  font-size: clamp(1.2rem, 0.8vw, 5.2rem);
   font-weight: 200;
   margin: 2em 0;
   position: relative;
@@ -110,11 +111,11 @@ export const ContactBtn = styled.button`
   background-color: #9a6130;
   border: none;
   font-family: var(--ff-primary);
-  font-size: clamp(1rem, 0.8vw, 6rem);
+  font-size: clamp(1rem, 1vw, 6rem);
   font-weight: 400;
   padding: 1.4em 1em;
   width: 40%;
-  min-width: 110px;
+  min-width: 100px;
   position: relative;
   margin-top: 5%;
   margin-left: 4.5em;
@@ -124,12 +125,15 @@ export const ContactBtn = styled.button`
   &::before {
     position: absolute;
     left: 120%;
-    font-size: clamp(0.8rem, 0.5vw, 5rem);
+    font-size: clamp(0.9rem, 0.5vw, 5rem);
     width: 100%;
     text-align: left;
     line-height: 1.5;
     letter-spacing: 0.5px;
     font-weight: 200;
+
+    width: 80%;
+    min-width: 100px;
     content: "Lorem ipsum dolor sit amet,
 consetetu";
   }
@@ -137,7 +141,7 @@ consetetu";
 
 export const SvgInner = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: -0.5%;
   left: 0;
   width: 100%;
   overflow: hidden;

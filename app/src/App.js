@@ -20,7 +20,7 @@ const App = () => {
     }),
     []
   );
-  console.log(data.current);
+
   const momentumScoll = useCallback(() => {
     data.current = window.scrollY;
     data.previous += (data.current - data.previous) * data.ease;
@@ -37,19 +37,17 @@ const App = () => {
 
   useEffect(() => {
     requestAnimationFrame(() => momentumScoll());
-    console.log("hi");
     return () => cancelAnimationFrame(() => momentumScoll());
   }, [momentumScoll]);
 
   useEffect(() => {
-    console.log("hello");
     setBodyHeight();
   }, [size.height, size.width, setBodyHeight]);
 
   return (
     <AppContainer>
       <Router>
-        {/* <NavbarContainer /> */}
+        <NavbarContainer />
         <Switch>
           <MomentumScroll ref={scrollRef}>
             <Route path={ROUTES.HOME} exact>
