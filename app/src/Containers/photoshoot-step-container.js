@@ -1,7 +1,7 @@
 import PhotoShootStep from "Components/PhotoShootStep/photoshoot-step";
 import { useMediaQuery } from "react-responsive";
 import { steps } from "Components/PhotoShootStep/photoshoot-step-data";
-import photoshoot from "Assets/Images/photoshoot_img.jpeg";
+import photoshootImg from "Assets/Images/photoshoot_img.jpeg";
 
 export function PhotoShootStepContainer() {
   const isMobile = useMediaQuery({ query: "(min-width: 768px)" });
@@ -29,7 +29,7 @@ export function PhotoShootStepContainer() {
       </PhotoShootStep.Left>
 
       <PhotoShootStep.Right isMobile={isMobile}>
-        <PhotoShootStep.Image src={photoshoot} />
+        <PhotoShootStep.Image src={photoshootImg} />
       </PhotoShootStep.Right>
 
       <PhotoShootStep.SvgWave>

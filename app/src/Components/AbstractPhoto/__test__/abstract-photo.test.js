@@ -4,9 +4,10 @@ import p1 from "Assets/Images/abstract_img_1.jpg";
 import p2 from "Assets/Images/abstract_img_2.jpg";
 import p3 from "Assets/Images/abstract_img_3.jpg";
 import p4 from "Assets/Images/abstract_img_4.jpg";
+
 describe("<AbstractPhoto />", () => {
-  it("should render <AbstractPhoto /> with populated data", () => {
-    const { container, getByText, getByAltText } = render(
+  it("should render <AbstractPhoto /> with populated data with image all visible", () => {
+    const { container, getByText, queryAllByTestId } = render(
       <AbstractPhoto>
         <AbstractPhoto.LeftBlock>
           <AbstractPhoto.ImageBlockTwo>
@@ -40,5 +41,16 @@ describe("<AbstractPhoto />", () => {
 
     expect(getByText("This is a title")).toBeTruthy();
     expect(getByText(/Lorem/i)).toBeTruthy();
+    expect(queryAllByTestId("abstract-img")).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
+  it("should not render image when show is set to false", () => {
+    const { container, queryByTestId } = render(
+      <AbstractPhoto.ImageItem show={false} />
+    );
+
+    expect(queryByTestId("abstract-img")).toBeFalsy();
+    expect(container).toMatchSnapshot();
   });
 });
