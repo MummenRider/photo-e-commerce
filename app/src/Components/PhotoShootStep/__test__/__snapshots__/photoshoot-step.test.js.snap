@@ -168,7 +168,7 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
 
 .c11 {
   position: absolute;
-  bottom: -0.5%;
+  bottom: -0.15%;
   left: 0;
   width: 100%;
   overflow: hidden;
