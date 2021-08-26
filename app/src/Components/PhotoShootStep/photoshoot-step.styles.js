@@ -141,7 +141,7 @@ consetetu";
 
 export const SvgInner = styled.div`
   position: absolute;
-  bottom: -0.5%;
+  bottom: -0.15%;
   left: 0;
   width: 100%;
   overflow: hidden;
