@@ -1,6 +1,6 @@
 import Navbar from "Components/Navbar/navbar";
 import React from "react";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, fireEvent } from "@testing-library/react";
 import "jest-styled-components";
 import * as ROUTES from "Constants/route";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -38,7 +38,7 @@ describe("<Navbar />", () => {
 
   it("should have colored background", () => {
     const { container } = customRender(<Navbar isScrolled={true} />);
-    expect(container.firstChild).toHaveStyleRule("background-color", "#353535");
+    expect(container.firstChild).toHaveStyleRule("background-color", "#111112");
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -50,9 +50,23 @@ describe("<Navbar />", () => {
   });
 
   it("should render burger icon", () => {
-    const { queryByTestId } = render(
-      <Navbar.Button isBigDevice={false}>hi</Navbar.Button>
+    const handleClick = jest.fn();
+    const { queryByTestId, getByText } = render(
+      <Navbar.Button isBigDevice={false} setIsOpen={handleClick}>
+        burger svg
+      </Navbar.Button>
     );
+
     expect(queryByTestId("menu-icon")).toBeTruthy();
+    expect(handleClick).toHaveBeenCalledTimes(0);
+    fireEvent.click(getByText("burger svg"));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it("should hide side navigation bar in bigger device", () => {
+    const { queryByText } = render(
+      <Navbar.MenuSide isBigDevice={true}>content hidden</Navbar.MenuSide>
+    );
+    expect(queryByText("content hidden")).toBeFalsy();
   });
 });

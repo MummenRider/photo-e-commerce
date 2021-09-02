@@ -2,13 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 export function Burger() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
       <motion.path
         d="M22 18.0048C22 18.5544 21.5544 19 21.0048 19H12.9952C12.4456 19 12 18.5544 12 18.0048C12 17.4552 12.4456 17.0096 12.9952 17.0096H21.0048C21.5544 17.0096 22 17.4552 22 18.0048Z"
         fill="currentColor"
         variants={{
           open: {
-            x: -2,
+            x: -1,
             y: -2,
             rotate: 45,
             transition: {
@@ -46,7 +46,7 @@ export function Burger() {
         fill="currentColor"
         variants={{
           open: {
-            x: -6,
+            x: -5,
             y: 4,
             rotate: 45,
             transition: {
