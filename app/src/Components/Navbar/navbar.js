@@ -17,16 +17,16 @@ export default function Navbar({ isBigDevice, children, ...restProps }) {
 
   return (
     <Header
-      initial={{ padding: !isScrolled && !isBigDevice ? "5% 0" : "2% 0" }}
+      initial={{ padding: !isScrolled && !isBigDevice ? "5vh 0" : "3vh 0" }}
       animate={{
         padding:
           isScrolled && !isBigDevice
-            ? "3% 0"
+            ? "2vh 0"
             : isScrolled && isBigDevice
-            ? "1% 0"
+            ? "1vh 0"
             : !isScrolled && !isBigDevice
-            ? "5% 0"
-            : "2% 0",
+            ? "5vh 0"
+            : "3vh 0",
       }}
       transition={{ duration: 0.5, type: "tween" }}
       isScrolled={isScrolled}
@@ -51,8 +51,12 @@ Navbar.Logo = function NavbarLogo({ children, ...restProps }) {
   return <Logo {...restProps}>{children}</Logo>;
 };
 
-Navbar.MenuSide = function NavbarMenuSide({ children, ...restProps }) {
-  return <MenuSide {...restProps}>{children}</MenuSide>;
+Navbar.MenuSide = function NavbarMenuSide({
+  isBigDevice,
+  children,
+  ...restProps
+}) {
+  return !isBigDevice ? <MenuSide {...restProps}>{children}</MenuSide> : null;
 };
 
 Navbar.Menu = function NavbarMenu({ isBigDevice, children, ...restProps }) {

@@ -29,7 +29,12 @@ export function NavbarContainer() {
         >
           <Burger />
         </Navbar.Button>
-        <Navbar.MenuSide variants={sideBar} initial="close" animate="open">
+        <Navbar.MenuSide
+          isBigDevice={isBigDevice}
+          variants={sideBar}
+          initial="close"
+          animate="open"
+        >
           <Navbar.Item to={ROUTES.ABOUT}>ABOUT</Navbar.Item>
           <Navbar.Item to={ROUTES.SERVICES}>SERVICES</Navbar.Item>
           <Navbar.Item to={ROUTES.CONTACT}>CONTACT</Navbar.Item>

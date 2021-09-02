@@ -11,21 +11,20 @@ exports[`<Navbar /> should have colored background 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   position: fixed;
-  padding: 2rem 0;
   top: 0;
-  background-color: #353535;
+  background-color: #111112;
   font-family: "Montserrat",sans-serif;
-  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   -webkit-transition: background-color 200ms ease-in;
   transition: background-color 200ms ease-in;
-  box-shadow: 0px 2px 20px#1a1a1a;
+  box-shadow: 0px 2px 20px #131313cc;
 }
 
 <header
   class="c0"
   data-testid="nav-background"
+  style="padding: 5vh 0px;"
 />
 `;
 
@@ -40,11 +39,9 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   -ms-flex-pack: center;
   justify-content: center;
   position: fixed;
-  padding: 2rem 0;
   top: 0;
   background-color: transparent;
   font-family: "Montserrat",sans-serif;
-  min-height: 96.9px;
   width: 100%;
   z-index: 999;
   -webkit-transition: background-color 200ms ease-in;
@@ -74,7 +71,7 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
 .c2 {
   cursor: pointer;
   color: white;
-  font-size: 2rem;
+  font-size: clamp(1.8rem,0.8vw,6rem);
   font-weight: 400;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -92,7 +89,8 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
   justify-content: space-between;
   color: #ffffff;
   position: relative;
-  width: 40rem;
+  width: 25%;
+  min-width: 320px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -101,7 +99,7 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
 
 .c4 {
   color: #ffffff;
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem,0.8vw,6rem);
   font-weight: 100;
   -webkit-letter-spacing: 0.2rem;
   -moz-letter-spacing: 0.2rem;
@@ -156,6 +154,7 @@ exports[`<Navbar /> should have logo, nav links with transparent background 1`] 
 <header
   class="c0"
   data-testid="nav-background"
+  style="padding: 5vh 0px;"
 >
   <div
     class="c1"
