@@ -19,7 +19,7 @@ export function NavbarContainer() {
   };
 
   return (
-    <Navbar>
+    <Navbar isBigDevice={isBigDevice}>
       <Navbar.Container>
         <Navbar.Logo to={ROUTES.HOME}>LOGO</Navbar.Logo>
         <Navbar.Button

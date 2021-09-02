@@ -12,11 +12,27 @@ import useScroll from "Hooks/useScroll";
 
 const ToggleMenuContext = createContext();
 
-export default function Navbar({ children, ...restProps }) {
+export default function Navbar({ isBigDevice, children, ...restProps }) {
   const { isScrolled } = useScroll(false);
 
   return (
-    <Header isScrolled={isScrolled} data-testid="nav-background" {...restProps}>
+    <Header
+      initial={{ padding: !isScrolled && !isBigDevice ? "5% 0" : "2% 0" }}
+      animate={{
+        padding:
+          isScrolled && !isBigDevice
+            ? "3% 0"
+            : isScrolled && isBigDevice
+            ? "1% 0"
+            : !isScrolled && !isBigDevice
+            ? "5% 0"
+            : "2% 0",
+      }}
+      transition={{ duration: 0.5, type: "tween" }}
+      isScrolled={isScrolled}
+      data-testid="nav-background"
+      {...restProps}
+    >
       {children}
     </Header>
   );
