@@ -7,6 +7,8 @@ import {
   Description,
   Inner,
   Frames,
+  Left,
+  Right,
 } from "Components/About/about.styles";
 
 export default function About({ children, ...restProps }) {
@@ -27,6 +29,14 @@ About.Image = function AboutImage({ src, ...restProps }) {
 
 About.Content = function AboutContent({ children, ...restProps }) {
   return <Content {...restProps}>{children}</Content>;
+};
+
+About.Left = function AboutLeft({ children, ...restProps }) {
+  return <Left {...restProps}>{children}</Left>;
+};
+
+About.Right = function AboutRight({ children, ...restProps }) {
+  return <Right {...restProps}>{children}</Right>;
 };
 
 About.Title = function AboutTitle({ isBigDevice, children, ...restProps }) {
