@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.section`
   width: 100%;
@@ -17,12 +18,13 @@ export const Left = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 export const Right = styled.div`
   margin: 0 auto;
-  padding: 5em 0;
+  padding: 5em 10%;
 
-  @media screen and (min-width: 768px) {
-    padding: 20% 0;
+  @media screen and (min-width: 1000px) {
+    padding: 20% 0%;
   }
 `;
 
@@ -39,14 +41,14 @@ export const Inner = styled.div`
   }
 `;
 
-export const Frames = styled.div`
+export const Frames = styled(motion.div)`
   width: 100vw;
   @media screen and (min-width: 1300px) {
     width: 30vw;
   }
 `;
 
-export const Image = styled.div`
+export const Image = styled(motion.div)`
   background-image: url(${(props) => props.url});
   width: 100%;
   background-size: cover;
@@ -73,7 +75,7 @@ export const Title = styled.h3`
   }
 `;
 
-export const Description = styled.p`
+export const Description = styled(motion.p)`
   font-size: clamp(1.5rem, 0.9vw, 6rem);
   font-weight: 100;
   padding: 1rem 0;

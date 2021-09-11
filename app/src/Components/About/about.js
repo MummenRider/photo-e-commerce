@@ -10,6 +10,7 @@ import {
   Left,
   Right,
 } from "Components/About/about.styles";
+import { useInView } from "react-intersection-observer";
 
 export default function About({ children, ...restProps }) {
   return (
@@ -20,8 +21,21 @@ export default function About({ children, ...restProps }) {
 }
 
 About.Image = function AboutImage({ src, ...restProps }) {
+  const [ref, inView] = useInView({
+    rootMargin: "-200px 0px",
+  });
   return (
-    <Frames {...restProps}>
+    <Frames
+      {...restProps}
+      ref={ref}
+      animate={{
+        scale: inView ? 1.0 : 1.3,
+      }}
+      transition={{
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 0.8,
+      }}
+    >
       <Image url={src} />
     </Frames>
   );
@@ -44,5 +58,25 @@ About.Title = function AboutTitle({ isBigDevice, children, ...restProps }) {
 };
 
 About.Description = function AboutDescription({ children, ...restProps }) {
-  return <Description {...restProps}>{children}</Description>;
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 1,
+  });
+
+  return (
+    <Description
+      ref={ref}
+      {...restProps}
+      animate={{
+        y: inView ? 0 : 100,
+        opacity: inView ? [0.2, 0.4, 0.8, 1] : 0,
+      }}
+      transition={{
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 1,
+      }}
+    >
+      {children}
+    </Description>
+  );
 };
