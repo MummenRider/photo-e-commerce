@@ -2,25 +2,18 @@
 
 exports[`<About /> should render <About /> 1`] = `
 <section
-  class="sc-bdnxRM cnQhyl"
+  class="sc-bdnxRM dazqpe"
 >
   <div
-    class="sc-gtsrHT givMVg"
+    class="sc-hKFxyN jelMKq"
   >
     <h3
-      class="sc-jSFjdj eNMYbP"
+      class="sc-iCoGMd lebLBC"
     >
       Title here
     </h3>
-    <div
-      class="sc-dlnjwi coeqwS"
-    >
-      <div
-        class="sc-hKFxyN YnZmL"
-      />
-    </div>
     <p
-      class="sc-gKAaRy gFSBBD"
+      class="sc-fujyAs iFKMfc"
     >
       Some description
     </p>
@@ -30,10 +23,10 @@ exports[`<About /> should render <About /> 1`] = `
 
 exports[`<About /> should render <About /> with title hidden to user 1`] = `
 <section
-  class="sc-bdnxRM cnQhyl"
+  class="sc-bdnxRM dazqpe"
 >
   <div
-    class="sc-gtsrHT givMVg"
+    class="sc-hKFxyN jelMKq"
   />
 </section>
 `;
