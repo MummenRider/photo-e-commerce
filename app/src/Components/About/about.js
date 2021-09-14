@@ -22,21 +22,21 @@ export default function About({ children, ...restProps }) {
 
 About.Image = function AboutImage({ src, ...restProps }) {
   const [ref, inView] = useInView({
-    rootMargin: "-200px 0px",
+    rootMargin: "0px 0px -30% 0px",
   });
   return (
-    <Frames
-      {...restProps}
-      ref={ref}
-      animate={{
-        scale: inView ? 1.0 : 1.3,
-      }}
-      transition={{
-        ease: [0.43, 0.13, 0.23, 0.96],
-        duration: 0.8,
-      }}
-    >
-      <Image url={src} />
+    <Frames {...restProps}>
+      <Image
+        url={src}
+        ref={ref}
+        animate={{
+          scale: inView ? 1.0 : 1.1,
+        }}
+        transition={{
+          ease: [0.43, 0.13, 0.23, 0.96],
+          duration: 0.8,
+        }}
+      />
     </Frames>
   );
 };
@@ -57,11 +57,12 @@ About.Title = function AboutTitle({ isBigDevice, children, ...restProps }) {
   return isBigDevice ? <Title {...restProps}>{children}</Title> : null;
 };
 
-About.Description = function AboutDescription({ children, ...restProps }) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 1,
-  });
+About.Description = function AboutDescription({
+  options,
+  children,
+  ...restProps
+}) {
+  const [ref, inView] = useInView({ ...options });
 
   return (
     <Description

@@ -14,7 +14,7 @@ export function AboutContainer() {
       </About.Left>
       <About.Right>
         <About.Title isBigDevice={isBigDevice}>Who am I</About.Title>
-        <About.Description>
+        <About.Description options={{ triggerOnce: true, threshold: 1 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus
           iaculis urna id volutpat lacus laoreet non. Ut eu sem integer vitae
@@ -25,7 +25,7 @@ export function AboutContainer() {
           mauris cursus mattis molestie. Qas utsaqa sasas tortorsa pretium
           viverra suspendisse potenti nullam ac.
         </About.Description>
-        <About.Description>
+        <About.Description options={{ triggerOnce: true, threshold: 1 }}>
           Egestas integer eget aliquet nibh praesent tristique magna sit amet.
           Vitae nunc sed velit dignissim sodales ut eu sem. Faucibus in ornare
           quam viverra orci sagittis eu. Justo laoreet sit amet cursus sit amet
@@ -33,7 +33,7 @@ export function AboutContainer() {
           Purus ut faucibus pulvinar elementum. Odio facilisis mauris sit amet
           massa vitae tortor.
         </About.Description>
-        <About.Description>
+        <About.Description options={{ triggerOnce: true, threshold: 1 }}>
           Faucibus in ornare quam viverra orci sagittis eu. Justo laoreet sit
           amet cursus sit amet dictum sit amet. Orci a scelerisque purus semper
           eget duis at tellus. Purus ut faucibus pulvinar elementum. Odio

@@ -23,7 +23,7 @@ export const Right = styled.div`
   margin: 0 auto;
   padding: 5em 10%;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1300px) {
     padding: 20% 0%;
   }
 `;
