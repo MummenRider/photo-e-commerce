@@ -37,7 +37,17 @@ Divider.Button = function DividerButton({
   ...restProps
 }) {
   return (
-    <Button onClick={destination} {...restProps}>
+    <Button
+      onClick={destination}
+      {...restProps}
+      whileHover={{ gap: "100px" }}
+      initial={{ gap: "30px" }}
+      transition={{
+        type: "tween",
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 0.6,
+      }}
+    >
       {children}
     </Button>
   );

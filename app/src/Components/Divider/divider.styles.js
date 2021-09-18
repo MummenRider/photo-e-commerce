@@ -1,9 +1,10 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Frame = styled.section`
   width: 100%;
   background-color: var(--bg-secondary);
-  padding: 5rem 0;
+  padding: 5% 0;
 `;
 
 export const Inner = styled.div`
@@ -19,7 +20,7 @@ export const Inner = styled.div`
 
 export const Title = styled.h1`
   font-family: var(--ff-secondary);
-  font-size: clamp(3.5rem, 4vw, 5rem);
+  font-size: clamp(3.5rem, 2vw, 20rem);
   font-style: italic;
   font-weight: lighter;
   letter-spacing: 3px;
@@ -37,7 +38,7 @@ export const ImageFrame = styled.div`
   padding-top: 6rem;
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   cursor: pointer;
   align-self: flex-end;
   margin-top: 5rem;
@@ -55,7 +56,7 @@ export const ButtonText = styled.span`
   color: white;
   font-family: var(--ff-primary);
   letter-spacing: 2px;
-  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  font-size: clamp(1.8rem, 1.2vw, 8rem);
   font-weight: lighter;
 `;
 
