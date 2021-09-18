@@ -4,22 +4,23 @@ exports[`<Divider /> should not render <Divider /> when show is set to false 1`]
 
 exports[`<Divider /> should render <Divider /> with button 1`] = `
 <section
-  class="sc-bdnxRM iCphrG"
+  class="sc-bdnxRM cFuttp"
   data-testid="divider"
 >
   <div
     class="sc-gtsrHT kYNZKW"
   >
     <h1
-      class="sc-dlnjwi bcKMoI"
+      class="sc-dlnjwi VWPZF"
     >
       Some title here
     </h1>
     <button
       class="sc-jSFjdj gvvKvs"
+      style="gap: 30px;"
     >
       <span
-        class="sc-gKAaRy rxnOu"
+        class="sc-gKAaRy sjknM"
       >
         Click me
       </span>
@@ -37,14 +38,14 @@ exports[`<Divider /> should render <Divider /> with button 1`] = `
 
 exports[`<Divider /> should render <Divider /> with data included 1`] = `
 <section
-  class="sc-bdnxRM iCphrG"
+  class="sc-bdnxRM cFuttp"
   data-testid="divider"
 >
   <div
     class="sc-gtsrHT kYNZKW"
   >
     <h1
-      class="sc-dlnjwi bcKMoI"
+      class="sc-dlnjwi VWPZF"
     >
       Some title here
     </h1>
@@ -64,14 +65,14 @@ exports[`<Divider /> should render <Divider /> with data included 1`] = `
 
 exports[`<Divider /> should render <Divider /> with just title 1`] = `
 <section
-  class="sc-bdnxRM iCphrG"
+  class="sc-bdnxRM cFuttp"
   data-testid="divider"
 >
   <div
     class="sc-gtsrHT kYNZKW"
   >
     <h1
-      class="sc-dlnjwi bcKMoI"
+      class="sc-dlnjwi VWPZF"
     >
       Some title here
     </h1>

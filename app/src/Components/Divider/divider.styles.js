@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Frame = styled.section`
@@ -37,7 +38,7 @@ export const ImageFrame = styled.div`
   padding-top: 6rem;
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   cursor: pointer;
   align-self: flex-end;
   margin-top: 5rem;
