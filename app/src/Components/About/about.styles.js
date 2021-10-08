@@ -3,14 +3,21 @@ import { motion } from "framer-motion";
 
 export const Container = styled.section`
   width: 100%;
+  min-height: 150vh;
   font-family: "Montserrat", sans-serif;
   color: white;
-  /* display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  padding: 10%;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-  } */
+    gap: 10%;
+    padding: 0 10%;
+    min-height: 120vh;
+  }
 `;
 
 export const Left = styled.div`
@@ -20,40 +27,42 @@ export const Left = styled.div`
 `;
 
 export const Right = styled.div`
-  margin: 0 auto;
-  padding: 5em 10%;
-
-  @media screen and (min-width: 1300px) {
-    padding: 20% 0%;
+  padding: 5vh 0;
+  @media screen and (min-width: 768px) {
+    padding: 0;
   }
 `;
 
-export const Inner = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: 1300px) {
-    flex-direction: row;
-    padding: 8rem 0;
-    width: 80%;
-    margin: 0 auto;
-    gap: 10%;
-  }
-`;
+export const Inner = styled.div``;
 
 export const Frames = styled(motion.div)`
   width: 100vw;
-  @media screen and (min-width: 1300px) {
-    width: 30vw;
+`;
+
+export const ImageOne = styled(motion.div)`
+  position: relative;
+  width: 60vw;
+
+  @media screen and (min-width: 768px) {
+    width: 26vw;
+  }
+`;
+export const ImageTwo = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  @media screen and (min-width: 768px) {
+    width: 26vw;
   }
 `;
 
 export const Image = styled(motion.div)`
-  background-image: url(${(props) => props.url});
-  width: 100%;
+  background-image: url(${(props) => props.src});
+  width: ${(props) => props.width};
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 98.5981%;
+  padding-top: ${(props) => props.padTop};
 `;
 
 export const Content = styled.div`
@@ -69,16 +78,16 @@ export const Title = styled.h3`
   text-align: center;
   font-weight: 300;
   padding: 10rem 0;
+  text-align: center;
+
   @media screen and (min-width: 1300px) {
     text-align: left;
-    padding: 2rem 0;
   }
 `;
 
 export const Description = styled(motion.p)`
-  font-size: clamp(1.5rem, 0.9vw, 6rem);
+  font-size: clamp(1.3rem, 0.9vw, 6rem);
   font-weight: 100;
-  padding: 1rem 0;
   line-height: 1.8;
-  text-align: left;
+  text-align: justify;
 `;

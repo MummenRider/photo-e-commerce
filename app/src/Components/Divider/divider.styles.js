@@ -3,67 +3,37 @@ import styled from "styled-components";
 
 export const Frame = styled.section`
   width: 100%;
-  background-color: var(--bg-secondary);
-  padding: 5% 0;
-`;
-
-export const Inner = styled.div`
-  width: 80%;
-  margin: 0 auto;
+  background-color: #f2eded;
+  height: 120vh;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: white;
-  text-align: ${(prop) => prop.position};
-  align-items: ${(prop) => prop.position};
+  justify-content: space-between;
+  padding: 10% 0;
 `;
 
 export const Title = styled.h1`
-  font-family: var(--ff-secondary);
-  font-size: clamp(3.5rem, 2vw, 20rem);
-  font-style: italic;
+  font-size: clamp(3.5rem, ${(props) => props.size}, 20rem);
+  font-family: broadacre-thin-1, sans-serif;
+  font-weight: 100;
+  font-style: normal;
   font-weight: lighter;
+  line-height: 1.5;
   letter-spacing: 3px;
+  text-transform: uppercase;
 `;
 
 export const Subtitle = styled.h3`
   font-family: var(--ff-primary);
-  letter-spacing: 1.5px;
-  font-weight: 100;
+  font-size: clamp(1.2rem, 0.8vw, 15rem);
+  letter-spacing: 4px;
+  font-weight: 400;
   padding: 2rem 0;
 `;
 
-export const ImageFrame = styled.div`
-  width: ${(props) => props.width};
-  padding-top: 6rem;
-`;
-
-export const Button = styled(motion.button)`
-  cursor: pointer;
-  align-self: flex-end;
-  margin-top: 5rem;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  padding-bottom: 8px;
-  gap: 30px;
-`;
-
-export const ButtonText = styled.span`
-  color: white;
-  font-family: var(--ff-primary);
-  letter-spacing: 2px;
-  font-size: clamp(1.8rem, 1.2vw, 8rem);
-  font-weight: lighter;
-`;
-
-export const ButtonIcon = styled.svg`
-  margin-top: 3px;
-`;
-
-export const ButtonIconPath = styled.path`
-  fill: white;
+export const TextFrame = styled.div``;
+export const SVGFrame = styled(motion.div)`
+  path {
+    fill: black;
+  }
 `;

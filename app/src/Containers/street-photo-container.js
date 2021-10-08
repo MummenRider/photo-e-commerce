@@ -1,19 +1,19 @@
-import React from 'react';
-import StreetPhoto from 'Components/StreetPhoto/street-photo';
-import LoadImage from 'Components/ImageBlock/image-block';
-import { useMediaQuery } from 'react-responsive';
-import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import img1 from 'Assets/Images/stp_1.jpg';
-import { Box } from 'Components/StreetPhoto/street-photo.styles';
+import React from "react";
+import StreetPhoto from "Components/StreetPhoto/street-photo";
+import LoadImage from "Components/ImageBlock/image-block";
+import { useMediaQuery } from "react-responsive";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
+import img1 from "Assets/Images/stp_1.jpg";
+import { Box } from "Components/StreetPhoto/street-photo.styles";
 export function StreetPhotoContainer() {
-  const isBigDevice = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isBigDevice = useMediaQuery({ query: "(min-width: 1024px)" });
   const { scrollY } = useViewportScroll();
-  const y1 = useTransform(scrollY, [0, 400, 800], [0, 0, 200]);
-  const y2 = useTransform(scrollY, [0, 400, 800], [0, 0, -100]);
+  const y1 = useTransform(scrollY, [0, 2600, 3200], [0, 0, 200]);
+  const y2 = useTransform(scrollY, [0, 2600, 3200], [0, 0, -100]);
   return (
     <StreetPhoto isBigDevice={isBigDevice}>
       <Box style={{ y: y1, x: -50 }} />
-      <Box style={{ y: y2, backgroundColor: 'salmon' }} />
+      <Box style={{ y: y2, backgroundColor: "salmon" }} />
       {/* <StreetPhoto.ColumnOne>
         <StreetPhoto.ImageBlockOne
           src={img1}

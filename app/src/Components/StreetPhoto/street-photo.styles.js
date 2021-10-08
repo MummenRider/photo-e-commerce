@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { motion } from "framer-motion";
 export const Container = styled(motion.section)`
   width: 100%;
   height: 200vh;
   text-align: center;
-  padding-top: 1000px;
+  padding-top: 100px;
 `;
 export const ColumnOne = styled(motion.div)`
   border: 1px solid red;
@@ -31,7 +31,6 @@ export const Title = styled.h1`
   font-family: var(--ff-secondary);
   font-size: clamp(2.5rem, 2.5vw, 17rem);
   font-weight: 200;
-
   line-height: 1.5;
 `;
 

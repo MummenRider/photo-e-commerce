@@ -1,22 +1,13 @@
 import React from "react";
-import {
-  Frame,
-  Inner,
-  Title,
-  Subtitle,
-  ImageFrame,
-  Button,
-  ButtonText,
-  ButtonIcon,
-  ButtonIconPath,
-} from "./divider.styles";
-
+import { Frame, Title, Subtitle, TextFrame, SVGFrame } from "./divider.styles";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 export default function Divider({ show, position, children, ...restProps }) {
-  return show ? (
-    <Frame data-testid="divider" {...restProps}>
-      <Inner position={position}>{children}</Inner>
+  return (
+    <Frame data-testid="divider" position={position} {...restProps}>
+      {children}
     </Frame>
-  ) : null;
+  );
 }
 
 Divider.Title = function DividerTitle({ children, ...restProps }) {
@@ -27,39 +18,32 @@ Divider.Subtitle = function DividerSubtitle({ children, ...restProps }) {
   return <Subtitle {...restProps}>{children}</Subtitle>;
 };
 
-Divider.ImageFrame = function DividerImagFramet({ children, ...restProps }) {
-  return <ImageFrame {...restProps}>{children}</ImageFrame>;
-};
-
-Divider.Button = function DividerButton({
-  destination,
+Divider.TextContainer = function DividerTextContainer({
   children,
   ...restProps
 }) {
+  return <TextFrame {...restProps}>{children}</TextFrame>;
+};
+
+Divider.SVGFrame = function DividerSVGFrame({
+  options,
+  children,
+  ...restProps
+}) {
+  const [ref, inView] = useInView({ ...options });
   return (
-    <Button
-      onClick={destination}
-      {...restProps}
-      whileHover={{ gap: "100px" }}
-      initial={{ gap: "30px" }}
-      transition={{
-        type: "tween",
-        ease: [0.43, 0.13, 0.23, 0.96],
-        duration: 0.6,
+    <SVGFrame
+      animate={{
+        rotate: inView ? "180deg" : "0deg",
       }}
+      transition={{
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 1,
+      }}
+      ref={ref}
+      {...restProps}
     >
       {children}
-    </Button>
+    </SVGFrame>
   );
-};
-
-Divider.ButtonText = function DividerButtonText({ children, ...restProps }) {
-  return <ButtonText {...restProps}>{children}</ButtonText>;
-};
-
-Divider.ButtonIcon = function DividerButtonIcon({ children, ...restProps }) {
-  return <ButtonIcon {...restProps}>{children}</ButtonIcon>;
-};
-Divider.ButtonIconPath = function DividerButtonIconPath({ ...restProps }) {
-  return <ButtonIconPath {...restProps} />;
 };
