@@ -12,7 +12,7 @@ import { FooterContainer } from "Containers/footer-container";
 import ScrollContainer from "Components/SmoothScroll/ScrollContainer";
 import hour from "Assets/Images/hourglass.svg";
 import { Hourglass } from "Components/About/hourglass";
-
+import abstractFace from "Assets/Images/03.png";
 export default function Home({ isBigDevice }) {
   const today = new Date();
   const day = today.toLocaleString("en-us", { weekday: "short" }).toUpperCase();
@@ -27,7 +27,13 @@ export default function Home({ isBigDevice }) {
       <HeroContainer />
       <AboutContainer />
 
-      <Divider>
+      <Divider
+        height="120vh"
+        minHeight="1162.8px"
+        bkgColor="#f2eded"
+        color="black"
+        show={isBigDevice}
+      >
         <Divider.TextContainer>
           <Divider.Title size="3vw">
             “ Photos are a return {<br />}
@@ -65,16 +71,25 @@ export default function Home({ isBigDevice }) {
 
       <StreetPhotoContainer />
 
-      {/* <Divider position="center" show={true}>
-        <Divider.Subtitle>LOREM IPSUM DOTTOR ANET</Divider.Subtitle>
-        <Divider.Title>Captured Portraits</Divider.Title>
-        <Divider.ImageFrame width="15%">
-          <LoadImage src={flower} alt="flower" />
-        </Divider.ImageFrame>
-      </Divider>
+      <Divider
+        height={isBigDevice ? "90vh" : "50vh"}
+        minHeight={isBigDevice ? "924px" : "462px"}
+        bkgColor="#f2eded"
+        color="black"
+        show={true}
+      >
+        <Divider.TextContainer>
+          <Divider.Title size="3vw">Captured Portraits</Divider.Title>
+        </Divider.TextContainer>
 
-      <CapturedPortraitContainer />
-      <AbstractPhotoContainer />
+        <Divider.ImageFrame src={abstractFace} />
+        <Divider.TextContainer>
+          <Divider.Subtitle>LOREM IPSUM DOTTOR ANET</Divider.Subtitle>
+        </Divider.TextContainer>
+      </Divider>
+      {/* 
+      <CapturedPortraitContainer /> */}
+      {/* <AbstractPhotoContainer />
       <PhotoShootStepContainer />
       <FooterContainer day={day} time={time} /> */}
     </>

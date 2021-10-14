@@ -3,13 +3,24 @@ import styled from "styled-components";
 
 export const Frame = styled.section`
   width: 100%;
-  background-color: #f2eded;
-  height: 120vh;
+  background-color: ${(props) => props.bkgColor};
+  height: ${(props) => props.height};
+  min-height: ${(props) => props.minHeight};
+  color: ${(props) => props.color};
+  position: relative;
+`;
+export const Inner = styled(motion.div)`
+  width: 90%;
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10% 0;
+  align-items: center;
 `;
 
 export const Title = styled.h1`
@@ -35,5 +46,14 @@ export const TextFrame = styled.div``;
 export const SVGFrame = styled(motion.div)`
   path {
     fill: black;
+  }
+`;
+
+export const ImageFrame = styled(motion.img)`
+  height: 20vh;
+  width: auto;
+
+  @media screen and (min-width: 1030px) {
+    height: 30vh;
   }
 `;
