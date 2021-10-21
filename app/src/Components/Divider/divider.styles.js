@@ -39,21 +39,27 @@ export const Subtitle = styled.h3`
   font-size: clamp(1.2rem, 0.8vw, 15rem);
   letter-spacing: 4px;
   font-weight: 400;
-  padding: 2rem 0;
 `;
 
 export const TextFrame = styled.div``;
 export const SVGFrame = styled(motion.div)`
+  svg {
+    height: 6vh;
+    width: 6vw;
+  }
   path {
     fill: black;
   }
 `;
 
 export const ImageFrame = styled(motion.img)`
-  height: 20vh;
+  height: 18vh;
   width: auto;
+  @media screen and (min-width: 530px) {
+    height: 20vh;
+  }
 
   @media screen and (min-width: 1030px) {
-    height: 30vh;
+    height: 38vh;
   }
 `;

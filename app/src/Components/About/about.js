@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Image,
-  Content,
   Title,
   Description,
-  Inner,
-  Frames,
   Left,
   Right,
   ImageOne,
@@ -19,24 +16,7 @@ export default function About({ children, ...restProps }) {
 }
 
 About.Image = function AboutImage({ ...restProps }) {
-  const [ref, inView] = useInView({
-    rootMargin: "0px 0px -30% 0px",
-  });
-  return (
-    <Image
-      {...restProps}
-      ref={ref}
-      animate={{}}
-      transition={{
-        ease: [0.43, 0.13, 0.23, 0.96],
-        duration: 0.8,
-      }}
-    />
-  );
-};
-
-About.Content = function AboutContent({ children, ...restProps }) {
-  return <Content {...restProps}>{children}</Content>;
+  return <Image {...restProps} />;
 };
 
 About.Left = function AboutLeft({ children, ...restProps }) {
@@ -49,14 +29,17 @@ About.ImageOne = function AboutImageOne({ children, ...restProps }) {
 
 About.ImageTwo = function AboutImageTwo({ options, children, ...restProps }) {
   const [ref, inView] = useInView({ ...options });
+
   return (
     <ImageTwo
       animate={{ rotate: inView ? "8deg" : "-8deg" }}
+      initial={false}
       transition={{
         ease: [0.43, 0.13, 0.23, 0.96],
         duration: 1,
       }}
       ref={ref}
+      data-testid="img-rotate"
       {...restProps}
     >
       {children}
@@ -68,17 +51,12 @@ About.Right = function AboutRight({ children, ...restProps }) {
   return <Right {...restProps}>{children}</Right>;
 };
 
-About.Title = function AboutTitle({ isBigDevice, children, ...restProps }) {
-  return isBigDevice ? <Title {...restProps}>{children}</Title> : null;
-};
-
 About.Description = function AboutDescription({
   options,
   children,
   ...restProps
 }) {
   const [ref, inView] = useInView({ ...options });
-
   return (
     <Description
       ref={ref}

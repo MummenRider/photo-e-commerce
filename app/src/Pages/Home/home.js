@@ -1,18 +1,13 @@
 import Divider from "Components/Divider/divider";
-import { ButtonIconPath } from "Components/Divider/divider.styles";
-import LoadImage from "Components/ImageBlock/image-block";
 import { AboutContainer } from "Containers/about-container";
 import { HeroContainer } from "Containers/hero-container";
 import { StreetPhotoContainer } from "Containers/street-photo-container";
-import flower from "Assets/Images/flower.png";
 import { CapturedPortraitContainer } from "Containers/captured-portrait-container";
 import { AbstractPhotoContainer } from "Containers/abstract-photo-container";
 import { PhotoShootStepContainer } from "Containers/photoshoot-step-container";
 import { FooterContainer } from "Containers/footer-container";
-import ScrollContainer from "Components/SmoothScroll/ScrollContainer";
-import hour from "Assets/Images/hourglass.svg";
-import { Hourglass } from "Components/About/hourglass";
 import abstractFace from "Assets/Images/03.png";
+
 export default function Home({ isBigDevice }) {
   const today = new Date();
   const day = today.toLocaleString("en-us", { weekday: "short" }).toUpperCase();
@@ -44,15 +39,9 @@ export default function Home({ isBigDevice }) {
         </Divider.TextContainer>
 
         <Divider.SVGFrame options={{ threshold: 0.5 }}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="6vw"
-            height="6vh"
-            viewBox="0 0 36 83.329"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 83.329">
             <g transform="translate(-893.062 -3019.773)">
               <path
-                class="a"
                 d="M12.636,0c8.645,0,15.653,8.059,15.653,18S21.281,36,12.636,36-13.875,18-13.875,18,3.992,0,12.636,0Z"
                 transform="translate(893.062 3048.062) rotate(-90)"
               />
@@ -87,11 +76,11 @@ export default function Home({ isBigDevice }) {
           <Divider.Subtitle>LOREM IPSUM DOTTOR ANET</Divider.Subtitle>
         </Divider.TextContainer>
       </Divider>
-      {/* 
-      <CapturedPortraitContainer /> */}
-      {/* <AbstractPhotoContainer />
+
+      <CapturedPortraitContainer />
+      <AbstractPhotoContainer />
       <PhotoShootStepContainer />
-      <FooterContainer day={day} time={time} /> */}
+      <FooterContainer day={day} time={time} />
     </>
   );
 }

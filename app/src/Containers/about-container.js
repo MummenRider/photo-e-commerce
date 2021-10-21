@@ -1,19 +1,14 @@
 import nicoImgOne from "Assets/Images/nico_bkg.jpg";
 import nicoImgTwo from "Assets/Images/nico_img_2.jpg";
 import About from "Components/About/about";
-import { useMediaQuery } from "react-responsive";
 
 export function AboutContainer() {
-  const isBigDevice = useMediaQuery({ query: "(min-width: 1300px)" });
-
   return (
     <About>
       <About.Left>
         <About.ImageOne>
           <About.Image src={nicoImgOne} padTop="98.38%" width="100%" />
-          <About.ImageTwo
-            options={{ threshold: 0.5, rootMargin: "20% 0px 0px 0px" }}
-          >
+          <About.ImageTwo options={{ threshold: 0.5 }}>
             <About.Image src={nicoImgTwo} padTop="97.78%" width="100%" />
           </About.ImageTwo>
         </About.ImageOne>

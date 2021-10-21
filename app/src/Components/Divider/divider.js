@@ -8,7 +8,6 @@ import {
   ImageFrame,
   Inner,
 } from "./divider.styles";
-import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 export default function Divider({ show, position, children, ...restProps }) {
   return show ? (
