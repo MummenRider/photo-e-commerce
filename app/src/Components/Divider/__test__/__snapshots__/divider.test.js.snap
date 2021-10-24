@@ -2,62 +2,27 @@
 
 exports[`<Divider /> should not render <Divider /> when show is set to false 1`] = `null`;
 
-exports[`<Divider /> should render <Divider /> with button 1`] = `
-<section
-  class="sc-bdnxRM cFuttp"
-  data-testid="divider"
->
-  <div
-    class="sc-gtsrHT kYNZKW"
-  >
-    <h1
-      class="sc-dlnjwi VWPZF"
-    >
-      Some title here
-    </h1>
-    <button
-      class="sc-jSFjdj gvvKvs"
-      style="gap: 30px;"
-    >
-      <span
-        class="sc-gKAaRy sjknM"
-      >
-        Click me
-      </span>
-      <svg
-        class="sc-iCoGMd jeAZbZ"
-      >
-        <path
-          class="sc-fujyAs bLaEBj"
-        />
-      </svg>
-    </button>
-  </div>
-</section>
-`;
-
 exports[`<Divider /> should render <Divider /> with data included 1`] = `
 <section
-  class="sc-bdnxRM cFuttp"
+  class="sc-bdnxRM irYzVS"
   data-testid="divider"
 >
   <div
-    class="sc-gtsrHT kYNZKW"
+    class="sc-gtsrHT jCVIbv"
   >
-    <h1
-      class="sc-dlnjwi VWPZF"
-    >
-      Some title here
-    </h1>
-    <h3
-      class="sc-hKFxyN bkFsMT"
-    >
-      This is subtitle included in divider component
-    </h3>
     <div
-      class="sc-eCApnc cFUyki"
+      class="sc-eCApnc"
     >
-      Image to be pass here or svg
+      <h1
+        class="sc-dlnjwi vLjLf"
+      >
+        Some title here
+      </h1>
+      <h3
+        class="sc-hKFxyN bHmfrS"
+      >
+        This is subtitle included in divider component
+      </h3>
     </div>
   </div>
 </section>
@@ -65,14 +30,14 @@ exports[`<Divider /> should render <Divider /> with data included 1`] = `
 
 exports[`<Divider /> should render <Divider /> with just title 1`] = `
 <section
-  class="sc-bdnxRM cFuttp"
+  class="sc-bdnxRM irYzVS"
   data-testid="divider"
 >
   <div
-    class="sc-gtsrHT kYNZKW"
+    class="sc-gtsrHT jCVIbv"
   >
     <h1
-      class="sc-dlnjwi VWPZF"
+      class="sc-dlnjwi vLjLf"
     >
       Some title here
     </h1>

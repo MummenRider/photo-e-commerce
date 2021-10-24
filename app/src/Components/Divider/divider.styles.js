@@ -3,67 +3,63 @@ import styled from "styled-components";
 
 export const Frame = styled.section`
   width: 100%;
-  background-color: var(--bg-secondary);
-  padding: 5% 0;
+  background-color: ${(props) => props.bkgColor};
+  height: ${(props) => props.height};
+  min-height: ${(props) => props.minHeight};
+  color: ${(props) => props.color};
+  position: relative;
 `;
-
-export const Inner = styled.div`
-  width: 80%;
-  margin: 0 auto;
+export const Inner = styled(motion.div)`
+  width: 90%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: white;
-  text-align: ${(prop) => prop.position};
-  align-items: ${(prop) => prop.position};
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Title = styled.h1`
-  font-family: var(--ff-secondary);
-  font-size: clamp(3.5rem, 2vw, 20rem);
-  font-style: italic;
+  font-size: clamp(3.5rem, ${(props) => props.size}, 20rem);
+  font-family: broadacre-thin-1, sans-serif;
+  font-weight: 100;
+  font-style: normal;
   font-weight: lighter;
+  line-height: 1.5;
   letter-spacing: 3px;
+  text-transform: uppercase;
 `;
 
 export const Subtitle = styled.h3`
   font-family: var(--ff-primary);
-  letter-spacing: 1.5px;
-  font-weight: 100;
-  padding: 2rem 0;
+  font-size: clamp(1.2rem, 0.8vw, 15rem);
+  letter-spacing: 4px;
+  font-weight: 400;
 `;
 
-export const ImageFrame = styled.div`
-  width: ${(props) => props.width};
-  padding-top: 6rem;
+export const TextFrame = styled.div``;
+export const SVGFrame = styled(motion.div)`
+  svg {
+    height: 6vh;
+    width: 6vw;
+  }
+  path {
+    fill: black;
+  }
 `;
 
-export const Button = styled(motion.button)`
-  cursor: pointer;
-  align-self: flex-end;
-  margin-top: 5rem;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  padding-bottom: 8px;
-  gap: 30px;
-`;
+export const ImageFrame = styled(motion.img)`
+  height: 18vh;
+  width: auto;
+  @media screen and (min-width: 530px) {
+    height: 20vh;
+  }
 
-export const ButtonText = styled.span`
-  color: white;
-  font-family: var(--ff-primary);
-  letter-spacing: 2px;
-  font-size: clamp(1.8rem, 1.2vw, 8rem);
-  font-weight: lighter;
-`;
-
-export const ButtonIcon = styled.svg`
-  margin-top: 3px;
-`;
-
-export const ButtonIconPath = styled.path`
-  fill: white;
+  @media screen and (min-width: 1030px) {
+    height: 38vh;
+  }
 `;

@@ -16,11 +16,11 @@ describe("<Home />", () => {
       </Router>
     );
 
-    expect(getByText("I do not capture images,")).toBeTruthy();
-    expect(getByText("I capture memories")).toBeTruthy();
-    expect(getByText("My Creations")).toBeTruthy();
+    expect(getByText("- KATHIE THURMES")).toBeTruthy();
+    expect(
+      getByText(/Photos are a return ticket to a moment otherwise gone/)
+    ).toBeTruthy();
     expect(getByText("LOREM IPSUM DOTTOR ANET")).toBeTruthy();
     expect(getByText("Captured Portraits")).toBeTruthy();
-    expect(getByAltText("flower")).toBeTruthy();
   });
 });

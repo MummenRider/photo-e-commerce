@@ -1,7 +1,6 @@
-import { useWindowSize } from "Hooks/useWindowSize";
 import { renderHook, act } from "@testing-library/react-hooks";
 import { cleanup } from "@testing-library/react";
-
+import { useWindowSize } from "Hooks/useWindowSize";
 afterEach(cleanup);
 
 window.resizeTo = function resizeTo(width, height) {

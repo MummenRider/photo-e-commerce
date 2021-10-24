@@ -2,31 +2,30 @@
 
 exports[`<About /> should render <About /> 1`] = `
 <section
-  class="sc-bdnxRM dazqpe"
+  class="sc-bdnxRM qUFjo"
 >
-  <div
-    class="sc-hKFxyN jelMKq"
+  <p
+    class="sc-jrsJWt cegScC"
   >
-    <h3
-      class="sc-iCoGMd lebLBC"
-    >
-      Title here
-    </h3>
-    <p
-      class="sc-fujyAs iFKMfc"
-    >
-      Some description
-    </p>
-  </div>
-</section>
-`;
-
-exports[`<About /> should render <About /> with title hidden to user 1`] = `
-<section
-  class="sc-bdnxRM dazqpe"
->
+    Some description
+  </p>
   <div
-    class="sc-hKFxyN jelMKq"
-  />
+    class="sc-jSFjdj kiORHR"
+  >
+    <div
+      class="sc-iCoGMd cGIZQj"
+      src="nico_bkg.jpg"
+    />
+  </div>
+  <div
+    class="sc-gKAaRy eUytbn"
+    data-testid="img-rotate"
+    style="transform: rotate(-8deg) translateZ(0);"
+  >
+    <div
+      class="sc-iCoGMd fargQz"
+      src="nico_img_2.jpg"
+    />
+  </div>
 </section>
 `;

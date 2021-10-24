@@ -4,47 +4,71 @@ exports[`<StreetPhoto /> should not render <StreetPhoto /> in smaller devices 1`
 
 exports[`<StreetPhoto /> should render <StreetPhoto /> with populated data 1`] = `
 <section
-  class="sc-bdnxRM khCAqU"
+  class="sc-bdnxRM bsFTzP"
   data-testid="str-photo-component"
 >
   <div
-    class="sc-gtsrHT cNKTQo"
+    class="sc-gtsrHT ddkkmo"
   >
-    <span
-      class="sc-hKFxyN kFhYQn"
+    <div
+      class="sc-dlnjwi btuzzQ"
     >
-      COMMUNITY, LOVE, RESPECT
-    </span>
-    <h1
-      class="sc-dlnjwi fMROt"
+      <span
+        class="sc-eCApnc dSsPLM"
+      >
+        COMMUNITY, LOVE, RESPECT
+      </span>
+      <h1
+        class="sc-hKFxyN kUsgN"
+      >
+        Lorem Ipsum Dolor Amet, Consetetur
+      </h1>
+      <span
+        class="sc-eCApnc dSsPLM"
+      >
+        Food Charity - Sikh
+      </span>
+    </div>
+    <div
+      class="sc-jSFjdj jLyRav"
+      data-testid="img-1"
+      style="transform: translateY(-200px) translateZ(0);"
     >
-      Lorem Ipsum Dolor Amet, Consetetur
-    </h1>
-    <span
-      class="sc-hKFxyN kFhYQn"
+      <div
+        class="sc-pNWdM eJEWdO"
+        src="stp_1.jpg"
+      />
+    </div>
+    <div
+      class="sc-gKAaRy itvfrD"
+      data-testid="img-2"
+      style="transform: translateY(200px) translateZ(0);"
     >
-      Food Charity - Sikh
-    </span>
-  </div>
-  <div
-    class="sc-eCApnc cdA-Das"
-  >
-    Image content one
-  </div>
-  <div
-    class="sc-jSFjdj kqvPWF"
-  >
-    Image content two
-  </div>
-  <div
-    class="sc-gKAaRy gKUFHy"
-  >
-    Image content three
-  </div>
-  <div
-    class="sc-iCoGMd blfSAQ"
-  >
-    Image content four
+      <div
+        class="sc-pNWdM eKRVuN"
+        src="stp_2.jpg"
+      />
+    </div>
+    <div
+      class="sc-iCoGMd kqTfZr"
+      data-testid="img-3"
+      style="transform: translateY(100px) translateZ(0);"
+    >
+      <div
+        class="sc-pNWdM hXrTco"
+        src="stp_3.jpg"
+      />
+    </div>
+    <div
+      class="sc-fujyAs iEWNjx"
+      data-testid="img-4"
+      style="transform: translateY(-100px) translateZ(0);"
+    >
+      <div
+        class="sc-pNWdM fjYhQP"
+        src="stp_4.jpg"
+      />
+    </div>
   </div>
 </section>
 `;
