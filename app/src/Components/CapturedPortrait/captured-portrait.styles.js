@@ -20,15 +20,24 @@ export const Left = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   @media screen and (min-width: 1024px) {
     width: 50%;
   }
 `;
-export const SubTitle = styled.span`
+
+export const TextContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 76%;
+`;
+export const SubTitle = styled(motion.span)`
   font-family: var(--ff-primary);
-  font-size: clamp(1.2rem, 1.2vw, 8rem);
+  font-size: clamp(1rem, 0.7vw, 8rem);
   font-weight: 100;
-  padding: 4em 0;
+  padding: 5em 0;
 `;
 export const MainTitle = styled.h1`
   font-family: var(--ff-secondary);

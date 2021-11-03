@@ -5,6 +5,7 @@ import {
   MainTitle,
   SubTitle,
   Right,
+  TextContainer,
 } from "Components/CapturedPortrait/captured-portrait.styles";
 import { useInView } from "react-intersection-observer";
 export default function CapturedPortrait({ children, ...restProps }) {
@@ -22,6 +23,23 @@ CapturedPortrait.Left = function CapturedPortraitLeft({
 }) {
   return <Left {...restProps}>{children}</Left>;
 };
+CapturedPortrait.TextContainer = function CapturedPortraitTextContainer({
+  options,
+  children,
+  ...restProps
+}) {
+  const [ref, inView] = useInView({ ...options });
+  return (
+    <TextContainer
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
+      {...restProps}
+      ref={ref}
+    >
+      {children}
+    </TextContainer>
+  );
+};
 CapturedPortrait.SubTitle = function CapturedPortraitSubTitle({
   children,
   ...restProps
@@ -35,10 +53,11 @@ CapturedPortrait.MainTitle = function CapturedPortraitMainTitle({
   return <MainTitle {...restProps}>{children}</MainTitle>;
 };
 CapturedPortrait.Right = function CapturedPortraitRight({
+  options,
   children,
   ...restProps
 }) {
-  const [ref, inView] = useInView({ rootMargin: "120% 0px 0px 0px" });
+  const [ref, inView] = useInView({ ...options });
   return (
     <Right
       {...restProps}
@@ -48,7 +67,7 @@ CapturedPortrait.Right = function CapturedPortraitRight({
         duration: 0.8,
       }}
       animate={{
-        scale: inView ? 1 : 1.1,
+        scale: inView ? 1 : 1.2,
       }}
       ref={ref}
     >

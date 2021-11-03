@@ -11,17 +11,23 @@ export function CapturedPortraitContainer() {
             bkg={imageData.bkg}
             fontColor={imageData.fontColor}
           >
-            <CapturedPortrait.SubTitle>
-              {imageData.topSubTitle}
-            </CapturedPortrait.SubTitle>
-            <CapturedPortrait.MainTitle>
-              {imageData.mainTitle}
-            </CapturedPortrait.MainTitle>
-            <CapturedPortrait.SubTitle>
-              {imageData.bottomSubTitle}
-            </CapturedPortrait.SubTitle>
+            <CapturedPortrait.TextContainer
+              options={{ rootMargin: "120% 0px 0px 0px", threshold: 0.05 }}
+            >
+              <CapturedPortrait.SubTitle>
+                {imageData.topSubTitle}
+              </CapturedPortrait.SubTitle>
+              <CapturedPortrait.MainTitle>
+                {imageData.mainTitle}
+              </CapturedPortrait.MainTitle>
+              <CapturedPortrait.SubTitle>
+                {imageData.bottomSubTitle}
+              </CapturedPortrait.SubTitle>
+            </CapturedPortrait.TextContainer>
           </CapturedPortrait.Left>
-          <CapturedPortrait.Right>
+          <CapturedPortrait.Right
+            options={{ rootMargin: "130% 0px 0px 0px", threshold: 0.05 }}
+          >
             <LoadImage
               src={imageData.src}
               fallback={imageData.fallback}
