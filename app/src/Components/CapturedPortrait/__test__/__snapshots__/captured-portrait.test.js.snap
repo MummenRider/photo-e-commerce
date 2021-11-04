@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CapturedPortrait /> should render <CapturedPortrait /> with populated data 1`] = `
+<section
+  class="sc-bdnxRM CRaxc"
+>
+  <div
+    class="sc-gtsrHT gxepyZ"
+  >
+    <div
+      class="sc-dlnjwi crTKpW"
+    >
+      <div
+        class="sc-hKFxyN dZOQqU"
+        style="opacity: 0; transform: none;"
+      >
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          LOREM, IPSUM, NONUMY
+        </span>
+        <h1
+          class="sc-jSFjdj ipxJJc"
+        >
+          Lorem Ipsum Dolor Amet Conseteur
+        </h1>
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          Stet Clita - AMOR
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-gKAaRy bGUpMe"
+      style="transform-origin: top center; transform: none;"
+    >
+      <picture
+        class="sc-iCoGMd"
+      >
+        <source
+          class="sc-fujyAs"
+          type="image/webp"
+        />
+        <source
+          class="sc-fujyAs"
+        />
+        <img
+          alt="Chan image"
+          class="sc-pNWdM heEJZC"
+        />
+      </picture>
+    </div>
+  </div>
+  <div
+    class="sc-gtsrHT gxepyZ"
+  >
+    <div
+      class="sc-dlnjwi crTKpW"
+    >
+      <div
+        class="sc-hKFxyN dZOQqU"
+        style="opacity: 0; transform: none;"
+      >
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          LOREM, IPSUM, NONUMY
+        </span>
+        <h1
+          class="sc-jSFjdj ipxJJc"
+        >
+          Lorem Ipsum Dolor Amet Conseteur
+        </h1>
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          Stet Clita - AMOR
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-gKAaRy bGUpMe"
+      style="transform-origin: top center; transform: none;"
+    >
+      <picture
+        class="sc-iCoGMd"
+      >
+        <source
+          class="sc-fujyAs"
+          type="image/webp"
+        />
+        <source
+          class="sc-fujyAs"
+        />
+        <img
+          alt="Ariana image"
+          class="sc-pNWdM heEJZC"
+        />
+      </picture>
+    </div>
+  </div>
+  <div
+    class="sc-gtsrHT gxepyZ"
+  >
+    <div
+      class="sc-dlnjwi crTKpW"
+    >
+      <div
+        class="sc-hKFxyN dZOQqU"
+        style="opacity: 0; transform: none;"
+      >
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          LOREM, IPSUM, NONUMY
+        </span>
+        <h1
+          class="sc-jSFjdj ipxJJc"
+        >
+          Lorem Ipsum Dolor Amet Conseteur
+        </h1>
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          Stet Clita - AMOR
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-gKAaRy bGUpMe"
+      style="transform-origin: top center; transform: none;"
+    >
+      <picture
+        class="sc-iCoGMd"
+      >
+        <source
+          class="sc-fujyAs"
+          type="image/webp"
+        />
+        <source
+          class="sc-fujyAs"
+        />
+        <img
+          alt="Liz image"
+          class="sc-pNWdM heEJZC"
+        />
+      </picture>
+    </div>
+  </div>
+  <div
+    class="sc-gtsrHT gxepyZ"
+  >
+    <div
+      class="sc-dlnjwi crTKpW"
+    >
+      <div
+        class="sc-hKFxyN dZOQqU"
+        style="opacity: 0; transform: none;"
+      >
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          LOREM, IPSUM, NONUMY
+        </span>
+        <h1
+          class="sc-jSFjdj ipxJJc"
+        >
+          Lorem Ipsum Dolor Amet Conseteur
+        </h1>
+        <span
+          class="sc-eCApnc gBNxHu"
+        >
+          Stet Clita - AMOR
+        </span>
+      </div>
+    </div>
+    <div
+      class="sc-gKAaRy bGUpMe"
+      style="transform-origin: top center; transform: none;"
+    >
+      <picture
+        class="sc-iCoGMd"
+      >
+        <source
+          class="sc-fujyAs"
+          type="image/webp"
+        />
+        <source
+          class="sc-fujyAs"
+        />
+        <img
+          alt="Bailey image"
+          class="sc-pNWdM heEJZC"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+`;
