@@ -59,7 +59,7 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
 }
 
 .c9 {
-  background-image: url(photoshoot_img.jpeg);
+  background-image: url(photoshoot_img.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -277,7 +277,7 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
     >
       <div
         class="c9"
-        src="photoshoot_img.jpeg"
+        src="photoshoot_img.jpg"
       />
     </div>
     <div

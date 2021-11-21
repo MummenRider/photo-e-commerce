@@ -1,12 +1,12 @@
-import { render } from "@testing-library/react";
-import AbstractPhoto from "Components/AbstractPhoto/abstract-photo";
-import p1 from "Assets/Images/abstract_img_1.jpg";
-import p2 from "Assets/Images/abstract_img_2.jpg";
-import p3 from "Assets/Images/abstract_img_3.jpg";
-import p4 from "Assets/Images/abstract_img_4.jpg";
-
-describe("<AbstractPhoto />", () => {
-  it("should render <AbstractPhoto /> with populated data with image all visible", () => {
+import { render } from '@testing-library/react';
+import AbstractPhoto from 'Components/AbstractPhoto/abstract-photo';
+import p1 from 'Assets/Images/abstract_img_1.jpg';
+import p2 from 'Assets/Images/abstract_img_2.jpg';
+import p3 from 'Assets/Images/abstract_img_3.jpg';
+import p4 from 'Assets/Images/abstract_img_4.jpg';
+import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';
+describe('<AbstractPhoto />', () => {
+  it('should render <AbstractPhoto /> with populated data with image all visible', () => {
     const { container, getByText, queryAllByTestId } = render(
       <AbstractPhoto>
         <AbstractPhoto.LeftBlock>
@@ -34,23 +34,23 @@ describe("<AbstractPhoto />", () => {
         </AbstractPhoto.CenterBlock>
 
         <AbstractPhoto.RightBlock>
-          <AbstractPhoto.ImageItem src={p4} position={"initial"} show={true} />
+          <AbstractPhoto.ImageItem src={p4} position={'initial'} show={true} />
         </AbstractPhoto.RightBlock>
       </AbstractPhoto>
     );
-
-    expect(getByText("This is a title")).toBeTruthy();
+    mockAllIsIntersecting(true);
+    expect(getByText('This is a title')).toBeTruthy();
     expect(getByText(/Lorem/i)).toBeTruthy();
-    expect(queryAllByTestId("abstract-img")).toBeTruthy();
+    expect(queryAllByTestId('abstract-img')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 
-  it("should not render image when show is set to false", () => {
+  it('should not render image when show is set to false', () => {
     const { container, queryByTestId } = render(
       <AbstractPhoto.ImageItem show={false} />
     );
-
-    expect(queryByTestId("abstract-img")).toBeFalsy();
+    mockAllIsIntersecting(true);
+    expect(queryByTestId('abstract-img')).toBeFalsy();
     expect(container).toMatchSnapshot();
   });
 });
