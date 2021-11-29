@@ -1,14 +1,14 @@
-import PhotoShootStep from "../photoshoot-step";
-import { render, cleanup } from "@testing-library/react";
-import React from "react";
-import photoshootImg from "Assets/Images/photoshoot_img.jpeg";
-import { steps } from "Components/PhotoShootStep/photoshoot-step-data";
-import renderer from "react-test-renderer";
-import "jest-styled-components";
+import PhotoShootStep from '../photoshoot-step';
+import { render, cleanup } from '@testing-library/react';
+import React from 'react';
+import photoshootImg from 'Assets/Images/photoshoot_img.jpg';
+import { steps } from 'Components/PhotoShootStep/photoshoot-step-data';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
 afterEach(cleanup);
-describe("<PhotoShootStep />", () => {
-  it("should render <PhotoShootStep /> with data populated", () => {
+describe('<PhotoShootStep />', () => {
+  it('should render <PhotoShootStep /> with data populated', () => {
     const { container, getByText } = render(
       <PhotoShootStep>
         <PhotoShootStep.Left>
@@ -38,14 +38,14 @@ describe("<PhotoShootStep />", () => {
       </PhotoShootStep>
     );
 
-    expect(getByText("This block is a title")).toBeTruthy();
-    expect(getByText("Subtitle here")).toBeTruthy();
-    expect(getByText("RESERVE YOUR DATE")).toBeTruthy();
-    expect(getByText("Svg content here")).toBeTruthy();
+    expect(getByText('This block is a title')).toBeTruthy();
+    expect(getByText('Subtitle here')).toBeTruthy();
+    expect(getByText('RESERVE YOUR DATE')).toBeTruthy();
+    expect(getByText('Svg content here')).toBeTruthy();
     expect(container).toMatchSnapshot();
   });
 
-  it("should render <PhotoShootStep /> with data populated", () => {
+  it('should render <PhotoShootStep /> with data populated', () => {
     const { container, queryByText } = render(
       <PhotoShootStep>
         <PhotoShootStep.Right isMobile={false}>
@@ -54,23 +54,23 @@ describe("<PhotoShootStep />", () => {
       </PhotoShootStep>
     );
 
-    expect(queryByText("I am hidden")).toBeFalsy();
+    expect(queryByText('I am hidden')).toBeFalsy();
     expect(container).toMatchSnapshot();
   });
 
-  it("should not render the pseudo element (upside down triangle) in smaller device", () => {
+  it('should not render the pseudo element (upside down triangle) in smaller device', () => {
     const tree = renderer.create(<PhotoShootStep isMobile={false} />).toJSON();
 
-    expect(tree).toHaveStyleRule("display", "none", {
-      modifier: "::before",
+    expect(tree).toHaveStyleRule('display', 'none', {
+      modifier: '::before',
     });
   });
 
-  it("should render the pseudo element (upside down triangle) in bigger device", () => {
+  it('should render the pseudo element (upside down triangle) in bigger device', () => {
     const tree = renderer.create(<PhotoShootStep isMobile={true} />).toJSON();
 
-    expect(tree).toHaveStyleRule("display", "block", {
-      modifier: "::before",
+    expect(tree).toHaveStyleRule('display', 'block', {
+      modifier: '::before',
     });
   });
 });

@@ -1,29 +1,38 @@
-import AbstractPhoto from "Components/AbstractPhoto/abstract-photo";
-import p1 from "Assets/Images/abstract_img_1.jpg";
-import p2 from "Assets/Images/abstract_img_2.jpg";
-import p3 from "Assets/Images/abstract_img_3.jpg";
-import p4 from "Assets/Images/abstract_img_4.jpg";
-import { useMediaQuery } from "react-responsive";
+import AbstractPhoto from 'Components/AbstractPhoto/abstract-photo';
+import p1 from 'Assets/Images/abstract_img_1.jpg';
+import p2 from 'Assets/Images/abstract_img_2.jpg';
+import p3 from 'Assets/Images/abstract_img_3.jpg';
+import p4 from 'Assets/Images/abstract_img_4.jpg';
+import { useMediaQuery } from 'react-responsive';
 
 export function AbstractPhotoContainer() {
-  const isBigDevice = useMediaQuery({ query: "(min-width: 768px)" });
+  const isBigDevice = useMediaQuery({ query: '(min-width: 768px)' });
+
   return (
     <AbstractPhoto>
       <AbstractPhoto.LeftBlock>
         <AbstractPhoto.ImageBlockTwo>
-          <AbstractPhoto.ImageItem
-            src={p2}
-            padTop={`${isBigDevice ? 145 : (749 / 599) * 100}%`}
-            show={true}
-          />
-          <AbstractPhoto.ImageBlockOne>
+          <AbstractPhoto.ImageBlockTwoInner
+            options={{ rootMargin: '300% 0px 5% 0px', threshold: 0.1 }}
+          >
+            <AbstractPhoto.ImageItem
+              src={p2}
+              padTop={`${isBigDevice ? 145 : (749 / 599) * 100}%`}
+              show={true}
+            />
+          </AbstractPhoto.ImageBlockTwoInner>
+          <AbstractPhoto.ImageBlockOne
+            options={{ rootMargin: '300% 0px -5% 0px', threshold: 1 }}
+          >
             <AbstractPhoto.ImageItem
               src={p1}
               padTop={` ${(486 / 322) * 100}%`}
               show={isBigDevice}
             />
           </AbstractPhoto.ImageBlockOne>
-          <AbstractPhoto.ImageBlockThree>
+          <AbstractPhoto.ImageBlockThree
+            options={{ rootMargin: '300% 0px 200px 0px', threshold: 0 }}
+          >
             <AbstractPhoto.ImageItem
               src={p3}
               padTop={`${(374 / 299) * 100}%`}
@@ -45,11 +54,13 @@ export function AbstractPhotoContainer() {
         </AbstractPhoto.Description>
       </AbstractPhoto.CenterBlock>
 
-      <AbstractPhoto.RightBlock>
+      <AbstractPhoto.RightBlock
+        options={{ rootMargin: '300% 0px -5% 0px', threshold: 0.1 }}
+      >
         <AbstractPhoto.ImageItem
           src={p4}
           padTop={`${isBigDevice ? 120 : 100}%`}
-          position={"initial"}
+          position={'initial'}
           show={true}
         />
       </AbstractPhoto.RightBlock>
