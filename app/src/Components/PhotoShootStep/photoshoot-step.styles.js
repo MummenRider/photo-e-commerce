@@ -1,5 +1,5 @@
-import styled from "styled-components";
-
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
@@ -8,8 +8,8 @@ export const Container = styled.section`
   position: relative;
   flex-wrap: wrap;
   &::before {
-    content: "";
-    display: ${(props) => (props.isMobile ? "block" : "none")};
+    content: '';
+    display: ${(props) => (props.isMobile ? 'block' : 'none')};
     position: absolute;
     top: -1%;
     left: 50%;
@@ -38,7 +38,7 @@ export const Left = styled.div`
   justify-content: center;
 `;
 
-export const Right = styled.div``;
+export const Right = styled(motion.div)``;
 export const Image = styled.div`
   background-image: url(${(props) => props.src});
   background-size: cover;
@@ -93,34 +93,35 @@ export const Item = styled.p`
   font-weight: 200;
   margin: 2em 0;
   position: relative;
-  left: 10%;
-  padding-left: 2em;
+  padding-left: 15%;
+
   &::before {
     counter-increment: counterName;
-    content: "0" counter(counterName) ". ";
+    content: '0' counter(counterName) '. ';
     font-size: clamp(1rem, 0.8vw, 4.5rem);
     position: absolute;
-    left: -10%;
+    left: 0;
   }
 `;
 
 export const Wrapper = styled.div``;
 
-export const ContactBtn = styled.button`
+export const ContactBtn = styled(motion.div)`
   cursor: pointer;
-  background-color: #9a6130;
-  border: none;
+  background-color: none;
+  text-align: center;
   font-family: var(--ff-primary);
   font-size: clamp(1rem, 1vw, 6rem);
-  font-weight: 400;
+  font-weight: 500;
+  border: 3px solid #9a6130;
+  border-radius: 4px;
   padding: 1.4em 1em;
   width: 40%;
   min-width: 100px;
   position: relative;
   margin-top: 5%;
-  margin-left: 4.5em;
-  box-shadow: rgba(17, 17, 26, 0.33) 0px 4px 16px,
-    rgba(17, 17, 26, 0) 0px 8px 32px;
+  margin-left: 15%;
+  color: #9a6130;
 
   &::before {
     position: absolute;
@@ -131,13 +132,17 @@ export const ContactBtn = styled.button`
     line-height: 1.5;
     letter-spacing: 0.5px;
     font-weight: 200;
-
+    color: black;
     width: 80%;
     min-width: 100px;
-    content: "Lorem ipsum dolor sit amet,
-consetetu";
+    content: 'Lorem ipsum dolor sit amet,
+consetetu';
   }
 `;
+
+export const BlobsContainer = styled(motion.div)``;
+
+export const Blob = styled(motion.div)``;
 
 export const SvgInner = styled.div`
   position: absolute;

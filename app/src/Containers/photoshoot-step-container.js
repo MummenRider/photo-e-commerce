@@ -24,7 +24,14 @@ export function PhotoShootStepContainer() {
               </PhotoShootStep.Item>
             ))}
           </PhotoShootStep.List>
-          <PhotoShootStep.ContactBtn>Contact me</PhotoShootStep.ContactBtn>
+          <PhotoShootStep.ContactBtn>
+            CONTACT ME
+            <PhotoShootStep.BlobsContainer>
+              <PhotoShootStep.Blob />
+              <PhotoShootStep.Blob />
+              <PhotoShootStep.Blob />
+            </PhotoShootStep.BlobsContainer>
+          </PhotoShootStep.ContactBtn>
         </PhotoShootStep.Inner>
       </PhotoShootStep.Left>
 
