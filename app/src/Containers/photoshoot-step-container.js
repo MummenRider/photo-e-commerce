@@ -2,6 +2,7 @@ import PhotoShootStep from 'Components/PhotoShootStep/photoshoot-step';
 import { useMediaQuery } from 'react-responsive';
 import { steps } from 'Components/PhotoShootStep/photoshoot-step-data';
 import photoshootImg from 'Assets/Images/photoshoot_img.jpg';
+import Goo from 'gooey-react';
 
 export function PhotoShootStepContainer() {
   const isMobile = useMediaQuery({ query: '(min-width: 768px)' });
@@ -24,13 +25,18 @@ export function PhotoShootStepContainer() {
               </PhotoShootStep.Item>
             ))}
           </PhotoShootStep.List>
-          <PhotoShootStep.ContactBtn>
+
+          <PhotoShootStep.ContactBtn className='btnGooey'>
             CONTACT ME
-            <PhotoShootStep.BlobsContainer>
+            <Goo
+              className='gooeyE c-button__blobs'
+              intensity='medium'
+              composite
+            >
               <PhotoShootStep.Blob />
               <PhotoShootStep.Blob />
               <PhotoShootStep.Blob />
-            </PhotoShootStep.BlobsContainer>
+            </Goo>
           </PhotoShootStep.ContactBtn>
         </PhotoShootStep.Inner>
       </PhotoShootStep.Left>
