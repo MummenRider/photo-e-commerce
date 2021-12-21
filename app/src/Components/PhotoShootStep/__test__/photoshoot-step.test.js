@@ -5,6 +5,7 @@ import photoshootImg from 'Assets/Images/photoshoot_img.jpg';
 import { steps } from 'Components/PhotoShootStep/photoshoot-step-data';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+import { mockAllIsIntersecting } from 'react-intersection-observer/test-utils';
 
 afterEach(cleanup);
 describe('<PhotoShootStep />', () => {
