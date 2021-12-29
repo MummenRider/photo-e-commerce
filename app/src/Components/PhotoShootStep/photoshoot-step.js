@@ -13,7 +13,10 @@ import {
   SvgWave,
   Outer,
   Wrapper,
-} from "Components/PhotoShootStep/photoshoot-step.styles";
+  Blob,
+  BlobsContainer,
+} from 'Components/PhotoShootStep/photoshoot-step.styles';
+import { useInView } from 'react-intersection-observer';
 
 export default function PhotoShootStep({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -40,7 +43,23 @@ PhotoShootStep.Right = function PhotoShootRight({
   children,
   ...restProps
 }) {
-  return isMobile ? <Right {...restProps}>{children}</Right> : null;
+  const [ref, inView] = useInView();
+  return isMobile ? (
+    <Right
+      style={{ transformOrigin: 'top center' }}
+      transition={{
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 0.8,
+      }}
+      animate={{
+        scale: inView ? 1 : 1.2,
+      }}
+      {...restProps}
+      ref={ref}
+    >
+      {children}
+    </Right>
+  ) : null;
 };
 
 PhotoShootStep.Title = function PhotoShootTitle({ children, ...restProps }) {
@@ -70,7 +89,11 @@ PhotoShootStep.ContactBtn = function PhotoShootContactBtn({
   children,
   ...restProps
 }) {
-  return <ContactBtn {...restProps}>{children}</ContactBtn>;
+  return (
+    <ContactBtn whileHover={{}} {...restProps}>
+      {children}
+    </ContactBtn>
+  );
 };
 
 PhotoShootStep.SvgWave = function PhotoShootStepSvgWave({
@@ -85,4 +108,15 @@ PhotoShootStep.SvgInner = function PhotoShootStepSvgInner({
   ...restProps
 }) {
   return <SvgInner {...restProps}>{children}</SvgInner>;
+};
+
+PhotoShootStep.Blob = function PhotoShootStepBlob({ ...restProps }) {
+  return <Blob {...restProps} />;
+};
+
+PhotoShootStep.BlobsContainer = function PhotoShootStepBlobsContainer({
+  children,
+  ...restProps
+}) {
+  return <BlobsContainer {...restProps}>{children}</BlobsContainer>;
 };

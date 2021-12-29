@@ -18,7 +18,7 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
 }
 
 .c0::before {
-  content: "";
+  content: '';
   display: none;
   position: absolute;
   top: -1%;
@@ -121,36 +121,38 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
   font-weight: 200;
   margin: 2em 0;
   position: relative;
-  left: 10%;
-  padding-left: 2em;
+  padding-left: 15%;
 }
 
 .c7::before {
   counter-increment: counterName;
-  content: "0" counter(counterName) ". ";
+  content: '0' counter(counterName) '. ';
   font-size: clamp(1rem,0.8vw,4.5rem);
   position: absolute;
-  left: -10%;
+  left: 0;
 }
 
 .c8 {
-  cursor: pointer;
-  background-color: #9a6130;
-  border: none;
+  border: 3px solid #9a6130;
+  text-align: center;
   font-family: var(--ff-primary);
   font-size: clamp(1rem,1vw,6rem);
-  font-weight: 400;
-  padding: 1.4em 1em;
   width: 40%;
   min-width: 100px;
+  padding: 1.5em 0;
   position: relative;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
   margin-top: 5%;
-  margin-left: 4.5em;
-  box-shadow: rgba(17,17,26,0.33) 0px 4px 16px, rgba(17,17,26,0) 0px 8px 32px;
+  margin-left: 15%;
+  z-index: 1;
+  color: #9a6130;
+  border-radius: 0.2em;
 }
 
 .c8::before {
   position: absolute;
+  pointer-events: none;
   left: 120%;
   font-size: clamp(0.9rem,0.5vw,5rem);
   width: 100%;
@@ -161,9 +163,60 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
   -ms-letter-spacing: 0.5px;
   letter-spacing: 0.5px;
   font-weight: 200;
+  color: black;
   width: 80%;
   min-width: 100px;
-  content: "Lorem ipsum dolor sit amet,consetetu";
+  content: 'Lorem ipsum dolor sit amet,consetetu';
+}
+
+.c8:hover {
+  color: #fff;
+}
+
+.c8:hover .c-button__blobs div {
+  -webkit-transform: scale(1.4) translateY(0) translateZ(0);
+  -ms-transform: scale(1.4) translateY(0) translateZ(0);
+  transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+.c8 .gooeyE {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.c8 .gooeyE div {
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  width: 38%;
+  border-radius: 100%;
+  background-color: #9a6130;
+  -webkit-transform: scale(1.8) translateY(126%) translateZ(0);
+  -ms-transform: scale(1.8) translateY(126%) translateZ(0);
+  transform: scale(1.8) translateY(126%) translateZ(0);
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+}
+
+.c8 .gooeyE div:nth-child(1) {
+  left: -5%;
+}
+
+.c8 .gooeyE div:nth-child(2) {
+  left: 30%;
+  -webkit-transition-delay: 90ms;
+  transition-delay: 90ms;
+}
+
+.c8 .gooeyE div:nth-child(3) {
+  left: 66%;
+  -webkit-transition-delay: 25ms;
+  transition-delay: 25ms;
 }
 
 .c11 {
@@ -264,16 +317,17 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
               AT VERO EOS ET ACCUSAM ET JUSTO DUO
             </p>
           </ul>
-          <button
+          <div
             class="c8"
           >
             Contact me
-          </button>
+          </div>
         </div>
       </div>
     </div>
     <div
       class=""
+      style="transform-origin: top center;"
     >
       <div
         class="c9"
@@ -311,7 +365,7 @@ exports[`<PhotoShootStep /> should render <PhotoShootStep /> with data populated
 }
 
 .c0::before {
-  content: "";
+  content: '';
   display: none;
   position: absolute;
   top: -1%;
