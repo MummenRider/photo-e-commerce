@@ -1,86 +1,156 @@
-import Divider from "Components/Divider/divider";
-import { AboutContainer } from "Containers/about-container";
-import { HeroContainer } from "Containers/hero-container";
-import { StreetPhotoContainer } from "Containers/street-photo-container";
-import { CapturedPortraitContainer } from "Containers/captured-portrait-container";
-import { AbstractPhotoContainer } from "Containers/abstract-photo-container";
-import { PhotoShootStepContainer } from "Containers/photoshoot-step-container";
-import { FooterContainer } from "Containers/footer-container";
-import abstractFace from "Assets/Images/03.png";
+import { HeroContainer } from "Containers/Home/hero-container";
+import servicesJPG from "Assets/Images/services-1.jpg";
+import { CouplesPortraitContainer } from "Containers/Home/couples-portrait-container";
+import { MaternityPortraitContainer } from "Containers/Home/maternity-portrait-container";
+import { ReviewContainer } from "Containers/Home/review-container";
+import {
+  Feature,
+  Item,
+  Title,
+  Divider,
+  Inner,
+  QuoteContainer,
+  Quote,
+  Author,
+  ImageContainer,
+  ServicesContainer,
+  ServicesDescription,
+  ServicesSubTitle,
+  ServicesTitle,
+  XLTextsFrame,
+} from "./home.styles";
 
-export default function Home({ isBigDevice }) {
-  const today = new Date();
-  const day = today.toLocaleString("en-us", { weekday: "short" }).toUpperCase();
-  const time = today.toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
+import { BlogsContainer } from "Containers/Home/blogs-container";
+import { FamilySessionContainer } from "Containers/Home/family-session-container";
+import { FooterContainer } from "Containers/Home/footer-container";
+
+import {
+  PageTransition,
+  TransitionFirstMount,
+} from "../../Components/Transitions/transition";
+
+import Text from "Components/Text/text";
+import ParallaxItem from "Components/ParallaxItem/parallax-item";
+import { useMediaQuery } from "react-responsive";
+import {
+  motion,
+  useMotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
+import { useRef } from "react";
+import ParallaxImage from "Components/ParallaxItem/ParallaxImage/parallax";
+
+export default function Home({ isFirstMount }) {
+  const isBigDevice = useMediaQuery({ query: "(min-width: 1900px)" });
+  const xtraBigDevice = useMediaQuery({ query: "(min-width: 3000px)" });
+  let ref = useRef(null);
+  let { scrollYProgress } = useScroll({
+    target: ref,
+    // start start - animate when target is on the top of the screen
+    // start end - animate when target is visible at the end of the screen
+    offset: ["start end", "center start"],
   });
 
+  const ease = { damping: 15, mass: 1, stiffness: 100, bounce: 0 };
+  const smooth = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 30,
+    mass: 1,
+    bounce: 0,
+  });
+  // smooth stransition - replace scrollyprogress with smooth
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  let majRef = useRef(null);
   return (
     <>
-      <HeroContainer />
-      <AboutContainer />
+      {/* {isFirstMount && <TransitionFirstMount />} */}
+      <PageTransition>
+        <HeroContainer isFirstMount={isFirstMount} />
+        <Feature>
+          <Inner>
+            <Title>WORK FEATURED IN</Title>
+            <Divider />
+            <Item>
+              REGINA <br />
+              TOURISM
+            </Item>
+            <Item>
+              QUEEN <br />
+              CITY EX
+            </Item>
+          </Inner>
+        </Feature>
+        <QuoteContainer>
+          <Quote>
+            “A good photograph is one that communicates a fact, touches the
+            heart and leaves the viewer a changed person for having seen it. It
+            is, in a word, effective.”
+          </Quote>
+          <Author>— IRVING PENN</Author>
+        </QuoteContainer>
 
-      <Divider
-        height="120vh"
-        minHeight="1162.8px"
-        bkgColor="#f2eded"
-        color="black"
-        show={isBigDevice}
-      >
-        <Divider.TextContainer>
-          <Divider.Title size="3vw">
-            “ Photos are a return {<br />}
-            ticket to a moment {<br />}
-            otherwise gone. ”
-          </Divider.Title>
-          <Divider.Subtitle>- KATHIE THURMES</Divider.Subtitle>
-        </Divider.TextContainer>
+        <ImageContainer ref={ref}>
+          <ParallaxImage
+            target={ref}
+            imgSrc={servicesJPG}
+            yOutputRange={["0%", "80%"]}
+          />
+          <ServicesContainer>
+            <ServicesSubTitle>FOR RAW + AUTHENTIC EXPERIENCE</ServicesSubTitle>
+            <ServicesTitle>My Services</ServicesTitle>
+            <ServicesDescription>
+              Explain your services in one/two sentence(s) -Lorem ipsum dolor
+              sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua.
+            </ServicesDescription>
+          </ServicesContainer>
+        </ImageContainer>
 
-        <Divider.SVGFrame options={{ threshold: 0.5 }}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 83.329">
-            <g transform="translate(-893.062 -3019.773)">
-              <path
-                d="M12.636,0c8.645,0,15.653,8.059,15.653,18S21.281,36,12.636,36-13.875,18-13.875,18,3.992,0,12.636,0Z"
-                transform="translate(893.062 3048.062) rotate(-90)"
-              />
-              <path
-                d="M12.636,0c8.645,0,15.653,8.059,15.653,18S21.281,36,12.636,36-13.875,18-13.875,18,3.992,0,12.636,0Z"
-                transform="translate(929.062 3074.813) rotate(90)"
-              />
-            </g>
-          </svg>
-        </Divider.SVGFrame>
+        <FamilySessionContainer />
+        <CouplesPortraitContainer />
+        <div
+          ref={majRef}
+          style={{ position: isBigDevice ? "relative" : "unset" }}
+        >
+          <MaternityPortraitContainer />
+          {isBigDevice && (
+            <>
+              <Text.ExtraLargeText opacity=".4" position="absolute" bottom="4%">
+                Capture
+              </Text.ExtraLargeText>
+              <ParallaxItem
+                position="absolute"
+                right="3%"
+                bottom="4%"
+                target={majRef}
+                offset={["center start", "end 25%"]}
+                yOutputRange={["0%", "75%"]}
+              >
+                <Text.ExtraLargeText opacity=".8">Capture</Text.ExtraLargeText>
+              </ParallaxItem>
+              <ParallaxItem
+                position="absolute"
+                right="3%"
+                bottom="4%"
+                target={majRef}
+                offset={["center start", "end 25%"]}
+                yOutputRange={["0%", "150%"]}
+              >
+                <Text.ExtraLargeText opacity="1">Capture</Text.ExtraLargeText>
+              </ParallaxItem>
+            </>
+          )}
+        </div>
 
-        <Divider.TextContainer>
-          <Divider.Title size="1.5vw">Memory Keeper</Divider.Title>
-        </Divider.TextContainer>
-      </Divider>
-
-      <StreetPhotoContainer />
-
-      <Divider
-        height={isBigDevice ? "90vh" : "50vh"}
-        minHeight={isBigDevice ? "924px" : "462px"}
-        bkgColor="#f2eded"
-        color="black"
-        show={true}
-      >
-        <Divider.TextContainer>
-          <Divider.Title size="3vw">Captured Portraits</Divider.Title>
-        </Divider.TextContainer>
-
-        <Divider.ImageFrame src={abstractFace} />
-        <Divider.TextContainer>
-          <Divider.Subtitle>LOREM IPSUM DOTTOR ANET</Divider.Subtitle>
-        </Divider.TextContainer>
-      </Divider>
-
-      <CapturedPortraitContainer />
-      <AbstractPhotoContainer />
-      <PhotoShootStepContainer />
-      <FooterContainer day={day} time={time} />
+        <ReviewContainer />
+        {/* <BlogsContainer /> */}
+        <FooterContainer />
+      </PageTransition>
     </>
   );
 }

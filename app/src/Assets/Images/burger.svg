@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="11" viewBox="0 0 31 11">
+  <g id="burger" transform="translate(-338.148 -53.101)">
+    <path id="topLine" d="M-1819.352-506.441h-30a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h30a.5.5,0,0,1,.5.5A.5.5,0,0,1-1819.352-506.441Z" transform="translate(2188 560.542)" fill="#313b41"/>
+    <path id="bottomLine" d="M-1819.352-506.441h-30a.5.5,0,0,1-.5-.5.5.5,0,0,1,.5-.5h30a.5.5,0,0,1,.5.5A.5.5,0,0,1-1819.352-506.441Z" transform="translate(2188 570.542)" fill="#313b41"/>
+  </g>
+</svg>

@@ -1,48 +1,47 @@
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const Container = styled(motion.section)`
-  height: 100vh;
-  min-height: 500px;
-  display: flex;
   position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 160px 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 59, 65, 0.8);
+    z-index: 1;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 230px 0;
+  }
 `;
 
-export const ImageFrame = styled.div`
+export const VideoBackground = styled(motion.video)`
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-`;
-
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1; /* Set z-index to 0 to allow the ::before pseudo-element to be displayed on top */
+  display: block;
   object-fit: cover;
-  filter: brightness(50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
-
-export const Text = styled(motion.span)`
-  font-family: lust-sans, sans-serif;
-  font-size: clamp(30px, 5vw, 80px);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: white;
-  padding: 10px 0;
-`;
-export const TextContainer = styled.h1`
+export const VideoContent = styled.source``;
+export const Content = styled(motion.div)`
+  height: min(80vw, 30em);
+  width: min(80vw, 30em);
   z-index: 2;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
 `;

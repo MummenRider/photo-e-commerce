@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import "react-intersection-observer/test-utils";
 import { BrowserRouter as Router } from "react-router-dom";
-import Home from "Pages/Home/home";
+import { Home } from "Pages/Home/home";
 
 describe("<Home />", () => {
   if (!SVGElement.prototype.getTotalLength) {

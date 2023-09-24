@@ -1,62 +1,18 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "Pages/Home/home";
-import { useMediaQuery } from "react-responsive";
-import * as ROUTES from "Constants/route";
-import { useWindowSize } from "Hooks/useWindowSize";
-import { AppContainer, MomentumScroll } from "global.styles";
-import { useRef, useEffect, useCallback, useMemo } from "react";
-import { NavbarContainer } from "Containers/navbar-container";
+import React, { useRef } from "react";
+import ParallaxContent from "Components/ParallaxContent/parallax-content";
+import AnimatedRoutes from "animateroutes";
+import ScrollToTop from "./Components/ScrollToTop/scrollToTop";
+import { NavbarContainer } from "./Containers/Home/navbar-container";
+import SmoothScroll from "Components/SmoothScroll/smoothscroll";
 
 const App = () => {
-  const isBigDevice = useMediaQuery({ query: "(min-width: 1024px)" });
-  const size = useWindowSize();
-  const scrollRef = useRef();
-  const data = useMemo(
-    () => ({
-      ease: 0.08,
-      current: 0,
-      previous: 0,
-      rounded: 0,
-    }),
-    []
-  );
-
-  const momentumScoll = useCallback(() => {
-    data.current = window.scrollY;
-    data.previous += (data.current - data.previous) * data.ease;
-    data.rounded = Math.round(data.previous * 100) / 100;
-    scrollRef.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-    requestAnimationFrame(() => momentumScoll());
-  }, [data]);
-
-  const setBodyHeight = useCallback(() => {
-    document.body.style.height = `${
-      scrollRef.current.getBoundingClientRect().height
-    }px`;
-  }, []);
-
-  useEffect(() => {
-    requestAnimationFrame(() => momentumScoll());
-    return () => cancelAnimationFrame(() => momentumScoll());
-  }, [momentumScoll]);
-
-  useEffect(() => {
-    setBodyHeight();
-  }, [size.height, size.width, setBodyHeight]);
-
+  const ref = useRef(null);
   return (
-    <AppContainer>
-      <Router>
-        <NavbarContainer />
-        <Switch>
-          <MomentumScroll ref={scrollRef}>
-            <Route path={ROUTES.HOME} exact>
-              <Home isBigDevice={isBigDevice} />
-            </Route>
-          </MomentumScroll>
-        </Switch>
-      </Router>
-    </AppContainer>
+    <>
+      {/* <ScrollToTop /> PARALLAX CONTENT BELOW*/}
+
+      <AnimatedRoutes />
+    </>
   );
 };
 

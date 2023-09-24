@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="107" height="85" viewBox="0 0 107 85">
+  <g id="backOnTop" transform="translate(-1683 -8775.415)">
+    <path id="Polygon_5" data-name="Polygon 5" d="M6.7,0l6.7,11.339H0Z" transform="translate(1729.884 8775.415)" fill="#fbf8f4"/>
+    <line id="Line_34" data-name="Line 34" y1="75.83" transform="translate(1736.5 8784.585)" fill="none" stroke="#fbf8f4" stroke-width="1"/>
+    <g id="textContainer" transform="translate(1683 8809.5)">
+      <rect id="Rectangle_103" data-name="Rectangle 103" width="107" height="26" fill="#313B41"/>
+      <text id="back_on_top" data-name="back on top" transform="translate(14.5 17)" fill="#fbf8f4" font-size="12" font-family="BrandonGrotesque-Light, Brandon Grotesque" font-weight="300"><tspan x="0" y="0">BACK ON TOP</tspan></text>
+    </g>
+  </g>
+</svg>

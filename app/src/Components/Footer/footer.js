@@ -1,14 +1,15 @@
 import {
-  Column,
+  TitleContainer,
   Container,
-  Row,
-  Description,
   Title,
   Inner,
-  SocialMedias,
-  SiteMap,
-  TitleDescription,
-  CopyRight,
+  SocialMediasContainer,
+  SocialMedia,
+  NamesContainer,
+  Owner,
+  Developer,
+  Content,
+  BackOnTopContainer,
 } from "Components/Footer/footer.styles";
 
 export default function Footer({ children, ...restProps }) {
@@ -19,37 +20,59 @@ export default function Footer({ children, ...restProps }) {
   );
 }
 
-Footer.Row = function FooterRow({ children, ...restProps }) {
-  return <Row {...restProps}>{children}</Row>;
-};
-
-Footer.Column = function FooterColumn({ children, ...restProps }) {
-  return <Column {...restProps}>{children}</Column>;
-};
-
-Footer.SocialMedias = function FooterSocialMedias({ children, ...restProps }) {
-  return <SocialMedias {...restProps}>{children}</SocialMedias>;
-};
-
-Footer.SiteMap = function FooterSiteMap({ children, ...restProps }) {
-  return <SiteMap {...restProps}>{children}</SiteMap>;
-};
-
-Footer.Description = function FooterDescription({ children, ...restProps }) {
-  return <Description {...restProps}>{children}</Description>;
-};
-
-Footer.TitleDescription = function FooterTitleDescription({
+Footer.TitleContainer = function FooterTitleContainer({
   children,
   ...restProps
 }) {
-  return <TitleDescription {...restProps}>{children}</TitleDescription>;
+  return <TitleContainer {...restProps}>{children}</TitleContainer>;
+};
+
+Footer.Content = function FooterContent({ children, ...restProps }) {
+  return <Content {...restProps}>{children}</Content>;
 };
 
 Footer.Title = function FooterTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Footer.CopyRight = function FooterCopyRight({ children, ...restProps }) {
-  return <CopyRight {...restProps}>{children}</CopyRight>;
+Footer.SocialMediasContainer = function FooterSocialMediasContainer({
+  children,
+  ...restProps
+}) {
+  return (
+    <SocialMediasContainer {...restProps}>{children}</SocialMediasContainer>
+  );
+};
+
+Footer.SocialMedia = function FooterSocialMedia({ children, ...restProps }) {
+  return <SocialMedia {...restProps}>{children}</SocialMedia>;
+};
+
+Footer.NamesContainer = function FooterNamesContainer({
+  children,
+  ...restProps
+}) {
+  return <NamesContainer {...restProps}>{children}</NamesContainer>;
+};
+
+Footer.Owner = function FooterOwner({ children, ...restProps }) {
+  return <Owner {...restProps}>{children}</Owner>;
+};
+
+Footer.Developer = function FooterDeveloper({ children, ...restProps }) {
+  return <Developer {...restProps}>{children}</Developer>;
+};
+
+Footer.BackOnTopContainer = function FooterBackOnTopContainer({
+  children,
+  ...restProps
+}) {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+  return (
+    <BackOnTopContainer onClick={scrollToTop} {...restProps}>
+      {children}
+    </BackOnTopContainer>
+  );
 };

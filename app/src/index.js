@@ -1,12 +1,16 @@
 import React from "react";
-import { render } from "react-dom";
-import App from "App";
-import { GlobalStyles } from "global.styles";
 
-render(
+import App from "App";
+import ReactDOM from "react-dom/client";
+import { GlobalStyles } from "global.styles";
+import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "Hooks/scrollToTop";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <GlobalStyles />
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+    <BrowserRouter>
+      <GlobalStyles />
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );

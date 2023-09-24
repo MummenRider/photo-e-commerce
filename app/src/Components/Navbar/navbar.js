@@ -1,87 +1,83 @@
-import React, { useState, useContext, createContext } from "react";
+import React from "react";
 import {
   Container,
-  Header,
-  Logo,
-  Menu,
-  Item,
-  Button,
-  MenuSide,
+  BurgerIcon,
+  LogoContainer,
+  MenuItem,
+  MenuList,
+  SocialMediaItem,
+  SocialMediaList,
+  Inner,
+  Image,
+  Right,
+  Center,
+  Left,
 } from "Components/Navbar/navbar.styles";
-import useScroll from "Hooks/useScroll";
 
-const ToggleMenuContext = createContext();
-
-export default function Navbar({ isBigDevice, children, ...restProps }) {
-  const { isScrolled } = useScroll(false);
-
+export default function Navbar({ children, ...restProps }) {
   return (
-    <Header
-      initial={{ padding: !isScrolled && !isBigDevice ? "5vh 0" : "3vh 0" }}
-      animate={{
-        padding:
-          isScrolled && !isBigDevice
-            ? "2vh 0"
-            : isScrolled && isBigDevice
-            ? "1vh 0"
-            : !isScrolled && !isBigDevice
-            ? "5vh 0"
-            : "3vh 0",
-      }}
-      transition={{ duration: 0.5, type: "tween" }}
-      isScrolled={isScrolled}
-      data-testid="nav-background"
-      {...restProps}
-    >
-      {children}
-    </Header>
+    <Container {...restProps}>
+      <Inner>{children}</Inner>
+    </Container>
   );
 }
 
-Navbar.Container = function NavbarContainer({ children, ...restProps }) {
-  const [toggleMenu, setToggleMenu] = useState(ToggleMenuContext);
+Navbar.LogoContainer = function NavbarLogoContainer({
+  isBigDevice,
+  children,
+  ...restProps
+}) {
   return (
-    <ToggleMenuContext.Provider value={{ toggleMenu, setToggleMenu }}>
-      <Container {...restProps}>{children}</Container>
-    </ToggleMenuContext.Provider>
+    !isBigDevice && <LogoContainer {...restProps}>{children}</LogoContainer>
   );
 };
 
-Navbar.Logo = function NavbarLogo({ children, ...restProps }) {
-  return <Logo {...restProps}>{children}</Logo>;
-};
-
-Navbar.MenuSide = function NavbarMenuSide({
+Navbar.MenuList = function NavbarMenuList({
   isBigDevice,
   children,
   ...restProps
 }) {
-  return !isBigDevice ? <MenuSide {...restProps}>{children}</MenuSide> : null;
+  return isBigDevice && <MenuList {...restProps}>{children}</MenuList>;
 };
 
-Navbar.Menu = function NavbarMenu({ isBigDevice, children, ...restProps }) {
-  const { toggleMenu } = useContext(ToggleMenuContext);
-
-  return isBigDevice ? (
-    <Menu data-testid="nav-menu" isOpen={toggleMenu} {...restProps}>
-      {children}
-    </Menu>
-  ) : null;
+Navbar.MenuItem = function NavbarMenuItem({ children, ...restProps }) {
+  return <MenuItem {...restProps}>{children}</MenuItem>;
 };
 
-Navbar.Item = function NavbarItem({ children, ...restProps }) {
-  return <Item {...restProps}>{children}</Item>;
+Navbar.SocialMediaList = function NavbarSocialMediaList({
+  children,
+  ...restProps
+}) {
+  return <SocialMediaList {...restProps}>{children}</SocialMediaList>;
 };
 
-Navbar.Button = function NavbarButton({
-  setIsOpen,
+Navbar.SocialMediaItem = function NavbarSocialMediaItem({
+  children,
+  ...restProps
+}) {
+  return <SocialMediaItem {...restProps}>{children}</SocialMediaItem>;
+};
+
+Navbar.BurgerIcon = function NavbarBurgerIcon({
   isBigDevice,
   children,
   ...restProps
 }) {
-  return !isBigDevice ? (
-    <Button data-testid="menu-icon" onClick={setIsOpen} {...restProps}>
-      {children}
-    </Button>
-  ) : null;
+  return !isBigDevice && <BurgerIcon {...restProps}>{children}</BurgerIcon>;
+};
+
+Navbar.Image = function HeroImage({ ...restProps }) {
+  return <Image {...restProps} />;
+};
+
+Navbar.Left = function NavbarLeft({ children, ...restProps }) {
+  return <Left {...restProps}>{children}</Left>;
+};
+
+Navbar.Center = function NavbarCenter({ children, ...restProps }) {
+  return <Center {...restProps}>{children}</Center>;
+};
+
+Navbar.Right = function NavbarRight({ children, ...restProps }) {
+  return <Right {...restProps}>{children}</Right>;
 };

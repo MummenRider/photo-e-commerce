@@ -1,56 +1,50 @@
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 export const GlobalStyles = createGlobalStyle`
 
 :root {
   --ff-primary: "Montserrat", sans-serif;
-  --ff-secondary: lust-sans, sans-serif;
-  --bg-primary: #111112;
-  --bg-secondary: #151515;
-  scrollbar-width: thin;
+  --ff-secondary: cormorant-garamond, serif;;
+  --ff-third: brandon-grotesque, sans-serif;
+  --ff-fourth: owners, sans-serif;
+  --ff-fifth: elza-narrow, sans-serif;
+  --ff-sixth: filmotype-lacrosse, sans-serif;
+  --ff-seventh: brandon-grotesque-light, sans-serif;
+  
+  --bg-primary: #FFFDF9;
+  --bg-secondary: #313B41;
+  --bg-third: #AD8B73;
+  --bg-fourth: #F5EDDC;
+
 }
 
-html {
-  font-size: 62.5%;
-  scroll-behavior:smooth;
-}
-
-* {
-  padding: 0px;
-  margin: 0px;
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-
 }
 
-body {
+html,body{
+  overscroll-behavior:none;  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: var(--bg-primary);
-  overflow-x: hidden;
-  overscroll-behavior-y:none;
-}
-
-body::-webkit-scrollbar {
-  width: 1em;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color:rgb(117 114 114);
-  border-radius:25px;
-
-}
-
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+ }
  
+ a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit; /*color of your choosing*/
+    text-decoration: none;
+    font-weight: normal;
+}
+
+ul, li{
+  all: unset;
 }
 `;
-
-export const AppContainer = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-`;
-
-export const MomentumScroll = styled.div``;

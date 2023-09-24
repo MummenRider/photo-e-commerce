@@ -2,7 +2,7 @@
 //For more info and more hooks, go to https://usehooks.com/useWindowSize/
 import { useState, useEffect } from "react";
 
-export function useWindowSize() {
+export default function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     height: undefined,
     width: undefined,
