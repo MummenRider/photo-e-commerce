@@ -50,16 +50,16 @@ const PortfoloMainContainer = () => {
         </Layout.List>
       </Layout.Frame>
 
-      <GalleryContainer>
+      <Gallery>
         {images.map((img) => (
-          <GallerItem gridColumn={img.gridColumn} gridRow={img.gridRow}>
-            <GallerImage
+          <Gallery.Item gridColumn={img.gridColumn} gridRow={img.gridRow} >
+            <Gallery.Image
               key={img.id}
               src={require(`Assets/Images/${img.imageSrc}`)}
             />
-          </GallerItem>
+          </Gallery.Item>
         ))}
-      </GalleryContainer>
+      </Gallery>
     </Layout>
   );
 };

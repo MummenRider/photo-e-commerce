@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 
 export const SideBarContainer = styled(motion.div)`
   height: 100vh;
+  min-height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
@@ -11,7 +12,8 @@ export const SideBarContainer = styled(motion.div)`
   right: 0;
   bottom: 0;
   background: var(--bg-primary);
-  z-index: 500;
+  z-index: 99999;
+
 `;
 
 export const SideBarInner = styled.div`

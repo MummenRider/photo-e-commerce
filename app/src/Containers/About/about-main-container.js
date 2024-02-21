@@ -7,9 +7,9 @@ import Five from "Assets/Images/about-3.png";
 import { useMediaQuery } from "react-responsive";
 import { NavbarContainer } from "../../Containers/Home/navbar-container";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import TextAnimation from "Components/Animation/text-animation";
-export function AboutMainContainer() {
+export function AboutMainContainer({isFirstMount}) {
   const isBigDevice = useMediaQuery({ query: "(min-width: 48em)" });
   const fourSubTitle = {
     gridColumn: "3 / span 8",
@@ -78,14 +78,16 @@ export function AboutMainContainer() {
       },
     },
   };
-  const textRef = useRef(null);
-  const isInView = useInView(textRef, {
-    once: false,
-    amount: "some",
-  });
+  // const textRef = useRef(null);
+  // const isInView = useInView(textRef, {
+  //   once: false,
+  //   amount: "some",
+  // });
+
+
   return (
     <AboutMain>
-      <AboutMain.HeroStack variant={parentVariant}>
+      <AboutMain.HeroStack isFirstMount={isFirstMount} variant={parentVariant}>
         <NavbarContainer
           variants={childVariant1}
           color="#313B41"

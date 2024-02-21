@@ -229,7 +229,7 @@ export const Description = styled(motion.div)`
   grid-column: 4 / -1;
   grid-row: 1;
   padding-top: 90%;
-  z-index: 300;
+  /* z-index: 300; */
   p {
     background: var(--bg-primary);
     padding: 1em;

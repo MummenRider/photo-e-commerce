@@ -44,6 +44,7 @@ import { useRef } from "react";
 import ParallaxImage from "Components/ParallaxItem/ParallaxImage/parallax";
 
 export default function Home({ isFirstMount }) {
+  console.log('Home', isFirstMount);
   const isBigDevice = useMediaQuery({ query: "(min-width: 1900px)" });
   const xtraBigDevice = useMediaQuery({ query: "(min-width: 3000px)" });
   let ref = useRef(null);

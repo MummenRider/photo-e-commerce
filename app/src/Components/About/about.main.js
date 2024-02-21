@@ -97,15 +97,16 @@ AboutMain.ImageFiveContainer = function AboutMainImageFiveContainer({
 };
 
 AboutMain.HeroStack = function AboutMainHeroStack({
+  isFirstMount,
   variant,
   children,
   ...restProps
 }) {
   return (
     <HeroStack
-      variants={variant}
-      initial="hidden"
-      animate="show"
+      variants={isFirstMount && variant}
+      initial= {isFirstMount && "hidden"}
+      animate= {isFirstMount && "show"}
       {...restProps}
     >
       {children}

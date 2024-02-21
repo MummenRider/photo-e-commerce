@@ -1,21 +1,28 @@
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import * as PAGEROUTES from "Constants/route";
 import Home from "./Pages/Home/home";
 import About from "Pages/About/about";
 import { AnimatePresence } from "framer-motion";
 import Portfolio from "Pages/Portfolio/portfolio";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function AnimatedRoutes() {
   const location = useLocation();
-  const [isFirstMount, setIsFirstMount] = useState(true);
+  const [isFirstMountHome, setIsFirstMountHome] = useState(true);
+  const [isFirstMountAbout, setIsFirstMountAbout] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      isFirstMount && setIsFirstMount(false);
-    }, 1500);
-    return () => clearTimeout(timeout);
-  }, [location, isFirstMount]);
+    const pathname = location.pathname;
+    setTimeout(() => {
+      if (pathname === PAGEROUTES.HOME && isFirstMountHome) {
+        setIsFirstMountHome(false);
+      } else if (pathname === PAGEROUTES.ABOUT && isFirstMountAbout) {
+        setIsFirstMountAbout(false);
+      }
+      
+    },1500)
+ 
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="wait">
@@ -23,9 +30,12 @@ export default function AnimatedRoutes() {
         <Route
           exact
           path={PAGEROUTES.HOME}
-          element={<Home isFirstMount={isFirstMount} />}
+          element={<Home isFirstMount={isFirstMountHome} />}
         />
-        <Route path={PAGEROUTES.ABOUT} element={<About />} />
+        <Route
+          path={PAGEROUTES.ABOUT}
+          element={<About isFirstMount={isFirstMountAbout} />}
+        />
         <Route path={PAGEROUTES.PORTFOLIO} element={<Portfolio />} />
       </Routes>
     </AnimatePresence>

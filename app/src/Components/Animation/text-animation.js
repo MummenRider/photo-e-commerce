@@ -23,7 +23,7 @@ const TextAnimation = ({
     },
   };
   return (
-    <motion.div ref={ref} variants={variant} initial="hidden" animate="show">
+    <motion.div ref={ref} variants={variant} initial="hidden" animate="show" style={{zIndex: 1, position:"relative"}}>
       {children}
     </motion.div>
   );
